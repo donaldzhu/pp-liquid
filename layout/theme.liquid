@@ -10,16 +10,15 @@
     {% style %}
       @font-face {
         font-family: "Xanh Mono";
-        src: url("{{ 'XanhMono-Regular' | file_url }}") format("ttf");
+        src: url("{{ 'XanhMono-Regular.ttf' | file_url }}") format("ttf");
         font-style: normal;
       }
 
       @font-face {
         font-family: "Xanh Mono";
-        src: url("{{ 'XanhMono-Italic' | file_url }}") format("ttf");
+        src: url("{{ 'XanhMono-Italic.ttf' | file_url }}") format("ttf");
         font-style: italic;
       }
-
     {% endstyle %}
 
     {%- if settings.favicon != blank -%}
