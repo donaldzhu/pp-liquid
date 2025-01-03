@@ -7,6 +7,20 @@
     <meta name="theme-color" content="">
     <link rel="canonical" href="{{ canonical_url }}">
 
+    {%{% style %}
+      @font-face {
+        font-family: "Xanh Mono";
+        src: url("{{ 'XanhMono-Regular' | file_url }}") format("ttf");
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Xanh Mono";
+        src: url("{{ 'XanhMono-Italic' | file_url }}") format("ttf");
+        font-style: italic;
+      }
+    {% endstyle %}%}
+
     {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
     {%- endif -%}
