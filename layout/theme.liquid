@@ -7,20 +7,6 @@
     <meta name="theme-color" content="">
     <link rel="canonical" href="{{ canonical_url }}">
 
-    {% style %}
-      @font-face {
-        font-family: "Xanh Mono";
-        src: url("{{ 'XanhMono-Regular.ttf' | file_url }}") format("ttf");
-        font-style: normal;
-      }
-
-      @font-face {
-        font-family: "Xanh Mono";
-        src: url("{{ 'XanhMono-Italic.ttf' | file_url }}") format("ttf");
-        font-style: italic;
-      }
-    {% endstyle %}
-
     {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
     {%- endif -%}
@@ -111,6 +97,18 @@
       {{ scheme_classes | prepend: 'body' }} {
         color: rgba(var(--color-foreground), 0.75);
         background-color: rgb(var(--color-background));
+      }
+
+      @font-face {
+        font-family: "Xanh Mono";
+        src: url("{{ 'XanhMono-Regular.ttf' | file_url }}") format("ttf");
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Xanh Mono";
+        src: url("{{ 'XanhMono-Italic.ttf' | file_url }}") format("ttf");
+        font-style: italic;
       }
 
       :root {
