@@ -1,9 +1,18 @@
 {
   "sections": {
     "patinapatina-hero": {
-      "type": "patinapatina-hero",
+      "type": "patinapatina-hero"
+    },
+    "patinapatina-home-section-1": {
+      "type": "patinapatina-home-section",
       "settings": {
-        "title": "PatinaPatina"
+        "section_title": "PATINAPATINA ISSUE ONE"
+      }
+    },
+    "patinapatina-home-section-2": {
+      "type": "patinapatina-home-section",
+      "settings": {
+        "section_title": "PATINAPATINA EVENTS"
       }
     },
     "image_banner": {
@@ -76,6 +85,8 @@
   },
   "order": [
     "patinapatina-hero",
+    "patinapatina-home-section-1",
+    "patinapatina-home-section-2",
     "image_banner",
     "featured_collection"
   ]

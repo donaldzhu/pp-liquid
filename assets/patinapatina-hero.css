@@ -1,6 +1,13 @@
+.patinapatina-hero {
+  padding: 40px 0 110px;
+}
 .patinapatina-hero .patinapatina-hero-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 36.4205607477vw;
+  max-height: 433px;
   max-width: 1140px;
-  padding: 120px 0 360px;
   margin: 0 auto;
   position: relative;
 }
@@ -13,8 +20,9 @@
   text-align: center;
 }
 .patinapatina-hero .patinapatina-hero-inner svg {
-  width: 45%;
+  max-width: 535px;
   position: absolute;
+  top: 0;
 }
 
 /*# sourceMappingURL=patinapatina-hero.css.map */

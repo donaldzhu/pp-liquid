@@ -1,7 +1,22 @@
+@use './scss/utils' as *;
+
 .patinapatina-hero {
+  $emblem-max-width: 535px;
+  $emblem-max-height: 433px;
+  $emblem-height-to-width-ratio: $emblem-max-height / $emblem-max-width;
+  $emblem-height: 45vw * $emblem-height-to-width-ratio;
+
+  @mixin size-to-emblem {
+    height: $emblem-height;
+    max-height: $emblem-max-height;
+  }
+
+  padding: 40px 0 110px;
+
   .patinapatina-hero-inner {
+    @include flex;
+    @include size-to-emblem;
     max-width: 1140px;
-    padding: 120px 0 360px;
     margin: 0 auto;
     position: relative;
 
@@ -15,8 +30,9 @@
     }
 
     svg {
-      width: 45%;
+      max-width: $emblem-max-width;
       position: absolute;
+      top: 0;
     }
   }
 }

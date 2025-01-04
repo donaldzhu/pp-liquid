@@ -1,0 +1,70 @@
+{{ 'patinapatina-home-section.css' | asset_url | stylesheet_tag }}
+
+{% assign title_array = section.settings.section_title | split: " " %}
+{%- style -%}
+  .patinapatina-home-section {
+    background-color: {{ section.settings.background_color }};
+  }
+
+  .patinapatina-home-section h2 {
+    color: {{ section.settings.text_color }};
+  }
+
+  .patinapatina-home-section-three-words h2 > span:nth-child(2) {
+    position: absolute;
+    left: 50vw;
+  }
+{%- endstyle -%}
+
+{% if title_array.size == 3 %}
+  {% assign has_three_words = true %}
+{% endif %}
+<div
+  id="Patinapatina-Home-Section-{{ section.id }}"
+  class="patinapatina-home-section"
+>
+  <h2 class="{% if has_three_words %}patinapatina-home-section-three-words{% endif %}">
+    {% for item in title_array %}
+      <span>{{ item }}</span>
+    {% endfor %}
+  </h2>
+</div>
+
+{% schema %}
+  {
+    "name": "PatinaPatina Home Section",
+    "tag": "section",
+    "class": "section",
+    "disabled_on": {
+      "groups": ["header", "footer"]
+    },
+    "settings": [
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "#141414"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text Color",
+        "default": "#FFFBF3"
+      },
+      {
+        "type": "text",
+        "id": "section_title",
+        "label": "Section Title",
+        "default": "PATINAPATINA"
+      }
+    ],
+    "blocks": [
+
+    ],
+    "presets": [
+      {
+        "name": "patinapatina-home-section"
+      }
+    ]
+  }
+  {% endschema %}
