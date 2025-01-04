@@ -8,16 +8,6 @@
     "theme_support_url": "https://support.shopify.com/"
   },
   {
-    "name": "Typography",
-    "settings": [
-      {
-        "type": "font_picker",
-        "id": "header_font",
-        "label": "Header Font"
-      }
-    ]
-  },
-  {
     "name": "t:settings_schema.logo.name",
     "settings": [
       {
