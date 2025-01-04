@@ -1,14 +1,14 @@
-.custom-hero h1 {
+.custom-hero .custom-hero-inner {
+  max-width: 1140px;
+  margin: 120px auto 360px;
+}
+.custom-hero .custom-hero-inner h1 {
   font-family: var(--custom-font-heading-family);
   font-weight: normal;
   font-size: var(--custom-font-heading-size);
   letter-spacing: 0.01em;
   line-height: 1.167em;
-}
-
-.custom-hero-inner {
-  max-width: 1200px;
-  margin: 0 auto;
+  text-align: center;
 }
 
 /*# sourceMappingURL=custom-hero.css.map */
