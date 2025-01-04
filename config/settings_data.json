@@ -1,10 +1,11 @@
 {
   "current": {
-    "header_font": "XanhMono",
+    "custom_header_font": "AzeretMono",
+    "custom_body_font": "XanhMono",
     "logo_width": 90,
-    "type_header_font": "XanhMono",
+    "type_header_font": "alegreya_n4",
     "heading_scale": 100,
-    "type_body_font": "XanhMono",
+    "type_body_font": "assistant_n4",
     "body_scale": 100,
     "page_width": 1200,
     "spacing_sections": 0,
