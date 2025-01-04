@@ -35,14 +35,6 @@
         font-weight: 100 900;
         font-style: italic;
       }
-
-      :root {
-        --custom-font-heading-family: 'AzeretMono';
-        --custom-font-body-family: 'XanhMono';
-
-        --custom-font-heading-size: 40px;
-      }
-
     {% endstyle %}
 
     {%- if settings.favicon != blank -%}
@@ -294,6 +286,7 @@
     {% endstyle %}
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
+    {{ 'custom-base.css' | asset_url | stylesheet_tag }}
     <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
 
     {%- if settings.cart_type == 'drawer' -%}
