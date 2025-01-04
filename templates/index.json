@@ -1,5 +1,8 @@
 {
   "sections": {
+    "custom_hero": {
+      "type": "custom-hero"
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
