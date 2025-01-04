@@ -35,6 +35,17 @@
         font-weight: 100 900;
         font-style: italic;
       }
+
+      :root {
+        --custom-font-heading-family: {{ settings.custom_header_font.family }}, {{ settings.custom_header_font.fallback_families }};
+        --custom-font-heading-style: {{ settings.custom_header_font.style }};
+        --custom-font-heading-weight: {{ settings.custom_header_font.weight }};
+
+        --custom-font-body-family: {{ settings.custom_body_font.family }}, {{ settings.custom_body_font.fallback_families }};
+        --custom-font-body-style: {{ settings.custom_body_font.style }};
+        --custom-font-body-weight: {{ settings.custom_body_font.weight }};
+      }
+
     {% endstyle %}
 
     {%- if settings.favicon != blank -%}
