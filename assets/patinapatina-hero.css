@@ -2,6 +2,7 @@
   max-width: 1140px;
   padding: 120px 0 360px;
   margin: 0 auto;
+  position: relative;
 }
 .patinapatina-hero .patinapatina-hero-inner h1 {
   font-family: var(--patinapatina-font-heading-family);
@@ -10,6 +11,10 @@
   letter-spacing: 0.01em;
   line-height: 1.167em;
   text-align: center;
+}
+.patinapatina-hero .patinapatina-hero-inner svg {
+  width: 45%;
+  position: absolute;
 }
 
 /*# sourceMappingURL=patinapatina-hero.css.map */
