@@ -1,6 +1,6 @@
 .custom-hero .custom-hero-inner {
   max-width: 1140px;
-  margin: 120px auto 360px;
+  padding: 120px auto 360px;
 }
 .custom-hero .custom-hero-inner h1 {
   font-family: var(--custom-font-heading-family);
