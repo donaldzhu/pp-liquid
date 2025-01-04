@@ -1,5 +1,9 @@
 .custom-hero {
   h1 {
     font-family: var(--custom-font-heading-family);
+    font-weight: normal;
+    font-size: var(--custom-font-heading-size)px;
+    letter-spacing: 0.01em;
+    line-height: 1.167em;
   }
 }
