@@ -14,6 +14,27 @@
         font-weight: normal;
         font-style: normal;
       }
+
+      @font-face {
+        font-family: 'XanhMono';
+        src: url('{{ 'XanhMono-Italic.ttf' | file_url }}') format('truetype');
+        font-weight: normal;
+        font-style: italic;
+      }
+
+      @font-face {
+        font-family: 'AzeretMono';
+        src: url('{{ 'AzeretMono-VariableFont_wght.ttf' | file_url }}') format('truetype');
+        font-weight: 100 900;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'AzeretMono';
+        src: url('{{ 'AzeretMono-Italic-VariableFont_wght.ttf' | file_url }}') format('truetype');
+        font-weight: 100 900;
+        font-style: italic;
+      }
     {% endstyle %}
 
     {%- if settings.favicon != blank -%}
