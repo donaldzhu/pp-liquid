@@ -1,12 +1,12 @@
 @font-face {
   font-family: "xanhmono";
-  src: url("{{ 'xanhmonoregular.woff2' | asset_url }}") format("woff2");
+  src: url({{ "xanhmonoregular.woff2" | asset_url }}) format("woff2");
   font-style: normal;
 }
 
 @font-face {
   font-family: "xanhmono";
-  src: url("{{ 'xanhmonoitalic.woff2' | asset_url }}") format("woff2");
+  src: url({{ "xanhmonoitalic.woff2" | asset_url }}) format("woff2");
   font-style: italic;
 }
 
