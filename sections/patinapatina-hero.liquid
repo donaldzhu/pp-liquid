@@ -1,27 +1,27 @@
-{{ 'custom-hero.css' | asset_url | stylesheet_tag }}
+{{ 'patinapatina-hero.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
-  .custom-hero {
+  .patinapatina-hero {
     background-color: {{ section.settings.background_color }};
   }
 
-  .custom-hero h1 {
+  .patinapatina-hero h1 {
     color: {{ section.settings.text_color }};
   }
 {%- endstyle -%}
 
 <div
-  id="Custom-Hero-{{ section.id }}"
-  class="custom-hero"
+  id="Patinapatina-Hero-{{ section.id }}"
+  class="patinapatina-hero"
 >
-  <div class="custom-hero-inner">
+  <div class="patinapatina-hero-inner">
     <h1>PATINAPATINA is a magazine with stories on art, identity, and culture. It is an embrace of the messiness and confusion of our shared experiences.</h1>
   </div>
 </div>
 
 {% schema %}
   {
-    "name": "Custom Hero",
+    "name": "PatinaPatina Hero",
     "tag": "section",
     "class": "section",
     "disabled_on": {
@@ -46,7 +46,7 @@
     ],
     "presets": [
       {
-        "name": "custom-hero",
+        "name": "patinapatina-hero",
         "blocks": [
         ]
       }

@@ -1,0 +1,15 @@
+.patinapatina-hero .patinapatina-hero-inner {
+  max-width: 1140px;
+  padding: 120px 0 360px;
+  margin: 0 auto;
+}
+.patinapatina-hero .patinapatina-hero-inner h1 {
+  font-family: var(--patinapatina-font-heading-family);
+  font-weight: normal;
+  font-size: var(--patinapatina-font-heading-size);
+  letter-spacing: 0.01em;
+  line-height: 1.167em;
+  text-align: center;
+}
+
+/*# sourceMappingURL=patinapatina-hero.css.map */

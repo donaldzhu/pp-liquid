@@ -1,8 +1,5 @@
 {
   "sections": {
-    "custom_hero": {
-      "type": "custom-hero"
-    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -69,10 +66,14 @@
         "padding_top": 44,
         "padding_bottom": 36
       }
+    },
+    "patinapatina-hero": {
+      "type": "patinapatina-hero"
     }
   },
   "order": [
     "image_banner",
-    "featured_collection"
+    "featured_collection",
+    "patinapatina-hero"
   ]
 }
