@@ -18,7 +18,6 @@
         src: url("{{ 'xanhmonoitalic.woff2' | asset_url }}") format("woff2");
         font-style: italic;
       }
-
     {% endstyle %}
     {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
