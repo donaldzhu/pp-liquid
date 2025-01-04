@@ -1,5 +1,5 @@
 .patinapatina-hero {
-  padding: 40px 0 110px;
+  padding: 40px 0 10px;
 }
 .patinapatina-hero .patinapatina-hero-inner {
   display: flex;
@@ -11,7 +11,7 @@
   margin: 0 auto;
   position: relative;
 }
-.patinapatina-hero .patinapatina-hero-inner h1 {
+.patinapatina-hero .patinapatina-hero-inner h3 {
   font-family: var(--patinapatina-font-heading-family);
   font-weight: normal;
   font-size: var(--patinapatina-font-heading-size);
