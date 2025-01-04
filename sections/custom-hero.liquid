@@ -1,5 +1,11 @@
 {{ 'custom-hero.css' | asset_url | stylesheet_tag }}
 
+{%- style -%}
+  .custom-hero {
+    background-color: {{ section.settings.background_color }};
+  }
+{%- endstyle -%}
+
 <div
   id="Custom-Hero-{{ section.id }}"
   class="custom-hero"
@@ -16,7 +22,12 @@
       "groups": ["header", "footer"]
     },
     "settings": [
-
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "#000000"
+      }
     ],
     "blocks": [
 
