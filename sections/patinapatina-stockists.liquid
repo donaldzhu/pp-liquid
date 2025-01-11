@@ -15,12 +15,13 @@
     <p>Art Metropole</p>
     <p>Offbrand Library</p>
     <p>Maktaba Bookstore</p> {% endcomment %}
-    {% for block in section.blocks %}
+    {% comment %} {% for block in section.blocks %}
       {%- case block.type -%}
-        {%- when "patinapatina_stockist" -%}
+        {%- when "patinapatina-stockist" -%}
           <p><a href="{{ block.settings.url }}">{{ block.settings.name }}</a></p>
       {% endcase %}
-    {% endfor %}
+    {% endfor %} {% endcomment %}
+    {% content_for 'blocks' %}
   </div>
   <div class="patinapatina-stockists-background">
     {{ 'patinapatina-stockists-background.svg' | asset_url | img_tag }}
@@ -40,14 +41,40 @@
     ],
     "blocks": [
       {
-        "type": "patinapatina_stockist",
-        "name": "Stockist"
+        "type": "patinapatina-stockist",
+        "name": "Stockist",
+        "settings": [
+          {
+            "type": "text",
+            "id": "name",
+            "label": "Name"
+          },
+          {
+            "type": "url",
+            "id": "url",
+            "label": "URL"
+          }
+        ]
       }
     ],
     "presets": [
       {
         "name": "patinapatina-stockists",
         "blocks": [
+          {
+            "type": "patinapatina-stockist",
+            "settings": {
+              "name": "Issues Mag Shop",
+              "url": "https://issuesmagshop.com"
+            }
+          },
+          {
+            "type": "patinapatina-stockist",
+            "settings": {
+              "name": "Disko Coffee",
+              "url": "https://issuesmagshop.com"
+            }
+          }
         ]
       }
     ]
