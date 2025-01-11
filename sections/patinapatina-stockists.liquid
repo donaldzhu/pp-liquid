@@ -22,13 +22,13 @@
       {% endcase %}
     {% endfor %} {% endcomment %}
     {% comment %} {% content_for 'blocks' %} {% endcomment %}
-     {% content_for 'blocks' %}
-    {% comment %} {% for block in section.blocks %}
+
+    {% for block in section.blocks %}
       {%- case block.type -%}
         {%- when "patinapatina-stockist" -%}
           <p><a href="{{ block.settings.url }}">{{ block.settings.name }}</a></p>
       {% endcase %}
-    {% endfor %} {% endcomment %}
+    {% endfor %}
   </div>
   <div class="patinapatina-stockists-background">
     {{ 'patinapatina-stockists-background.svg' | asset_url | img_tag }}
