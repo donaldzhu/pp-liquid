@@ -1,5 +1,6 @@
 @use './scss/utils' as *;
 @use './scss/layout' as *;
+@use './scss/typography' as *;
 
 .patinapatina-home-section {
   .patinapatina-home-section-image-container {
@@ -10,60 +11,23 @@
     }
   }
 
-  $vertical-padding: 4.5rem;
+
 
   h2 {
     @include flex(space-between, center);
     letter-spacing: 0.01em;
-    padding: 14rem $padding $vertical-padding;
+    padding: 14rem $x-padding $y-padding;
     margin: 0;
     text-transform: uppercase;
-  }
-
-  h2,
-  p,
-  button,
-  a {
-    font-family: var(--patinapatina-font-body-family);
-    font-size: var(--patinapatina-font-body-size);
-    line-height: 1.2;
   }
 
   p {
-    $left: calc(50vw - $padding);
+    $left: calc(50vw - $x-padding);
     text-indent: calc(-1 * $left);
     position: relative;
     left: $left;
-    width: calc(50vw + $padding);
+    width: calc(50vw + $x-padding);
     margin: 0;
-    padding: $vertical-padding $padding 5.6rem;
-  }
-
-  button {
-    @include flex;
-    $button-height: 4rem;
-    display: block;
-    border-radius: calc($button-height / 2);
-    padding: 0;
-    margin-top: 3.2rem;
-    height: $button-height;
-  }
-
-  a {
-    border: none;
-    text-transform: uppercase;
-    padding: 0 1.8rem;
-    display: block;
-    min-height: auto;
-
-    &::before,
-    &::after {
-      content: none;
-    }
-  }
-
-  button,
-  a {
-    background: none;
+    padding: $y-padding $x-padding 5.6rem;
   }
 }

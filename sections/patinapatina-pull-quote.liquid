@@ -1,0 +1,69 @@
+{{ 'patinapatina-pull-quote.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .patinapatina-pull-quote {
+    background-color: {{ section.settings.background_color }};
+  }
+
+  .patinapatina-pull-quote h4,
+  .patinapatina-pull-quote p {
+    color: {{ section.settings.text_color }};
+  }
+{%- endstyle -%}
+
+<div
+  id="Patinapatina-Pull-Quote-{{ section.id }}"
+  class="patinapatina-pull-quote">
+  <div class="patinapatina-pull-quote-inner">
+    {% render 'patinapatina-logo', color: section.settings.text_color %}
+    <h4>{{ section.settings.quote }}</h4>
+    <p>{{ section.settings.quote_attribution }}</p>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "PatinaPatina Pull Quote",
+    "tag": "section",
+    "class": "section",
+    "disabled_on": {
+      "groups": ["header", "footer"]
+    },
+    "settings": [
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "#141414"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text Color",
+        "default": "#FFFBF3"
+      },
+      {
+        "type": "text",
+        "id": "quote",
+        "label": "Quote",
+        "default": "“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Ut aliquip ex ea commodo consequat.”"
+      },
+      {
+        "type": "text",
+        "id": "quote_attribution",
+        "label": "Quote Attribution",
+        "default": "ADRIAN LAYNE, ISSUE ONE"
+      }
+    ],
+    "blocks": [
+
+    ],
+    "presets": [
+      {
+        "name": "patinapatina-pull-quote",
+        "blocks": [
+        ]
+      }
+    ]
+  }
+  {% endschema %}

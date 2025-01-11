@@ -2,9 +2,47 @@
   --patinapatina-font-heading-family: "AzeretMono";
   --patinapatina-font-body-family: "XanhMono";
   --patinapatina-font-heading-size: 4rem;
-  --patinapatina-font-body-size: 2.5rem;
+  --patinapatina-font-body-size: 2.4rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+button.patinapatina-button, button.patinapatina-button-active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2.1rem;
+  padding: 0;
+  margin-top: 3.2rem;
+  height: 4.2rem;
+  border: 1px solid currentColor;
+}
+button.patinapatina-button a, button.patinapatina-button-active a {
+  font-family: var(--patinapatina-font-body-family);
+  font-size: var(--patinapatina-font-body-size);
+  line-height: 1.2;
+  border: none;
+  text-transform: uppercase;
+  padding: 0 2.5rem;
+  display: block;
+  min-height: auto;
+  min-width: auto;
+}
+button.patinapatina-button a::before, button.patinapatina-button a::after, button.patinapatina-button-active a::before, button.patinapatina-button-active a::after {
+  content: none;
+}
+button.patinapatina-button,
+button.patinapatina-button a, button.patinapatina-button-active,
+button.patinapatina-button-active a {
+  background: none;
+  transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+h2,
+p {
+  font-family: var(--patinapatina-font-body-family);
+  font-size: var(--patinapatina-font-body-size);
+  line-height: 1.2;
 }
 
 /*# sourceMappingURL=patinapatina-base.css.map */

@@ -1,7 +1,21 @@
-.header-menu .header-menu-item {
-  /* &-active {
-    display: none;
-  } */
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 3.6rem 3.2rem 1.8rem;
+}
+header h1 {
+  margin: 0;
+}
+
+.header-menu ul {
+  display: flex;
+  gap: 1.2rem;
+}
+.header-menu li::marker {
+  content: none;
+}
+.header-menu li button {
+  margin: 0;
 }
 
 /*# sourceMappingURL=header.css.map */

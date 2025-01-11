@@ -15,14 +15,6 @@
   margin: 0;
   text-transform: uppercase;
 }
-.patinapatina-home-section h2,
-.patinapatina-home-section p,
-.patinapatina-home-section button,
-.patinapatina-home-section a {
-  font-family: var(--patinapatina-font-body-family);
-  font-size: var(--patinapatina-font-body-size);
-  line-height: 1.2;
-}
 .patinapatina-home-section p {
   text-indent: calc(-1 * (50vw - 3.2rem));
   position: relative;
@@ -30,30 +22,6 @@
   width: calc(50vw + 3.2rem);
   margin: 0;
   padding: 4.5rem 3.2rem 5.6rem;
-}
-.patinapatina-home-section button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  display: block;
-  border-radius: 2rem;
-  padding: 0;
-  margin-top: 3.2rem;
-  height: 4rem;
-}
-.patinapatina-home-section a {
-  border: none;
-  text-transform: uppercase;
-  padding: 0 1.8rem;
-  display: block;
-  min-height: auto;
-}
-.patinapatina-home-section a::before, .patinapatina-home-section a::after {
-  content: none;
-}
-.patinapatina-home-section button,
-.patinapatina-home-section a {
-  background: none;
 }
 
 /*# sourceMappingURL=patinapatina-home-section.css.map */

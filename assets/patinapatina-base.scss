@@ -1,10 +1,56 @@
+@use './scss/utils' as *;
+@use './scss/typography' as *;
+@use './scss/layout' as *;
+
 :root {
   --patinapatina-font-heading-family: 'AzeretMono';
   --patinapatina-font-body-family: 'XanhMono';
 
   --patinapatina-font-heading-size: 4rem;
-  --patinapatina-font-body-size: 2.5rem;
+  --patinapatina-font-body-size: 2.4rem;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+button.patinapatina-button {
+
+  &,
+  &-active {
+    @include flex;
+    $button-height: 4.2rem;
+    border-radius: calc($button-height / 2);
+    padding: 0;
+    margin-top: 3.2rem;
+    height: $button-height;
+    border: 1px solid currentColor;
+
+    a {
+      @include patinapatina-body-type;
+      border: none;
+      text-transform: uppercase;
+      padding: 0 2.5rem;
+      display: block;
+      min-height: auto;
+      min-width: auto;
+
+      &::before,
+      &::after {
+        content: none;
+      }
+    }
+
+    &,
+    a {
+      background: none;
+      transition:
+        background-color $button-transition,
+        color $button-transition;
+    }
+  }
+}
+
+h2,
+p {
+  @include patinapatina-body-type;
 }

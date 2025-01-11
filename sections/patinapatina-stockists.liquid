@@ -1,0 +1,51 @@
+{{ 'patinapatina-stockists.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+
+{%- endstyle -%}
+
+<div
+  id="Patinapatina-Stockists-{{ section.id }}"
+  class="patinapatina-stockists">
+  <h2>Stockists</h2>
+  <div class="patinapatina-stockists-list">
+    <p>Issues Mag Shop</p>
+    <p>Disko Coffee</p>
+    <p>Typist Books & Coffee</p>
+    <p>Art Metropole</p>
+    <p>Offbrand Library</p>
+    <p>Maktaba Bookstore</p>
+  </div>
+  <div class="patinapatina-stockists-background">
+    {{ 'patinapatina-stockists-background.svg' | asset_url | img_tag }}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "PatinaPatina Stockists",
+    "tag": "section",
+    "class": "section",
+    "disabled_on": {
+      "groups": ["header", "footer"]
+    },
+    "settings": [
+      {
+        "type": "metaobject_list",
+        "id": "stockists_list",
+        "label": "Stockists",
+        "metaobject_type": "shopify--stockist"
+      }
+    ],
+    "blocks": [
+
+    ],
+    "presets": [
+      {
+        "name": "patinapatina-stockists",
+        "blocks": [
+        ]
+      }
+    ]
+  }
+  {% endschema %}

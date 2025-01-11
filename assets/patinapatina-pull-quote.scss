@@ -1,0 +1,38 @@
+@use './scss/utils' as *;
+
+.patinapatina-pull-quote {
+
+  @mixin size-to-emblem {
+    height: $emblem-height;
+    max-height: $emblem-max-height;
+  }
+
+  padding: 14rem 0;
+
+  .patinapatina-pull-quote-inner {
+    @include flex;
+    flex-direction: column;
+
+    max-width: 885px;
+    margin: 0 auto;
+    position: relative;
+
+    h4 {
+      font-family: var(--patinapatina-font-heading-family);
+      font-weight: normal;
+      font-size: var(--patinapatina-font-heading-size);
+      letter-spacing: 0.01em;
+      line-height: 1.167em;
+      text-align: center;
+      margin: 3rem 0;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    svg {
+      width: 70px;
+    }
+  }
+}

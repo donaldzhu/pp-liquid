@@ -10,16 +10,25 @@
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
       }
     },
+    "patinapatina-pull-quote": {
+      "type": "patinapatina-pull-quote"
+    },
     "patinapatina-home-section-2": {
       "type": "patinapatina-home-section",
       "settings": {
-        "section_title": "PATINAPATINA EVENTS"
+        "section_title": "PATINAPATINA EVENTS",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
       }
+    },
+    "patinapatina-stockists": {
+      "type": "patinapatina-stockists"
     }
   },
   "order": [
     "patinapatina-hero",
     "patinapatina-home-section-1",
-    "patinapatina-home-section-2"
+    "patinapatina-pull-quote",
+    "patinapatina-home-section-2",
+    "patinapatina-stockists"
   ]
 }

@@ -15,8 +15,7 @@
   font-family: var(--patinapatina-font-heading-family);
   font-weight: normal;
   font-size: var(--patinapatina-font-heading-size);
-  letter-spacing: 0.01em;
-  line-height: 1.167em;
+  line-height: 1.12em;
   text-align: center;
 }
 .patinapatina-hero .patinapatina-hero-inner svg {

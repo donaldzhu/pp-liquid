@@ -1,7 +1,29 @@
+@use './scss/layout' as *;
+
+header {
+  h1 {
+    margin: 0;
+  }
+
+  display: flex;
+  justify-content: space-between;
+  padding: 3.6rem $x-padding 1.8rem;
+}
+
 .header-menu {
-  .header-menu-item {
-    /* &-active {
-      display: none;
-    } */
+
+  ul {
+    display: flex;
+    gap: 1.2rem;
+  }
+
+  li {
+    &::marker {
+      content: none;
+    }
+
+    button {
+      margin: 0;
+    }
   }
 }

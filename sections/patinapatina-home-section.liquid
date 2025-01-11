@@ -7,13 +7,11 @@
   }
 
   .patinapatina-home-section h2,
-  .patinapatina-home-section p {
+  .patinapatina-home-section p,
+  button.patinapatina-button {
     color: {{ section.settings.text_color }};
   }
 
-  .patinapatina-home-section-text-container button {
-    border: 1px solid {{ section.settings.text_color }};
-  }
   {% if title_array.size == 3 %}
       #Patinapatina-Home-Section-{{ section.id }} h2 > span:nth-child(2) {
         position: absolute;
@@ -39,7 +37,7 @@
   <div class="patinapatina-home-section-text-container">
     <p>
       {{ section.settings.text }}
-      <button>
+      <button class="patinapatina-button">
         <a href="{{ section.settings.button_link }}" class="button">READ MORE</a>
       </button>
     </p>
