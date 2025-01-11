@@ -21,7 +21,14 @@
           <p><a href="{{ block.settings.url }}">{{ block.settings.name }}</a></p>
       {% endcase %}
     {% endfor %} {% endcomment %}
-    {% content_for 'blocks' %}
+    {% comment %} {% content_for 'blocks' %} {% endcomment %}
+     {% content_for 'blocks' %}
+    {% comment %} {% for block in section.blocks %}
+      {%- case block.type -%}
+        {%- when "patinapatina-stockist" -%}
+          <p><a href="{{ block.settings.url }}">{{ block.settings.name }}</a></p>
+      {% endcase %}
+    {% endfor %} {% endcomment %}
   </div>
   <div class="patinapatina-stockists-background">
     {{ 'patinapatina-stockists-background.svg' | asset_url | img_tag }}
@@ -53,27 +60,6 @@
             "type": "url",
             "id": "url",
             "label": "URL"
-          }
-        ]
-      }
-    ],
-    "presets": [
-      {
-        "name": "patinapatina-stockists",
-        "blocks": [
-          {
-            "type": "patinapatina-stockist",
-            "settings": {
-              "name": "Issues Mag Shop",
-              "url": "https://issuesmagshop.com"
-            }
-          },
-          {
-            "type": "patinapatina-stockist",
-            "settings": {
-              "name": "Disko Coffee",
-              "url": "https://issuesmagshop.com"
-            }
           }
         ]
       }
