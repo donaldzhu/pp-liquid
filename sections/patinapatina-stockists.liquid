@@ -9,12 +9,18 @@
   class="patinapatina-stockists">
   <h2>Stockists</h2>
   <div class="patinapatina-stockists-list">
-    <p>Issues Mag Shop</p>
+   {% comment %}  <p>Issues Mag Shop</p>
     <p>Disko Coffee</p>
     <p>Typist Books & Coffee</p>
     <p>Art Metropole</p>
     <p>Offbrand Library</p>
-    <p>Maktaba Bookstore</p>
+    <p>Maktaba Bookstore</p> {% endcomment %}
+    {% for block in section.blocks %}
+      {%- case block.type -%}
+        {%- when "patinapatina_stockist" -%}
+          <p><a href="{{ block.settings.url }}">{{ block.settings.name }}</a></p>
+      {% endcase %}
+    {% endfor %}
   </div>
   <div class="patinapatina-stockists-background">
     {{ 'patinapatina-stockists-background.svg' | asset_url | img_tag }}
@@ -30,20 +36,13 @@
       "groups": ["header", "footer"]
     },
     "settings": [
-      /* {
-        "type": "metaobject_list",
-        "id": "stockists_list",
-        "label": "Stockists",
-        "metaobject_type": "shopify--stockist"
-      } */
-       {
-        "type": "url",
-        "id": "stockists_list",
-        "label": "Stockists"
-       }
+
     ],
     "blocks": [
-
+      {
+        "type": "patinapatina_stockist",
+        "name": "Stockist"
+      }
     ],
     "presets": [
       {
