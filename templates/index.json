@@ -1,27 +1,65 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "patinapatina-hero": {
-      "type": "patinapatina-hero"
+      "type": "patinapatina-hero",
+      "settings": {
+        "background_color": "#141414",
+        "text_color": "#FFFBF3"
+      }
     },
     "patinapatina-home-section-1": {
       "type": "patinapatina-home-section",
       "settings": {
+        "background_color": "#141414",
+        "text_color": "#FFFBF3",
         "section_title": "PATINAPATINA ISSUE ONE",
-        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "button_link": ""
       }
     },
     "patinapatina-pull-quote": {
-      "type": "patinapatina-pull-quote"
+      "type": "patinapatina-pull-quote",
+      "settings": {
+        "background_color": "#141414",
+        "text_color": "#FFFBF3",
+        "quote": "“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Ut aliquip ex ea commodo consequat.”",
+        "quote_attribution": "ADRIAN LAYNE, ISSUE ONE"
+      }
     },
     "patinapatina-home-section-2": {
       "type": "patinapatina-home-section",
       "settings": {
+        "background_color": "#141414",
+        "text_color": "#FFFBF3",
         "section_title": "PATINAPATINA EVENTS",
-        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "button_link": ""
       }
     },
     "patinapatina-stockists": {
-      "type": "patinapatina-stockists"
+      "type": "patinapatina-stockists",
+      "blocks": {
+        "patinapatina_stockist_7ppXhJ": {
+          "type": "patinapatina-stockist",
+          "settings": {
+            "name": "Issue Magaine",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "patinapatina_stockist_7ppXhJ"
+      ],
+      "settings": {}
     }
   },
   "order": [
