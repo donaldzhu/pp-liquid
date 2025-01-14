@@ -9,25 +9,8 @@
   class="patinapatina-stockists">
   <h2>Stockists</h2>
   <div class="patinapatina-stockists-list">
-   {% comment %}  <p>Issues Mag Shop</p>
-    <p>Disko Coffee</p>
-    <p>Typist Books & Coffee</p>
-    <p>Art Metropole</p>
-    <p>Offbrand Library</p>
-    <p>Maktaba Bookstore</p> {% endcomment %}
-    {% comment %} {% for block in section.blocks %}
-      {%- case block.type -%}
-        {%- when "patinapatina-stockist" -%}
-          <p><a href="{{ block.settings.url }}">{{ block.settings.name }}</a></p>
-      {% endcase %}
-    {% endfor %} {% endcomment %}
-    {% comment %} {% content_for 'blocks' %} {% endcomment %}
-
     {% for block in section.blocks %}
-      {%- case block.type -%}
-        {%- when "patinapatina-stockist" -%}
-          <p><a href="{{ block.settings.url }}">{{ block.settings.name }}</a></p>
-      {% endcase %}
+      <p><a href="{{ block.settings.url }}" target="_blank">{{ block.settings.name }}</a></p>
     {% endfor %}
   </div>
   <div class="patinapatina-stockists-background">

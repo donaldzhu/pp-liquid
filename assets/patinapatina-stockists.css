@@ -16,6 +16,12 @@
 .patinapatina-stockists p {
   margin: 0;
 }
+.patinapatina-stockists p a,
+.patinapatina-stockists p a:hover,
+.patinapatina-stockists p a:active {
+  text-decoration: none;
+  color: inherit;
+}
 .patinapatina-stockists h2,
 .patinapatina-stockists div {
   width: 50vw;

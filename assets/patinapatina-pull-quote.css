@@ -14,8 +14,8 @@
   font-family: var(--patinapatina-font-heading-family);
   font-weight: normal;
   font-size: var(--patinapatina-font-heading-size);
+  line-height: 1.12;
   letter-spacing: 0.01em;
-  line-height: 1.167em;
   text-align: center;
   margin: 3rem 0;
 }

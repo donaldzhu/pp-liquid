@@ -12,21 +12,17 @@ button.patinapatina-button, button.patinapatina-button-active {
   justify-content: center;
   align-items: center;
   border-radius: 2.1rem;
-  padding: 0;
-  margin-top: 3.2rem;
   height: 4.2rem;
   border: 1px solid currentColor;
+  padding: 0 3rem;
 }
 button.patinapatina-button a, button.patinapatina-button-active a {
-  font-family: var(--patinapatina-font-body-family);
-  font-size: var(--patinapatina-font-body-size);
-  line-height: 1.2;
   border: none;
   text-transform: uppercase;
-  padding: 0 2.5rem;
   display: block;
   min-height: auto;
   min-width: auto;
+  padding: 0;
 }
 button.patinapatina-button a::before, button.patinapatina-button a::after, button.patinapatina-button-active a::before, button.patinapatina-button-active a::after {
   content: none;
@@ -36,13 +32,16 @@ button.patinapatina-button a, button.patinapatina-button-active,
 button.patinapatina-button-active a {
   background: none;
   transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+  font-family: var(--patinapatina-font-body-family);
+  font-size: var(--patinapatina-font-body-size);
+  line-height: 1.12;
 }
 
 h2,
 p {
   font-family: var(--patinapatina-font-body-family);
   font-size: var(--patinapatina-font-body-size);
-  line-height: 1.2;
+  line-height: 1.12;
 }
 
 /*# sourceMappingURL=patinapatina-base.css.map */

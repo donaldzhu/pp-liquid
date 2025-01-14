@@ -1,0 +1,62 @@
+@use './scss/utils' as *;
+@use './scss/typography' as *;
+
+.patinapatina-newsletter {
+  @include flex;
+
+  .patinapatina-newsletter-inner {
+    max-width: 88.5rem;
+    padding: 23.5rem 0;
+
+    h2 {
+      @include patinapatina-heading-type;
+    }
+
+    p {
+      @include patinapatina-body-type;
+      padding: 3.2rem 0;
+    }
+
+    h2,
+    p {
+      text-align: center;
+      margin: 0;
+    }
+
+
+  }
+
+  .patinapatina-newsletter-form-wrapper {
+    margin-top: 1.4rem;
+
+    form {
+      margin: 0;
+      max-width: initial;
+    }
+
+    .patinapatina-newsletter-form-email {
+
+      &,
+      &:focus,
+      &:focus-visible {
+        @include patinapatina-body-type;
+        height: 4rem;
+        max-width: 37.5rem;
+        width: 100%;
+        border: none;
+        outline: none;
+        box-shadow: none;
+
+        padding: 0 1rem;
+      }
+    }
+  }
+
+  .patinapatina-newsletter-form-field-wrapper {
+    @include flex;
+    width: 100%;
+    gap: 2.4rem;
+
+
+  }
+}

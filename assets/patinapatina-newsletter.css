@@ -1,0 +1,54 @@
+.patinapatina-newsletter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.patinapatina-newsletter .patinapatina-newsletter-inner {
+  max-width: 88.5rem;
+  padding: 23.5rem 0;
+}
+.patinapatina-newsletter .patinapatina-newsletter-inner h2 {
+  font-family: var(--patinapatina-font-heading-family);
+  font-weight: normal;
+  font-size: var(--patinapatina-font-heading-size);
+  line-height: 1.12;
+}
+.patinapatina-newsletter .patinapatina-newsletter-inner p {
+  font-family: var(--patinapatina-font-body-family);
+  font-size: var(--patinapatina-font-body-size);
+  line-height: 1.12;
+  padding: 3.2rem 0;
+}
+.patinapatina-newsletter .patinapatina-newsletter-inner h2,
+.patinapatina-newsletter .patinapatina-newsletter-inner p {
+  text-align: center;
+  margin: 0;
+}
+.patinapatina-newsletter .patinapatina-newsletter-form-wrapper {
+  margin-top: 1.4rem;
+}
+.patinapatina-newsletter .patinapatina-newsletter-form-wrapper form {
+  margin: 0;
+  max-width: initial;
+}
+.patinapatina-newsletter .patinapatina-newsletter-form-wrapper .patinapatina-newsletter-form-email, .patinapatina-newsletter .patinapatina-newsletter-form-wrapper .patinapatina-newsletter-form-email:focus, .patinapatina-newsletter .patinapatina-newsletter-form-wrapper .patinapatina-newsletter-form-email:focus-visible {
+  font-family: var(--patinapatina-font-body-family);
+  font-size: var(--patinapatina-font-body-size);
+  line-height: 1.12;
+  height: 4rem;
+  max-width: 37.5rem;
+  width: 100%;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  padding: 0 1rem;
+}
+.patinapatina-newsletter .patinapatina-newsletter-form-field-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 2.4rem;
+}
+
+/*# sourceMappingURL=patinapatina-newsletter.css.map */

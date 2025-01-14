@@ -39,18 +39,65 @@
     "patinapatina-stockists": {
       "type": "patinapatina-stockists",
       "blocks": {
-        "patinapatina_stockist_7ppXhJ": {
+        "patinapatina_stockist_issue_magazine": {
           "type": "patinapatina-stockist",
           "settings": {
             "name": "Issue Magaine",
             "url": "https://issuesmagshop.com"
           }
+        },
+        "patinapatina_stockist_disko_coffee": {
+          "type": "patinapatina-stockist",
+          "settings": {
+            "name": "Disko Coffee",
+            "url": "https://issuesmagshop.com"
+          }
+        },
+        "patinapatina_stockist_typist_books_and_coffee": {
+          "type": "patinapatina-stockist",
+          "settings": {
+            "name": "Typist Books & Coffee",
+            "url": "https://disko.ca/"
+          }
+        },
+        "patinapatina_stockist_art_metropole": {
+          "type": "patinapatina-stockist",
+          "settings": {
+            "name": "Art Metropole",
+            "url": "https://artmetropole.com/"
+          }
+        },
+        "patinapatina_stockist_offbrand_library": {
+          "type": "patinapatina-stockist",
+          "settings": {
+            "name": "Offbrand Library",
+            "url": "https://offbrandlibrary.com/"
+          }
+        },
+        "patinapatina_stockist_maktaba_bookstore": {
+          "type": "patinapatina-stockist",
+          "settings": {
+            "name": "Maktaba Bookstore",
+            "url": "https://www.maktaba.online/"
+          }
         }
       },
       "block_order": [
-        "patinapatina_stockist_7ppXhJ"
+        "patinapatina_stockist_issue_magazine",
+        "patinapatina_stockist_disko_coffee",
+        "patinapatina_stockist_typist_books_and_coffee",
+        "patinapatina_stockist_art_metropole",
+        "patinapatina_stockist_offbrand_library",
+        "patinapatina_stockist_maktaba_bookstore"
       ],
       "settings": {}
+    },
+    "patinapatina-newsletter": {
+      "type": "patinapatina-newsletter",
+      "settings": {
+        "background_color": "#141414",
+        "text_color": "#FFFBF3"
+      }
     }
   },
   "order": [
@@ -58,6 +105,7 @@
     "patinapatina-home-section-1",
     "patinapatina-pull-quote",
     "patinapatina-home-section-2",
-    "patinapatina-stockists"
+    "patinapatina-stockists",
+    "patinapatina-newsletter"
   ]
 }

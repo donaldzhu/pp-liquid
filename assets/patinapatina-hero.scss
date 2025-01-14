@@ -1,4 +1,5 @@
 @use './scss/utils' as *;
+@use './scss/typography' as *;
 
 .patinapatina-hero {
   $emblem-max-width: 535px;
@@ -21,10 +22,9 @@
     position: relative;
 
     h3 {
-      font-family: var(--patinapatina-font-heading-family);
-      font-weight: normal;
-      font-size: var(--patinapatina-font-heading-size);
-      line-height: 1.12em;
+      @include patinapatina-heading-type;
+      letter-spacing: 0.01em;
+      line-height: 1.1667;
       text-align: center;
     }
 

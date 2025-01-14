@@ -1,4 +1,5 @@
 @use './scss/utils' as *;
+@use './scss/typography' as *;
 
 .patinapatina-pull-quote {
 
@@ -18,11 +19,8 @@
     position: relative;
 
     h4 {
-      font-family: var(--patinapatina-font-heading-family);
-      font-weight: normal;
-      font-size: var(--patinapatina-font-heading-size);
+      @include patinapatina-heading-type;
       letter-spacing: 0.01em;
-      line-height: 1.167em;
       text-align: center;
       margin: 3rem 0;
     }
