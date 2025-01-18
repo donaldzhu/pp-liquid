@@ -1,14 +1,5 @@
-{% comment %}
-  Renders the PatinaPatina logo
-
-  Accepts:
-  - color: {String} Color of the logo (optional)
-  Usage:
-  {% render 'patinapatina-logo', color: '#FFFBF3' %}
-{% endcomment %}
-
 {%- liquid
-  assign color = color | default: '#FFFBF3'
+  assign color = color | default: settings.color_schemes.landing.settings.text
 -%}
 
 <svg

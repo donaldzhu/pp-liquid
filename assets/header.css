@@ -6,6 +6,9 @@ header {
 header h1 {
   margin: 0;
 }
+header svg {
+  fill: rgb(var(--text-color));
+}
 
 .header-menu ul {
   display: flex;

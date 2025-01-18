@@ -2,8 +2,8 @@
 @use './scss/layout' as *;
 @use './scss/typography' as *;
 
-.patinapatina-home-section {
-  .patinapatina-home-section-image-container {
+.patinapatina-landing-section {
+  .patinapatina-landing-section-image-container {
     @include flex;
 
     img {
@@ -31,5 +31,10 @@
 
   button {
     margin-top: 3.2rem;
+
+    &[disabled='true'] {
+      opacity: 0.5;
+      pointer-events: none;
+    }
   }
 }

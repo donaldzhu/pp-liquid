@@ -1,16 +1,23 @@
 {{ 'patinapatina-stockists.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
+  .patinapatina-stockists-background {
+    background-color: {{ section.settings.background_color }};
+  }
 
+  .patinapatina-stockists h2,
+  .patinapatina-stockists p {
+    color: {{ section.settings.foreground_color }};
+  }
 {%- endstyle -%}
 
-<div
-  id="Patinapatina-Stockists-{{ section.id }}"
-  class="patinapatina-stockists">
+<div class="patinapatina-stockists">
   <h2>Stockists</h2>
   <div class="patinapatina-stockists-list">
     {% for block in section.blocks %}
-      <p><a href="{{ block.settings.url }}" target="_blank">{{ block.settings.name }}</a></p>
+      <p>
+        <a href="{{ block.settings.url }}" target="_blank">{{ block.settings.name }}</a>
+      </p>
     {% endfor %}
   </div>
   <div class="patinapatina-stockists-background">
@@ -27,7 +34,17 @@
       "groups": ["header", "footer"]
     },
     "settings": [
-
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "#3C3D63"
+      }, {
+        "type": "color",
+        "id": "foreground_color",
+        "label": "Foreground Color",
+        "default": "#B0CCD5"
+      }
     ],
     "blocks": [
       {
@@ -38,8 +55,7 @@
             "type": "text",
             "id": "name",
             "label": "Name"
-          },
-          {
+          }, {
             "type": "url",
             "id": "url",
             "label": "URL"
@@ -48,4 +64,4 @@
       }
     ]
   }
-  {% endschema %}
+{% endschema %}

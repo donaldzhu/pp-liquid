@@ -1,39 +1,18 @@
 {{ 'patinapatina-newsletter.css' | asset_url | stylesheet_tag }}
 
-
 {% style %}
   .patinapatina-newsletter {
-    background-image: url('{{ 'Newsletter.png' | file_url }}');
+    background-image: url('{{ section.settings.background_image | default: 'patinapatina-newsletter-default.png' | asset_url }}');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
   }
-
-  .patinapatina-newsletter h2,
-  .patinapatina-newsletter p,
-  button.patinapatina-button {
-    color: {{ section.settings.text_color }};
-  }
-
-  .patinapatina-newsletter-form-email {
-    background-color: {{ section.settings.text_color }};
-  }
-
-  .patinapatina-newsletter button.patinapatina-button:hover {
-    background-color: {{ section.settings.text_color }};
-    border-color: {{ section.settings.text_color }};
-  }
-
-  .patinapatina-newsletter button.patinapatina-button:hover {
-    color: {{ section.settings.background_color }};
-  }
-
 {% endstyle %}
 
 <div class="patinapatina-newsletter">
   <div class="patinapatina-newsletter-inner">
-    <h2>Join our newsletter!</h2>
-    <p>Our monthly letter revisits topics from past PATINAPATINA issues and places them into the context of current events.</p>
+    <h2>{{ section.settings.title }}</h2>
+    <p>{{ section.settings.text }}</p>
     <div class="patinapatina-newsletter-form-wrapper">
       {% form 'customer' %}
         <input
@@ -104,18 +83,19 @@
     },
     "settings": [
       {
-        "type": "color",
-        "id": "background_color",
-        "label": "Background Color",
-        "default": "#141414"
+        "type": "image_picker",
+        "id": "background_image",
+        "label": "Background Image"
       }, {
-        "type": "color",
-        "id": "text_color",
-        "label": "Text Color",
-        "default": "#FFFBF3"
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      }, {
+        "type": "text",
+        "id": "text",
+        "label": "Text"
       }
     ],
-    "blocks": [],
     "presets": [
       {
         "name": "patinapatina-newsletter"

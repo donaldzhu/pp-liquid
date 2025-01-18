@@ -1,22 +1,10 @@
 {{ 'patinapatina-hero.css' | asset_url | stylesheet_tag }}
 
-{%- style -%}
-  .patinapatina-hero {
-    background-color: {{ section.settings.background_color }};
-  }
-
-  .patinapatina-hero h3 {
-    color: {{ section.settings.text_color }};
-  }
-{%- endstyle -%}
-
-<div
-  id="Patinapatina-Hero-{{ section.id }}"
-  class="patinapatina-hero"
->
+<div class="patinapatina-hero color-landing">
   <div class="patinapatina-hero-inner">
-    <h3>PATINAPATINA is a magazine with stories on art, identity, and culture. It is an embrace of the messiness and confusion of our shared experiences.</h3>
+    <h3>{{ section.settings.hero_statement }}</h3>
     {{ 'patinapatina-emblem.svg' | inline_asset_content }}
+
   </div>
 </div>
 
@@ -30,27 +18,15 @@
     },
     "settings": [
       {
-        "type": "color",
-        "id": "background_color",
-        "label": "Background Color",
-        "default": "#141414"
-      },
-      {
-        "type": "color",
-        "id": "text_color",
-        "label": "Text Color",
-        "default": "#FFFBF3"
+        "type": "text",
+        "id": "hero_statement",
+        "label": "Hero Statement"
       }
-    ],
-    "blocks": [
-
     ],
     "presets": [
       {
-        "name": "patinapatina-hero",
-        "blocks": [
-        ]
+        "name": "patinapatina-hero"
       }
     ]
   }
-  {% endschema %}
+{% endschema %}

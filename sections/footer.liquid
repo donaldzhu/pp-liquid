@@ -1,17 +1,5 @@
 {{ 'footer.css' | asset_url | stylesheet_tag }}
 
-{%- style -%}
-  footer {
-    background-color: {{ section.settings.background_color }};
-  }
-
-  footer a,
-  footer a:active,
-  footer a:visited {
-    color: {{ section.settings.text_color }};
-  }
-{%- endstyle -%}
-
 <footer class="patinapatina-footer">
   <div class="footer-menu">
     <ul role="list">
@@ -31,26 +19,13 @@
         </li>
       {% endfor %}
     </ul>
-    <img src="{{ 'Footer.png' | file_url  }}">
+    <img src="{{ 'patinapatina-footer.png' | asset_url }}">
   </div>
 </footer>
 
 {% schema %}
   {
     "name": "t:sections.footer.name",
-    "class": "section-footer",
-    "settings": [
-      {
-        "type": "color",
-        "id": "background_color",
-        "label": "Background Color",
-        "default": "#141414"
-      }, {
-        "type": "color",
-        "id": "text_color",
-        "label": "Text Color",
-        "default": "#FFFBF3"
-      }
-    ]
+    "class": "section-footer"
   }
 {% endschema %}

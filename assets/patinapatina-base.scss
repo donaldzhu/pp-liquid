@@ -17,18 +17,30 @@
       content: none;
     }
   }
+
+  a,
+  a:active,
+  a:visited {
+    color: rgb(var(--color-foreground));
+  }
+
+  #shop-hcaptcha-badge-container {
+    display: none !important;
+  }
 }
 
 button.patinapatina-button {
+  color: rgb(var(--color-foreground));
+
 
   &,
   &-active {
     $button-height: 4.2rem;
-
     @include flex;
+
+    border: 1px solid rgb(var(--color-foreground));
     border-radius: calc($button-height / 2);
     height: $button-height;
-    border: 1px solid currentColor;
     padding: 0 3rem;
     cursor: pointer;
 
@@ -56,11 +68,15 @@ button.patinapatina-button {
     &,
     a {
       background: none;
-      transition:
-        background-color $button-transition,
-        color $button-transition;
       @include patinapatina-body-type;
     }
+  }
+
+  &-active,
+  &:hover {
+    background-color: rgb(var(--color-foreground));
+    color: rgb(var(--color-background));
+    transition: all $button-transition;
   }
 }
 

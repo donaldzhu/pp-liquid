@@ -3,35 +3,37 @@
     "patinapatina-hero": {
       "type": "patinapatina-hero",
       "settings": {
-        "background_color": "#141414",
-        "text_color": "#FFFBF3"
+        "hero_statement": "PATINAPATINA is a magazine with stories on art, identity, and culture. It is an embrace of the messiness and confusion of our shared experiences."
       }
     },
-    "patinapatina-home-section-1": {
-      "type": "patinapatina-home-section",
+    "patinapatina-landing-section-1": {
+      "type": "patinapatina-landing-section",
       "settings": {
-        "background_color": "#141414",
-        "text_color": "#FFFBF3",
         "section_title": "PATINAPATINA ISSUE ONE",
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        "button_link": ""
+        "button_link": "",
+        "purchase_button": true
       }
     },
     "patinapatina-pull-quote": {
       "type": "patinapatina-pull-quote",
       "settings": {
-        "background_color": "#141414",
-        "text_color": "#FFFBF3",
         "quote": "“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Ut aliquip ex ea commodo consequat.”",
         "quote_attribution": "ADRIAN LAYNE, ISSUE ONE"
       }
     },
-    "patinapatina-home-section-2": {
-      "type": "patinapatina-home-section",
+    "patinapatina-landing-section-2": {
+      "type": "patinapatina-landing-section",
       "settings": {
-        "background_color": "#141414",
-        "text_color": "#FFFBF3",
         "section_title": "PATINAPATINA EVENTS",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "button_link": ""
+      }
+    },
+    "patinapatina-landing-section-3": {
+      "type": "patinapatina-landing-section",
+      "settings": {
+        "section_title": "PATINAPATINA BLOG",
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         "button_link": ""
       }
@@ -95,16 +97,17 @@
     "patinapatina-newsletter": {
       "type": "patinapatina-newsletter",
       "settings": {
-        "background_color": "#141414",
-        "text_color": "#FFFBF3"
+        "title": "Join our newsletter!",
+        "text": "Our monthly letter revisits topics from past PATINAPATINA issues and places them into the context of current events."
       }
     }
   },
   "order": [
     "patinapatina-hero",
-    "patinapatina-home-section-1",
+    "patinapatina-landing-section-1",
     "patinapatina-pull-quote",
-    "patinapatina-home-section-2",
+    "patinapatina-landing-section-2",
+    "patinapatina-landing-section-3",
     "patinapatina-stockists",
     "patinapatina-newsletter"
   ]

@@ -86,9 +86,12 @@
 
       {% for scheme in settings.color_schemes -%}
         {% assign scheme_classes = scheme_classes | append: ', .color-' | append: scheme.id %}
-        {% if forloop.index == 1 -%}
+        {% assign subpath = request.path | split: '/' | last %}
+        {% if request.path == '/' and scheme.id == 'landing' or scheme.id == subpath %}
           :root,
         {%- endif %}
+
+
         .color-{{ scheme.id }} {
           --color-background: {{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }};
         {% if scheme.settings.background_gradient != empty %}
@@ -125,7 +128,7 @@
       {% endfor %}
 
       {{ scheme_classes | prepend: 'body' }} {
-        color: rgba(var(--color-foreground), 0.75);
+        color: rgb(var(--color-foreground));
         background-color: rgb(var(--color-background));
       }
 

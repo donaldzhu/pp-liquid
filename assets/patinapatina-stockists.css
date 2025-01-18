@@ -3,12 +3,12 @@
   padding: 4.5rem 3.2rem 13.5rem;
   position: relative;
   overflow: hidden;
+  margin-top: 14rem;
 }
 .patinapatina-stockists h2,
 .patinapatina-stockists p {
   font-family: var(--patinapatina-font-heading-family);
   font-size: var(--patinapatina-font-body-size);
-  color: #B0CCD5;
   line-height: 1.167em;
   letter-spacing: 0.01em;
   margin: 0;
@@ -32,7 +32,6 @@
   top: 50%;
   left: -15px;
   transform: translateY(-50%);
-  background-color: #3C3D63;
   z-index: -1;
 }
 .patinapatina-stockists .patinapatina-stockists-background path {

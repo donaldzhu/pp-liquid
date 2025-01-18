@@ -6,12 +6,12 @@
   padding: $y-padding $x-padding 13.5rem;
   position: relative;
   overflow: hidden;
+  margin-top: 14rem;
 
   h2,
   p {
     font-family: var(--patinapatina-font-heading-family);
     font-size: var(--patinapatina-font-body-size);
-    color: #B0CCD5;
     line-height: 1.167em;
     letter-spacing: 0.01em;
     margin: 0;
@@ -40,7 +40,6 @@
     top: 50%;
     left: -15px;
     transform: translateY(-50%);
-    background-color: #3C3D63;
     z-index: -1;
 
     path {

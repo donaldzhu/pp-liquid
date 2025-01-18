@@ -133,13 +133,35 @@
     },
     "content_for_index": [],
     "color_schemes": {
+      "landing": {
+        "settings": {
+          "background": "#141414",
+          "background_gradient": "",
+          "text": "#FFFBF3",
+          "button": "#FFFBF3",
+          "button_label": "#141414",
+          "secondary_button_label": "#FFFBF3",
+          "shadow": "#FFFBF3"
+        }
+      },
+      "issues": {
+        "settings": {
+          "background": "#DCDFAF",
+          "background_gradient": "",
+          "text": "#767324",
+          "button": "#767324",
+          "button_label": "#DCDFAF",
+          "secondary_button_label": "#767324",
+          "shadow": "#767324"
+        }
+      },
       "scheme-1": {
         "settings": {
-          "background": "#ffffff",
+          "background": "#FFFFFF",
           "background_gradient": "",
           "text": "#121212",
           "button": "#121212",
-          "button_label": "#ffffff",
+          "button_label": "#FFFFFF",
           "secondary_button_label": "#121212",
           "shadow": "#121212"
         }
@@ -194,6 +216,28 @@
     "Default": {
       "logo_width": 90,
       "color_schemes": {
+        "landing": {
+          "settings": {
+            "background": "#141414",
+            "background_gradient": "",
+            "text": "#FFFBF3",
+            "button": "#FFFBF3",
+            "button_label": "#141414",
+            "secondary_button_label": "#FFFBF3",
+            "shadow": "#FFFBF3"
+          }
+        },
+        "issues": {
+          "settings": {
+            "background": "#DCDFAF",
+            "background_gradient": "",
+            "text": "#767324",
+            "button": "#767324",
+            "button_label": "#DCDFAF",
+            "secondary_button_label": "#767324",
+            "shadow": "#767324"
+          }
+        },
         "scheme-1": {
           "settings": {
             "background": "#FFFFFF",

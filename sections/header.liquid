@@ -1,31 +1,5 @@
 {{ 'header.css' | asset_url | stylesheet_tag }}
 
-{% style %}
-  header {
-    background-color: {{ section.settings.background_color }};
-  }
-
-  header svg {
-    fill: {{ section.settings.text_color }};
-  }
-
-  header button.patinapatina-button {
-    color: {{ section.settings.text_color }};
-  }
-
-  header button.patinapatina-button-active,
-  header button.patinapatina-button:hover {
-    background-color: {{ section.settings.text_color }};
-    border-color: {{ section.settings.text_color }};
-  }
-
-  header button.patinapatina-button-active a,
-  header button.patinapatina-button:hover a {
-    color: {{ section.settings.background_color }};
-  }
-
-{% endstyle %}
-
 {%- liquid
   for block in section.blocks
     if block.type == '@app'
@@ -51,7 +25,6 @@
         <li>
           <button class="patinapatina-button{%- if link.current -%}-active{%- endif -%}">
             <a
-              id="HeaderMenu-{{ link.handle }}"
               href="{{ link.url }}"
               class="button"
               {% if link.current %}
@@ -105,23 +78,9 @@
     }
   </script>
 {%- endif -%}
-
 {% schema %}
   {
     "name": "t:sections.header.name",
-    "class": "section-header",
-    "settings": [
-      {
-        "type": "color",
-        "id": "background_color",
-        "label": "Background Color",
-        "default": "#141414"
-      }, {
-        "type": "color",
-        "id": "text_color",
-        "label": "Text Color",
-        "default": "#FFFBF3"
-      }
-    ]
+    "class": "section-header"
   }
 {% endschema %}

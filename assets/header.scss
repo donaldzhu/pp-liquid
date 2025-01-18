@@ -8,6 +8,10 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 3.6rem $x-padding 1.8rem;
+
+  svg {
+    fill: rgb(var(--text-color));
+  }
 }
 
 .header-menu {
