@@ -17,6 +17,7 @@
     {% endfor %}
   </h2>
   <div class="patinapatina-landing-section-image-container">
+      {% comment %} TODO: default images and 2 images {% endcomment %}
     <img src="{{ section.settings.image_1 | default: 'patinapatina-landing-default-1.png' | asset_url  }}">
     <img src="{{ section.settings.image_2 | default: 'patinapatina-landing-default-2.png' | asset_url  }}">
   </div>
