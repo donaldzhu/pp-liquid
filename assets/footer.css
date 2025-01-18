@@ -1,0 +1,30 @@
+footer {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer a {
+  font-family: var(--patinapatina-font-body-family);
+  font-size: var(--patinapatina-font-body-size);
+  line-height: 1.12;
+  text-transform: uppercase;
+  text-decoration-thickness: 5%;
+  text-underline-offset: 12.5%;
+}
+footer img {
+  width: 100%;
+  max-width: 1600px;
+}
+
+.footer-menu ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: 100%;
+  gap: 4.5rem;
+  padding: 8.5rem 0 4.5rem;
+}
+
+/*# sourceMappingURL=footer.css.map */

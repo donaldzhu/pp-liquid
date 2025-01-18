@@ -8,8 +8,17 @@
 
   .patinapatina-home-section h2,
   .patinapatina-home-section p,
-  button.patinapatina-button {
+  .patinapatina-home-section button.patinapatina-button {
     color: {{ section.settings.text_color }};
+  }
+
+  .patinapatina-home-section button.patinapatina-button:hover {
+    background-color: {{ section.settings.text_color }};
+    border-color: {{ section.settings.text_color }};
+  }
+
+  .patinapatina-home-section button.patinapatina-button:hover a {
+    color: {{ section.settings.background_color }};
   }
 
   {% if title_array.size == 3 %}
@@ -38,7 +47,7 @@
     <p>
       {{ section.settings.text }}
       <button class="patinapatina-button">
-        <a href="{{ section.settings.button_link }}" class="button">READ MORE</a>
+        <a href="{{ section.settings.button_link }}">READ MORE</a>
       </button>
     </p>
   </div>

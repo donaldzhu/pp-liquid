@@ -16,13 +16,7 @@ header {
     gap: 1.2rem;
   }
 
-  li {
-    &::marker {
-      content: none;
-    }
-
-    button {
-      margin: 0;
-    }
+  li button {
+    margin: 0;
   }
 }

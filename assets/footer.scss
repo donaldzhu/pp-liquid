@@ -1,0 +1,27 @@
+@use './scss/utils' as *;
+@use './scss/typography' as *;
+
+footer {
+  margin: 0;
+  @include flex;
+
+  a {
+    @include patinapatina-body-type;
+    text-transform: uppercase;
+    text-decoration-thickness: 5%;
+    text-underline-offset: 12.5%;
+  }
+
+  img {
+    width: 100%;
+    max-width: 1600px;
+  }
+}
+
+.footer-menu ul {
+  @include flex;
+  margin: 0;
+  width: 100%;
+  gap: 4.5rem;
+  padding: 8.5rem 0 4.5rem;
+}

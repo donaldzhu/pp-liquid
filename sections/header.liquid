@@ -9,18 +9,18 @@
     fill: {{ section.settings.text_color }};
   }
 
-  button.patinapatina-button {
+  header button.patinapatina-button {
     color: {{ section.settings.text_color }};
   }
 
-  button.patinapatina-button-active,
-  button.patinapatina-button:hover {
+  header button.patinapatina-button-active,
+  header button.patinapatina-button:hover {
     background-color: {{ section.settings.text_color }};
     border-color: {{ section.settings.text_color }};
   }
 
-  button.patinapatina-button-active a,
-  button.patinapatina-button:hover a {
+  header button.patinapatina-button-active a,
+  header button.patinapatina-button:hover a {
     color: {{ section.settings.background_color }};
   }
 
@@ -38,9 +38,10 @@
   {%- if request.page_type == 'index' -%}
     <h1>
   {%- endif -%}
-      <a href="{{ routes.root_url }}">
-        {% render 'patinapatina-logo', color: section.settings.text_color %}
-      </a>
+  <a href="{{ routes.root_url }}">
+    {% render 'patinapatina-logo'
+      , color: section.settings.text_color %}
+  </a>
   {%- if request.page_type == 'index' -%}
     </h1>
   {%- endif -%}
@@ -54,7 +55,7 @@
               href="{{ link.url }}"
               class="button"
               {% if link.current %}
-                aria-current="page"
+              aria-current="page"
               {% endif %}>
               {{ link.title | escape }}
             </a>
@@ -67,25 +68,25 @@
 
 <script type="application/ld+json">
   {
-    "@context": "http://schema.org",
-    "@type": "Organization",
-    "name": {{ shop.name | json }},
-    {% if settings.logo %}
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": {{ shop.name | json }},
+      {% if settings.logo %}
       "logo": {{ settings.logo | image_url: width: 500 | prepend: "https:" | json }},
-    {% endif %}
-    "sameAs": [
-      {{ settings.social_twitter_link | json }},
-      {{ settings.social_facebook_link | json }},
-      {{ settings.social_pinterest_link | json }},
-      {{ settings.social_instagram_link | json }},
-      {{ settings.social_tiktok_link | json }},
-      {{ settings.social_tumblr_link | json }},
-      {{ settings.social_snapchat_link | json }},
-      {{ settings.social_youtube_link | json }},
-      {{ settings.social_vimeo_link | json }}
-    ],
-    "url": {{ request.origin | append: page.url | json }}
-  }
+      {% endif %}
+      "sameAs": [
+        {{ settings.social_twitter_link | json }},
+        {{ settings.social_facebook_link | json }},
+        {{ settings.social_pinterest_link | json }},
+        {{ settings.social_instagram_link | json }},
+        {{ settings.social_tiktok_link | json }},
+        {{ settings.social_tumblr_link | json }},
+        {{ settings.social_snapchat_link | json }},
+        {{ settings.social_youtube_link | json }},
+        {{ settings.social_vimeo_link | json }}
+      ],
+      "url": {{ request.origin | append: page.url | json }}
+    }
 </script>
 
 {%- if request.page_type == 'index' -%}
@@ -106,30 +107,21 @@
 {%- endif -%}
 
 {% schema %}
-{
-  "name": "t:sections.header.name",
-  "class": "section-header",
-  "max_blocks": 3,
-  "settings": [
+  {
+    "name": "t:sections.header.name",
+    "class": "section-header",
+    "settings": [
       {
         "type": "color",
         "id": "background_color",
         "label": "Background Color",
         "default": "#141414"
-      },
-      {
+      }, {
         "type": "color",
         "id": "text_color",
         "label": "Text Color",
         "default": "#FFFBF3"
       }
-    ],
-  "blocks": [
-    {
-      "type": "@app"
-    }
-  ]
-}
+    ]
+  }
 {% endschema %}
-
-

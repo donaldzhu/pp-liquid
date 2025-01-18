@@ -11,9 +11,6 @@ header h1 {
   display: flex;
   gap: 1.2rem;
 }
-.header-menu li::marker {
-  content: none;
-}
 .header-menu li button {
   margin: 0;
 }
