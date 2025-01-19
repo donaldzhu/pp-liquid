@@ -1,4 +1,3 @@
-@use './scss/utils' as *;
 @use './scss/layout' as *;
 @use './scss/typography' as *;
 
@@ -13,20 +12,20 @@
 
   h2 {
     @include flex(space-between, center);
+    @include main-container(14rem, $y-padding);
     letter-spacing: 0.01em;
-    padding: 14rem $x-padding $y-padding;
     margin: 0;
     text-transform: uppercase;
   }
 
   p {
     $left: calc(50vw - $x-padding);
-    text-indent: calc(-1 * $left);
-    position: relative;
-    left: $left;
     width: calc(50vw + $x-padding);
     margin: 0;
     padding: $y-padding $x-padding 5.6rem;
+    text-indent: calc(-1 * $left);
+    position: relative;
+    left: $left;
   }
 
   button {

@@ -10,18 +10,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  letter-spacing: 0.01em;
   padding: 14rem 3.2rem 4.5rem;
+  width: 100%;
+  letter-spacing: 0.01em;
   margin: 0;
   text-transform: uppercase;
 }
 .pp-landing-section p {
-  text-indent: calc(-1 * (50vw - 3.2rem));
-  position: relative;
-  left: calc(50vw - 3.2rem);
   width: calc(50vw + 3.2rem);
   margin: 0;
   padding: 4.5rem 3.2rem 5.6rem;
+  text-indent: calc(-1 * (50vw - 3.2rem));
+  position: relative;
+  left: calc(50vw - 3.2rem);
 }
 .pp-landing-section button {
   margin-top: 3.2rem;
@@ -30,5 +31,3 @@
   opacity: 0.5;
   pointer-events: none;
 }
-
-/*# sourceMappingURL=pp-landing-section.css.map */

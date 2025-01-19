@@ -1,0 +1,53 @@
+@use './scss/layout' as *;
+@use './scss/typography' as *;
+
+section:not(:first-child) h1 {
+  display: none;
+}
+
+.pp-subpage-section {
+  .pp-subpage-section-header-container {
+    @include main-container;
+    @include flex;
+    flex-direction: column;
+
+
+    .pp-subpage-section-dot {
+      display: block;
+      width: 4.3rem;
+      height: 4.3rem;
+      background-color: rgb(var(--pp-dot-color));
+      border-radius: 100%;
+      margin: 20rem 0 1.5rem;
+    }
+
+
+    h1 {
+      @include pp-body-type;
+      line-height: 0.87;
+      width: 100%;
+      text-align: center;
+    }
+
+    h2 {
+      font-family: var(--pp-font-heading-family);
+      font-size: 17.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      line-height: 0.87;
+      margin: 7.5rem 0 4rem;
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .pp-subpage-section-date {
+    @include main-container;
+    @include flex(space-between);
+    margin-top: 3.75rem;
+    line-height: 1.2;
+  }
+}

@@ -1,6 +1,7 @@
 .pp-stockists {
   display: flex;
   padding: 4.5rem 3.2rem 13.5rem;
+  width: 100%;
   position: relative;
   overflow: hidden;
   margin-top: 14rem;
@@ -16,9 +17,7 @@
 .pp-stockists p {
   margin: 0;
 }
-.pp-stockists p a,
-.pp-stockists p a:hover,
-.pp-stockists p a:active {
+.pp-stockists p a.pp-stockists-link, .pp-stockists p a.pp-stockists-link:hover, .pp-stockists p a.pp-stockists-link:active {
   text-decoration: none;
   color: inherit;
 }
@@ -37,5 +36,3 @@
 .pp-stockists .pp-stockists-background path {
   stroke-width: 1px;
 }
-
-/*# sourceMappingURL=pp-stockists.css.map */

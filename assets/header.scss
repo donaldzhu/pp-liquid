@@ -5,9 +5,8 @@ header {
     margin: 0;
   }
 
-  display: flex;
-  justify-content: space-between;
-  padding: 3.6rem $x-padding 1.8rem;
+  @include flex(space-between);
+  @include main-container(3.6rem, 1.8rem);
 }
 
 .header-menu {

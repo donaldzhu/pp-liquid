@@ -1,0 +1,7 @@
+{% liquid
+  assign date_components = date | split: '.'
+%}
+
+{% for date_component in date_components %}
+  <span>{{ date_component }}{% if forloop.last == false %}.{% endif %}</span>
+{% endfor %}

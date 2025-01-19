@@ -1,3 +1,14 @@
 $x-padding: 3.2rem;
 $y-padding: 4.5rem;
 $button-transition: 0.15s ease-in-out;
+
+@mixin flex ($justify: center, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin main-container($top-margin: 0, $bottom-margin: 0) {
+  padding: $top-margin $x-padding $bottom-margin;
+  width: 100%;
+}

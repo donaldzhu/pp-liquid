@@ -1,9 +1,8 @@
-@use './scss/utils' as *;
 @use './scss/layout' as *;
 
 .pp-stockists {
   display: flex;
-  padding: $y-padding $x-padding 13.5rem;
+  @include main-container($y-padding, 13.5rem);
   position: relative;
   overflow: hidden;
   margin-top: 14rem;
@@ -21,12 +20,16 @@
   p {
     margin: 0;
 
-    a,
-    a:hover,
-    a:active {
-      text-decoration: none;
-      color: inherit;
+    a.pp-stockists-link {
+
+      &,
+      &:hover,
+      &:active {
+        text-decoration: none;
+        color: inherit;
+      }
     }
+
   }
 
   h2,

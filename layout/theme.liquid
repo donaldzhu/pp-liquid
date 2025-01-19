@@ -97,6 +97,12 @@
           :root, 
         {%- endif -%}
         {% if scheme.id == subpath %}
+          :root  {
+            --pp-dot-color: {{ scheme.settings.dot.red }}, 
+            {{ scheme.settings.dot.green }}, 
+            {{ scheme.settings.dot.blue }};
+          }
+
           :root, 
         {%- endif -%}
         .color-{{ scheme.id }} {

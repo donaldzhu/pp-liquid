@@ -1,11 +1,23 @@
 {
   "sections": {
-    "pp-subpage": {
-      "type": "pp-subpage",
-      "settings": {}
+    "pp-subpage-section-1": {
+      "type": "pp-subpage-section",
+      "settings": {
+        "section_title": "beijing/sunrise, sunset",
+        "start_date": "15.08.2024"
+      }
+    },
+    "pp-subpage-section-2": {
+      "type": "pp-subpage-section",
+      "settings": {
+        "section_title": "we like krump",
+        "start_date": "15.08.2024",
+        "end_date": "22.08.2024"
+      }
     }
   },
   "order": [
-    "pp-subpage"
+    "pp-subpage-section-1",
+    "pp-subpage-section-2"
   ]
 }

@@ -141,7 +141,8 @@
           "button": "#FFFBF3",
           "button_label": "#141414",
           "secondary_button_label": "#FFFBF3",
-          "shadow": "#FFFBF3"
+          "shadow": "#FFFBF3",
+          "dot": ""
         }
       },
       "issues": {
@@ -152,7 +153,8 @@
           "button": "#767324",
           "button_label": "#DCDFAF",
           "secondary_button_label": "#767324",
-          "shadow": "#767324"
+          "shadow": "#767324",
+          "dot": "#A1CF1D"
         }
       },
       "scheme-1": {
@@ -163,7 +165,8 @@
           "button": "#121212",
           "button_label": "#FFFFFF",
           "secondary_button_label": "#121212",
-          "shadow": "#121212"
+          "shadow": "#121212",
+          "dot": "#121212"
         }
       },
       "scheme-2": {
@@ -174,7 +177,8 @@
           "button": "#121212",
           "button_label": "#f3f3f3",
           "secondary_button_label": "#121212",
-          "shadow": "#121212"
+          "shadow": "#121212",
+          "dot": "#121212"
         }
       },
       "scheme-3": {
@@ -185,7 +189,8 @@
           "button": "#ffffff",
           "button_label": "#000000",
           "secondary_button_label": "#ffffff",
-          "shadow": "#121212"
+          "shadow": "#121212",
+          "dot": "#121212"
         }
       },
       "scheme-4": {
@@ -196,7 +201,8 @@
           "button": "#ffffff",
           "button_label": "#121212",
           "secondary_button_label": "#ffffff",
-          "shadow": "#121212"
+          "shadow": "#121212",
+          "dot": "#121212"
         }
       },
       "scheme-5": {
@@ -207,7 +213,8 @@
           "button": "#ffffff",
           "button_label": "#334fb4",
           "secondary_button_label": "#ffffff",
-          "shadow": "#121212"
+          "shadow": "#121212",
+          "dot": "#121212"
         }
       }
     }
@@ -224,7 +231,8 @@
             "button": "#FFFBF3",
             "button_label": "#141414",
             "secondary_button_label": "#FFFBF3",
-            "shadow": "#FFFBF3"
+            "shadow": "#FFFBF3",
+            "dot": ""
           }
         },
         "issues": {
@@ -235,7 +243,8 @@
             "button": "#767324",
             "button_label": "#DCDFAF",
             "secondary_button_label": "#767324",
-            "shadow": "#767324"
+            "shadow": "#767324",
+            "dot": "#A1CF1D"
           }
         },
         "scheme-1": {
@@ -257,7 +266,8 @@
             "button": "#121212",
             "button_label": "#F3F3F3",
             "secondary_button_label": "#121212",
-            "shadow": "#121212"
+            "shadow": "#121212",
+            "dot": "#121212"
           }
         },
         "scheme-3": {
@@ -268,7 +278,8 @@
             "button": "#FFFFFF",
             "button_label": "#000000",
             "secondary_button_label": "#FFFFFF",
-            "shadow": "#121212"
+            "shadow": "#121212",
+            "dot": "#121212"
           }
         },
         "scheme-4": {
@@ -279,7 +290,8 @@
             "button": "#FFFFFF",
             "button_label": "#121212",
             "secondary_button_label": "#FFFFFF",
-            "shadow": "#121212"
+            "shadow": "#121212",
+            "dot": "#121212"
           }
         },
         "scheme-5": {
@@ -290,7 +302,8 @@
             "button": "#FFFFFF",
             "button_label": "#334FB4",
             "secondary_button_label": "#FFFFFF",
-            "shadow": "#121212"
+            "shadow": "#121212",
+            "dot": "#121212"
           }
         }
       },
