@@ -1,19 +1,19 @@
 @use './scss/utils' as *;
 @use './scss/typography' as *;
 
-.patinapatina-newsletter {
+.pp-newsletter {
   @include flex;
 
-  .patinapatina-newsletter-inner {
+  .pp-newsletter-inner {
     max-width: 88.5rem;
     padding: 23.5rem 0;
 
     h2 {
-      @include patinapatina-heading-type;
+      @include pp-heading-type;
     }
 
     p {
-      @include patinapatina-body-type;
+      @include pp-body-type;
       padding: 3.2rem 0;
     }
 
@@ -24,7 +24,7 @@
     }
   }
 
-  .patinapatina-newsletter-form-wrapper {
+  .pp-newsletter-form-wrapper {
     margin-top: 1.4rem;
 
     form {
@@ -32,12 +32,12 @@
       max-width: initial;
     }
 
-    .patinapatina-newsletter-form-email {
+    .pp-newsletter-form-email {
 
       &,
       &:focus,
       &:focus-visible {
-        @include patinapatina-body-type;
+        @include pp-body-type;
         height: 4rem;
         max-width: 37.5rem;
         width: 100%;
@@ -50,7 +50,7 @@
     }
   }
 
-  .patinapatina-newsletter-form-field-wrapper {
+  .pp-newsletter-form-field-wrapper {
     @include flex;
     width: 100%;
     gap: 2.4rem;

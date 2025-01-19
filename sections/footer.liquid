@@ -1,6 +1,6 @@
 {{ 'footer.css' | asset_url | stylesheet_tag }}
 
-<footer class="patinapatina-footer">
+<footer class="pp-footer">
   <div class="footer-menu">
     <ul role="list">
       {% for link in linklists.footer.links %}
@@ -19,7 +19,13 @@
         </li>
       {% endfor %}
     </ul>
-    <img src="{{ 'patinapatina-footer.png' | asset_url }}">
+    <div class="logo-container{% if request.path != '/' %}-colored{% endif %}">
+      {% if request.path == '/' %}
+        <img src="{{ 'pp-footer.png' | asset_url }}">
+      {% else %}
+        <img src="{{ 'pp-footer-bw.png' | asset_url }}">
+      {% endif %}
+    </div>
   </div>
 </footer>
 

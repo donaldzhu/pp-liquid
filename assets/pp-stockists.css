@@ -1,0 +1,41 @@
+.pp-stockists {
+  display: flex;
+  padding: 4.5rem 3.2rem 13.5rem;
+  position: relative;
+  overflow: hidden;
+  margin-top: 14rem;
+}
+.pp-stockists h2,
+.pp-stockists p {
+  font-family: var(--pp-font-heading-family);
+  font-size: var(--pp-font-body-size);
+  line-height: 1.167em;
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+.pp-stockists p {
+  margin: 0;
+}
+.pp-stockists p a,
+.pp-stockists p a:hover,
+.pp-stockists p a:active {
+  text-decoration: none;
+  color: inherit;
+}
+.pp-stockists h2,
+.pp-stockists div {
+  width: 50vw;
+}
+.pp-stockists .pp-stockists-background {
+  position: absolute;
+  width: calc(100vw + 30px);
+  top: 50%;
+  left: -15px;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+.pp-stockists .pp-stockists-background path {
+  stroke-width: 1px;
+}
+
+/*# sourceMappingURL=pp-stockists.css.map */

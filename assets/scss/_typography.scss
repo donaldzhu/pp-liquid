@@ -1,12 +1,12 @@
-@mixin patinapatina-body-type {
-  font-family: var(--patinapatina-font-body-family);
-  font-size: var(--patinapatina-font-body-size);
+@mixin pp-body-type {
+  font-family: var(--pp-font-body-family);
+  font-size: var(--pp-font-body-size);
   line-height: 1.12;
 }
 
-@mixin patinapatina-heading-type {
-  font-family: var(--patinapatina-font-heading-family);
+@mixin pp-heading-type {
+  font-family: var(--pp-font-heading-family);
   font-weight: normal;
-  font-size: var(--patinapatina-font-heading-size);
+  font-size: var(--pp-font-heading-size);
   line-height: 1.12;
 }

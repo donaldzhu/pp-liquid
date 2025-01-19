@@ -2,8 +2,8 @@
 @use './scss/layout' as *;
 @use './scss/typography' as *;
 
-.patinapatina-landing-section {
-  .patinapatina-landing-section-image-container {
+.pp-landing-section {
+  .pp-landing-section-image-container {
     @include flex;
 
     img {

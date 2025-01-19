@@ -1,0 +1,23 @@
+{{ 'pp-subpage.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+
+{%- endstyle -%}
+
+<div></div>
+
+{% schema %}
+  {
+    "name": "PatinaPatina Subpage",
+    "tag": "section",
+    "class": "section",
+    "disabled_on": {
+      "groups": ["header", "footer"]
+    },
+    "presets": [
+      {
+        "name": "pp-subpage"
+      }
+    ]
+  }
+{% endschema %}

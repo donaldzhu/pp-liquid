@@ -1,31 +1,31 @@
-{{ 'patinapatina-newsletter.css' | asset_url | stylesheet_tag }}
+{{ 'pp-newsletter.css' | asset_url | stylesheet_tag }}
 
 {% style %}
-  .patinapatina-newsletter {
-    background-image: url('{{ section.settings.background_image | default: 'patinapatina-newsletter-default.png' | asset_url }}');
+  .pp-newsletter {
+    background-image: url('{{ section.settings.background_image | default: 'pp-newsletter-default.png' | asset_url }}');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
   }
 {% endstyle %}
 
-<div class="patinapatina-newsletter">
-  <div class="patinapatina-newsletter-inner">
+<div class="pp-newsletter">
+  <div class="pp-newsletter-inner">
     <h2>{{ section.settings.title }}</h2>
     <p>{{ section.settings.text }}</p>
-    <div class="patinapatina-newsletter-form-wrapper">
+    <div class="pp-newsletter-form-wrapper">
       {% form 'customer' %}
         <input
           type="hidden"
           name="contact[tags]"
           value="newsletter">
-        <div class="patinapatina-newsletter-form-field-wrapper">
+        <div class="pp-newsletter-form-field-wrapper">
           <input
             id="NewsletterForm--{{ section.id }}"
             type="email"
             aria-label="Email"
             name="contact[email]"
-            class="patinapatina-newsletter-form-email"
+            class="pp-newsletter-form-email"
             value="{{ form.email }}"
             aria-required="true"
             autocorrect="off"
@@ -41,7 +41,7 @@
             required>
           <button
             type="submit"
-            class="patinapatina-button"
+            class="pp-button"
             name="commit"
             aria-label="{{ 'newsletter.button_label' | t }}">
             SIGN UP
@@ -98,7 +98,7 @@
     ],
     "presets": [
       {
-        "name": "patinapatina-newsletter"
+        "name": "pp-newsletter"
       }
     ]
   }

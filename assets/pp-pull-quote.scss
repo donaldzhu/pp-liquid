@@ -1,7 +1,7 @@
 @use './scss/utils' as *;
 @use './scss/typography' as *;
 
-.patinapatina-pull-quote {
+.pp-pull-quote {
 
   @mixin size-to-emblem {
     height: $emblem-height;
@@ -10,7 +10,7 @@
 
   padding: 14rem 0;
 
-  .patinapatina-pull-quote-inner {
+  .pp-pull-quote-inner {
     @include flex;
     flex-direction: column;
 
@@ -19,7 +19,7 @@
     position: relative;
 
     h4 {
-      @include patinapatina-heading-type;
+      @include pp-heading-type;
       letter-spacing: 0.01em;
       text-align: center;
       margin: 3rem 0;

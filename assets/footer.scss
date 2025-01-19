@@ -6,15 +6,40 @@ footer {
   @include flex;
 
   a {
-    @include patinapatina-body-type;
+    @include pp-body-type;
     text-transform: uppercase;
     text-decoration-thickness: 5%;
     text-underline-offset: 12.5%;
   }
 
-  img {
-    width: 100%;
-    max-width: 1600px;
+  .logo-container {
+
+    &,
+    &-colored {
+      max-width: 1600px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    &-colored {
+      position: relative;
+      mix-blend-mode: multiply;
+      display: flex;
+
+      &:before {
+        content: '';
+        display: block;
+        width: 99%;
+        height: 99%;
+        position: absolute;
+        top: 0.5%;
+        left: 0.5%;
+        background-color: rgb(var(--color-foreground));
+        mix-blend-mode: screen;
+      }
+    }
   }
 }
 

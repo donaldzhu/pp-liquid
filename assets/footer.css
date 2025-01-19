@@ -5,16 +5,34 @@ footer {
   align-items: center;
 }
 footer a {
-  font-family: var(--patinapatina-font-body-family);
-  font-size: var(--patinapatina-font-body-size);
+  font-family: var(--pp-font-body-family);
+  font-size: var(--pp-font-body-size);
   line-height: 1.12;
   text-transform: uppercase;
   text-decoration-thickness: 5%;
   text-underline-offset: 12.5%;
 }
-footer img {
-  width: 100%;
+footer .logo-container, footer .logo-container-colored {
   max-width: 1600px;
+}
+footer .logo-container img, footer .logo-container-colored img {
+  width: 100%;
+}
+footer .logo-container-colored {
+  position: relative;
+  mix-blend-mode: multiply;
+  display: flex;
+}
+footer .logo-container-colored:before {
+  content: "";
+  display: block;
+  width: 99%;
+  height: 99%;
+  position: absolute;
+  top: 0.5%;
+  left: 0.5%;
+  background-color: rgb(var(--color-foreground));
+  mix-blend-mode: screen;
 }
 
 .footer-menu ul {

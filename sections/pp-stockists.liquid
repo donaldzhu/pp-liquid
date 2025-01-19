@@ -1,27 +1,27 @@
-{{ 'patinapatina-stockists.css' | asset_url | stylesheet_tag }}
+{{ 'pp-stockists.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
-  .patinapatina-stockists-background {
+  .pp-stockists-background {
     background-color: {{ section.settings.background_color }};
   }
 
-  .patinapatina-stockists h2,
-  .patinapatina-stockists p {
+  .pp-stockists h2,
+  .pp-stockists p {
     color: {{ section.settings.foreground_color }};
   }
 {%- endstyle -%}
 
-<div class="patinapatina-stockists">
+<div class="pp-stockists">
   <h2>Stockists</h2>
-  <div class="patinapatina-stockists-list">
+  <div class="pp-stockists-list">
     {% for block in section.blocks %}
       <p>
         <a href="{{ block.settings.url }}" target="_blank">{{ block.settings.name }}</a>
       </p>
     {% endfor %}
   </div>
-  <div class="patinapatina-stockists-background">
-    {{ 'patinapatina-stockists-background.svg' | asset_url | img_tag }}
+  <div class="pp-stockists-background">
+    {{ 'pp-stockists-background.svg' | asset_url | img_tag }}
   </div>
 </div>
 
@@ -48,7 +48,7 @@
     ],
     "blocks": [
       {
-        "type": "patinapatina-stockist",
+        "type": "pp-stockist",
         "name": "Stockist",
         "settings": [
           {

@@ -1,30 +1,30 @@
-{{ 'patinapatina-landing-section.css' | asset_url | stylesheet_tag }}
+{{ 'pp-landing-section.css' | asset_url | stylesheet_tag }}
 
 {% assign title_array = section.settings.section_title | split: " " %}
 {% style %}
   {% if title_array.size == 3 %}
-    .patinapatina-landing-section h2 > span:nth-child(2) {
+    .pp-landing-section h2 > span:nth-child(2) {
       position: absolute;
       left: 50vw;
     }
   {% endif %}
 {% endstyle %}
 
-<div class="patinapatina-landing-section">
+<div class="pp-landing-section">
   <h2>
     {% for item in title_array %}
       <span>{{ item }}</span>
     {% endfor %}
   </h2>
-  <div class="patinapatina-landing-section-image-container">
+  <div class="pp-landing-section-image-container">
       {% comment %} TODO: default images and 2 images {% endcomment %}
-    <img src="{{ section.settings.image_1 | default: 'patinapatina-landing-default-1.png' | asset_url  }}">
-    <img src="{{ section.settings.image_2 | default: 'patinapatina-landing-default-2.png' | asset_url  }}">
+    <img src="{{ section.settings.image_1 | default: 'pp-landing-default-1.png' | asset_url  }}">
+    <img src="{{ section.settings.image_2 | default: 'pp-landing-default-2.png' | asset_url  }}">
   </div>
-  <div class="patinapatina-landing-section-text-container">
+  <div class="pp-landing-section-text-container">
     <p>
       {{ section.settings.text }}
-      <button class="patinapatina-button" disabled="{{ section.settings.purchase_button }}">
+      <button class="pp-button" disabled="{{ section.settings.purchase_button }}">
         <a href="{{ section.settings.button_link }}">
           {% if section.settings.purchase_button %}SOLD OUT{% else %}READ MORE{% endif %}
         </a>
@@ -76,7 +76,7 @@
     "blocks": [],
     "presets": [
       {
-        "name": "patinapatina-landing-section"
+        "name": "pp-landing-section"
       }
     ]
   }

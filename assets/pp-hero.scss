@@ -1,7 +1,7 @@
 @use './scss/utils' as *;
 @use './scss/typography' as *;
 
-.patinapatina-hero {
+.pp-hero {
   $emblem-max-width: 535px;
   $emblem-max-height: 433px;
   $emblem-height-to-width-ratio: $emblem-max-height / $emblem-max-width;
@@ -14,7 +14,7 @@
 
   padding: 40px 0 10px;
 
-  .patinapatina-hero-inner {
+  .pp-hero-inner {
     @include flex;
     @include size-to-emblem;
     max-width: 1140px;
@@ -22,7 +22,7 @@
     position: relative;
 
     h3 {
-      @include patinapatina-heading-type;
+      @include pp-heading-type;
       letter-spacing: 0.01em;
       line-height: 1.1667;
       text-align: center;

@@ -1,13 +1,13 @@
 {
   "sections": {
-    "patinapatina-hero": {
-      "type": "patinapatina-hero",
+    "pp-hero": {
+      "type": "pp-hero",
       "settings": {
         "hero_statement": "PATINAPATINA is a magazine with stories on art, identity, and culture. It is an embrace of the messiness and confusion of our shared experiences."
       }
     },
-    "patinapatina-landing-section-1": {
-      "type": "patinapatina-landing-section",
+    "pp-landing-section-1": {
+      "type": "pp-landing-section",
       "settings": {
         "section_title": "PATINAPATINA ISSUE ONE",
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
@@ -15,69 +15,69 @@
         "purchase_button": true
       }
     },
-    "patinapatina-pull-quote": {
-      "type": "patinapatina-pull-quote",
+    "pp-pull-quote": {
+      "type": "pp-pull-quote",
       "settings": {
         "quote": "“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Ut aliquip ex ea commodo consequat.”",
         "quote_attribution": "ADRIAN LAYNE, ISSUE ONE"
       }
     },
-    "patinapatina-landing-section-2": {
-      "type": "patinapatina-landing-section",
+    "pp-landing-section-2": {
+      "type": "pp-landing-section",
       "settings": {
         "section_title": "PATINAPATINA EVENTS",
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         "button_link": ""
       }
     },
-    "patinapatina-landing-section-3": {
-      "type": "patinapatina-landing-section",
+    "pp-landing-section-3": {
+      "type": "pp-landing-section",
       "settings": {
         "section_title": "PATINAPATINA BLOG",
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         "button_link": ""
       }
     },
-    "patinapatina-stockists": {
-      "type": "patinapatina-stockists",
+    "pp-stockists": {
+      "type": "pp-stockists",
       "blocks": {
         "patinapatina_stockist_issue_magazine": {
-          "type": "patinapatina-stockist",
+          "type": "pp-stockist",
           "settings": {
             "name": "Issue Magaine",
             "url": "https://issuesmagshop.com"
           }
         },
         "patinapatina_stockist_disko_coffee": {
-          "type": "patinapatina-stockist",
+          "type": "pp-stockist",
           "settings": {
             "name": "Disko Coffee",
             "url": "https://issuesmagshop.com"
           }
         },
         "patinapatina_stockist_typist_books_and_coffee": {
-          "type": "patinapatina-stockist",
+          "type": "pp-stockist",
           "settings": {
             "name": "Typist Books & Coffee",
             "url": "https://disko.ca/"
           }
         },
         "patinapatina_stockist_art_metropole": {
-          "type": "patinapatina-stockist",
+          "type": "pp-stockist",
           "settings": {
             "name": "Art Metropole",
             "url": "https://artmetropole.com/"
           }
         },
         "patinapatina_stockist_offbrand_library": {
-          "type": "patinapatina-stockist",
+          "type": "pp-stockist",
           "settings": {
             "name": "Offbrand Library",
             "url": "https://offbrandlibrary.com/"
           }
         },
         "patinapatina_stockist_maktaba_bookstore": {
-          "type": "patinapatina-stockist",
+          "type": "pp-stockist",
           "settings": {
             "name": "Maktaba Bookstore",
             "url": "https://www.maktaba.online/"
@@ -94,8 +94,8 @@
       ],
       "settings": {}
     },
-    "patinapatina-newsletter": {
-      "type": "patinapatina-newsletter",
+    "pp-newsletter": {
+      "type": "pp-newsletter",
       "settings": {
         "title": "Join our newsletter!",
         "text": "Our monthly letter revisits topics from past PATINAPATINA issues and places them into the context of current events."
@@ -103,12 +103,12 @@
     }
   },
   "order": [
-    "patinapatina-hero",
-    "patinapatina-landing-section-1",
-    "patinapatina-pull-quote",
-    "patinapatina-landing-section-2",
-    "patinapatina-landing-section-3",
-    "patinapatina-stockists",
-    "patinapatina-newsletter"
+    "pp-hero",
+    "pp-landing-section-1",
+    "pp-pull-quote",
+    "pp-landing-section-2",
+    "pp-landing-section-3",
+    "pp-stockists",
+    "pp-newsletter"
   ]
 }

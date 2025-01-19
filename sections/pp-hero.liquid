@@ -1,9 +1,9 @@
-{{ 'patinapatina-hero.css' | asset_url | stylesheet_tag }}
+{{ 'pp-hero.css' | asset_url | stylesheet_tag }}
 
-<div class="patinapatina-hero color-landing">
-  <div class="patinapatina-hero-inner">
+<div class="pp-hero color-landing">
+  <div class="pp-hero-inner">
     <h3>{{ section.settings.hero_statement }}</h3>
-    {{ 'patinapatina-emblem.svg' | inline_asset_content }}
+    {{ 'pp-emblem.svg' | inline_asset_content }}
 
   </div>
 </div>
@@ -25,7 +25,7 @@
     ],
     "presets": [
       {
-        "name": "patinapatina-hero"
+        "name": "pp-hero"
       }
     ]
   }

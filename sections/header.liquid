@@ -13,7 +13,7 @@
     <h1>
   {%- endif -%}
   <a href="{{ routes.root_url }}">
-    {% render 'patinapatina-logo'
+    {% render 'pp-logo'
       , color: section.settings.text_color %}
   </a>
   {%- if request.page_type == 'index' -%}
@@ -23,7 +23,7 @@
     <ul role="list">
       {% for link in linklists.main-menu.links %}
         <li>
-          <button class="patinapatina-button{%- if link.current -%}-active{%- endif -%}">
+          <button class="pp-button{%- if link.current -%}-active{%- endif -%}">
             <a
               href="{{ link.url }}"
               class="button"

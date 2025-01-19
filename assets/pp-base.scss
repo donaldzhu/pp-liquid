@@ -3,11 +3,11 @@
 @use './scss/layout' as *;
 
 :root {
-  --patinapatina-font-heading-family: 'AzeretMono';
-  --patinapatina-font-body-family: 'XanhMono';
+  --pp-font-heading-family: 'AzeretMono';
+  --pp-font-body-family: 'XanhMono';
 
-  --patinapatina-font-heading-size: 4rem;
-  --patinapatina-font-body-size: 2.4rem;
+  --pp-font-heading-size: 4rem;
+  --pp-font-body-size: 2.4rem;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -29,7 +29,7 @@
   }
 }
 
-button.patinapatina-button {
+button.pp-button {
   color: rgb(var(--color-foreground));
 
 
@@ -68,7 +68,7 @@ button.patinapatina-button {
     &,
     a {
       background: none;
-      @include patinapatina-body-type;
+      @include pp-body-type;
     }
   }
 
@@ -82,5 +82,5 @@ button.patinapatina-button {
 
 h2,
 p {
-  @include patinapatina-body-type;
+  @include pp-body-type;
 }
