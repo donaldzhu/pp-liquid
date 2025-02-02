@@ -1,6 +1,7 @@
 {{ 'pp-landing-section.css' | asset_url | stylesheet_tag }}
 
 {% assign title_array = section.settings.section_title | split: " " %}
+
 {% style %}
   {% if title_array.size == 3 %}
     .pp-landing-section h2 > span:nth-child(2) {
@@ -9,6 +10,12 @@
     }
   {% endif %}
 {% endstyle %}
+
+<script>
+  (() => {
+
+  })();
+</script>
 
 <div class="pp-landing-section">
   <h2>

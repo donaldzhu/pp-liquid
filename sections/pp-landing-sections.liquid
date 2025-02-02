@@ -1,0 +1,38 @@
+{% style %}
+
+{% endstyle %}
+
+{% assign metaobj = shop.metaobjects['app--6007307--sanity-documents-home'].values %}
+
+<div class="pp-landing-sections">
+  {% for o in metaobj -%}
+    {% for s in o.modules.value -%}
+      {% comment %} <div class="pp-landing-section">
+        <h2>{{ s.title }}</h2>
+        <p>{{ s.text }}</p>
+      </div> {% endcomment %}
+      {% if s._type == 'landingSection' %}
+        <div class="pp-landing-section">
+          {% render 'pp-landing-section', sectionData: s %}
+        </div>
+      {% elsif s._type == 'pullQuote' %}
+        {% comment %} <div class="pp-pull-quote">
+          {% render 'pp-pull-quote', sectionData: s %}
+        </div> {% endcomment %}
+      {% endif %}
+    {%- endfor -%}
+  {%- endfor -%}
+</div>
+
+{% schema %}
+  {
+    "name": "Landing Sections",
+    "tag": "section",
+    "disabled_on": {
+      "groups": ["header", "footer"]
+    },
+    "settings": [
+
+    ]
+  }
+{% endschema %}

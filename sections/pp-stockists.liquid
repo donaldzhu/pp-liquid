@@ -11,14 +11,18 @@
   }
 {%- endstyle -%}
 
+{% assign metaobj = shop.metaobjects['app--6007307--sanity-documents-home'].values %}
+
 <div class="pp-stockists">
   <h2>Stockists</h2>
   <div class="pp-stockists-list">
-    {% for block in section.blocks %}
-      <p>
-        <a href="{{ block.settings.url }}" class="pp-stockists-link" target="_blank">{{ block.settings.name }}</a>
-      </p>
-    {% endfor %}
+    {% for o in metaobj -%}
+      {% for s in o.stockists.value -%}
+        <p>
+          <a href="{{ s.stockistLink }}" class="pp-stockists-link" target="_blank">{{ s.stockistName }}</a>
+        </p>
+      {%- endfor -%}
+    {%- endfor -%}
   </div>
   <div class="pp-stockists-background">
     {{ 'pp-stockists-background.svg' | asset_url | img_tag }}
@@ -44,23 +48,6 @@
         "id": "foreground_color",
         "label": "Foreground Color",
         "default": "#B0CCD5"
-      }
-    ],
-    "blocks": [
-      {
-        "type": "pp-stockist",
-        "name": "Stockist",
-        "settings": [
-          {
-            "type": "text",
-            "id": "name",
-            "label": "Name"
-          }, {
-            "type": "url",
-            "id": "url",
-            "label": "URL"
-          }
-        ]
       }
     ]
   }

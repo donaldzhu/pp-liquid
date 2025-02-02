@@ -1,0 +1,43 @@
+{{ 'pp-landing-section.css' | asset_url | stylesheet_tag }}
+
+{% assign title_array = sectionData.title | split: " " %}
+
+{% style %}
+  {% if title_array.size == 3 %}
+    .pp-landing-section h2 > span:nth-child(2) {
+      position: absolute;
+      left: 50vw;
+    }
+  {% endif %}
+{% endstyle %}
+
+<script>
+  (() => {
+
+  })();
+</script>
+
+<div class="pp-landing-section">
+  <h2>
+    {% for item in title_array %}
+      <span>{{ item }}</span>
+    {% endfor %}
+  </h2>
+  <div class="pp-landing-section-image-container">
+      {% for s in sectionData.sectionMedia -%}
+        {% if s.mediaType == 'image' %}
+          <img src="{{ s.image.filename | file_url  }}">
+        {% endif %}
+      {% endfor %}
+  </div>
+  <div class="pp-landing-section-text-container">
+    <p>
+      {{ sectionData.caption }}
+      <button class="pp-button" disabled="{% if sectionData.ctaType == 'buyNow' %}true{% endif %}">
+        <a href="{{ sectionData.navigation }}">
+          {% if sectionData.ctaType == 'buyNow' %}SOLD OUT{% else %}READ MORE{% endif %}
+        </a>
+      </button>
+    </p>
+  </div>
+</div>

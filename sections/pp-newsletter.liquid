@@ -1,18 +1,24 @@
 {{ 'pp-newsletter.css' | asset_url | stylesheet_tag }}
 
+{% assign metaobj = shop.metaobjects['app--6007307--sanity-documents-home'].values %}
+
 {% style %}
-  .pp-newsletter {
-    background-image: url('{{ section.settings.background_image | default: 'pp-newsletter-default.png' | asset_url }}');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-  }
+  {% for o in metaobj -%}
+    .pp-newsletter {
+      background-image: url("{{ o.newsletter.value.image.filename | file_url }}");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  {%- endfor -%}
 {% endstyle %}
 
 <div class="pp-newsletter">
   <div class="pp-newsletter-inner">
-    <h2>{{ section.settings.title }}</h2>
-    <p>{{ section.settings.text }}</p>
+    {% for o in metaobj -%}
+      <h2>{{ o.newsletter.value.header }}</h2>
+      <p>{{ o.newsletter.value.body }}</p>
+    {%- endfor -%}
     <div class="pp-newsletter-form-wrapper">
       {% form 'customer' %}
         <input
