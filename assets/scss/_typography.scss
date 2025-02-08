@@ -10,3 +10,10 @@
   font-size: var(--pp-font-heading-size);
   line-height: 1.12;
 }
+
+@mixin pp-caption-type {
+  font-size: 1.6rem;
+  line-height: 1.2;
+  font-family: var(--pp-font-heading-family);
+  letter-spacing: 0.01em;
+}

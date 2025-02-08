@@ -27,7 +27,3 @@
 .pp-landing-section button {
   margin-top: 3.2rem;
 }
-.pp-landing-section button[disabled=true] {
-  opacity: 0.5;
-  pointer-events: none;
-}

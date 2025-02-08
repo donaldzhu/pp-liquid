@@ -1,0 +1,12 @@
+{{ 'pp-image-grid.css' | asset_url | stylesheet_tag }}
+
+<div
+  style="--desktop-columns: {{ sectionData.desktopColumnCount }};"
+class="pp-image-grid">
+  {% for imageField in sectionData.images %}
+    <div class="pp-image-grid-item">
+      {% render 'pp-subpage-img', content: imageField %}
+    </div>
+  {% endfor %}
+</div>
+

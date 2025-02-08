@@ -1,0 +1,28 @@
+{{ 'pp-subpage-img.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+  assign imageData = content.image
+  assign caption = content.caption
+  case content.insetSize
+    when 'Small'
+      assign insetSize = '45%'
+    when 'Medium'
+      assign insetSize = '60%'
+    when 'Large'
+      assign insetSize = '75%'
+    else
+      assign insetSize = '100%'
+  endcase
+%}
+
+
+<div>
+  <img
+    style="--insetSize: {{ insetSize }};"
+    class="pp-subpage-img{% if roundedCorners != false %} rounded{% endif %}{% if dropShadow != false %} drop-shadow{% endif %}"
+    src="{{ imageData.filename | file_url }}"
+    alt="{{ imageData.alt }}">
+  {% if caption != blank %}
+    <p class="pp-subpage-img-caption">{{ caption }}</p>
+  {% endif %}
+</div>

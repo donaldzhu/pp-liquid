@@ -1,0 +1,81 @@
+{% liquid
+  assign lines = content.title | newline_to_br | split: '<br />'
+  assign idSuffix = "now" | date: "%N"
+  assign id = "pp-subpage-section-title-" | append: idSuffix
+%}
+
+<script>
+  (() => {
+    const flowTitle =  () => {
+    const title = `{{ title }}`;
+    const isSingleWord = title.split(' ').length === 1
+    const headerElement = document.getElementById('{{ id }}')
+    headerElement.style.opacity = 1
+
+    const charWidth = 650 / 1000
+    const X_PADDING = 32
+    const maxCharsPerLine = Math.floor((window.innerWidth - X_PADDING * 2) / (charWidth * 175) )
+    const lines = title.split('\n');
+    const splitLines = lines.map(line => [...line.matchAll(/[a-zA-Z0-9_-]+([^a-zA-Z0-9_-]*)/gi)].map(matched => matched[0].trim()))
+
+    const truncatedLines = splitLines.map(line => {
+      const concatedWords = []
+      let currentWord = ''
+      line.forEach(word => {
+        if (currentWord.length + word.length + 1 <= maxCharsPerLine)
+          currentWord += ` ${word}`
+        else {
+          concatedWords.push(currentWord)
+          currentWord = word
+        }
+        currentWord = currentWord.trim()
+      })
+      concatedWords.push(currentWord)
+      return concatedWords
+    })
+
+    let concatedLines = []
+    let currentLine = ''
+    let lastLineIsBroken
+    truncatedLines.forEach((line, i) => {
+      if (line.length <= 1 && (line[0].length + currentLine.length + 2) <= maxCharsPerLine) {
+        currentLine += ` ${line[0]}`
+      } else {
+        concatedLines.push(currentLine)
+        if (line.length > 1) {
+          concatedLines.push(line)
+          currentLine = ''
+          if (i === truncatedLines.length - 1) lastLineIsBroken = true
+        } else currentLine = line[0]
+      }
+      currentLine = currentLine.trim()
+    })
+
+    concatedLines.push(currentLine)
+
+    headerElement.innerHTML = ''
+    concatedLines = concatedLines
+      .filter(line => line)
+      .flat()
+      .forEach((line, i, lines) => {
+        const span = document.createElement('span')
+        if (isSingleWord) span.classList.add('pp-subpage-section-title-single-word')
+        const innerSpans = line.split(' ').map((word, ii, words) => {
+          const innerSpan = document.createElement('span')
+          innerSpan.textContent = word
+          if (ii === words.length - 1  && i === lines.length - 1 && lastLineIsBroken)
+            innerSpan.classList.add('pp-subpage-section-title-broken-line')
+          return innerSpan
+        })
+        span.replaceChildren(...innerSpans)
+        headerElement.appendChild(span)
+      })
+    }
+    document.addEventListener('DOMContentLoaded', flowTitle)
+    window.addEventListener('resize', flowTitle)
+  })()
+
+</script>
+
+
+<h2 class="pp-subpage-section-title" id="{{ id }}">{{ title }}</h2>

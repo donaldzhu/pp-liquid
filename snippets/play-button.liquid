@@ -1,0 +1,32 @@
+
+{%  liquid
+  assign idSuffix = "now" | date: "%N"
+  assign id = "PP-Play-Button-" | append: idSuffix
+%}
+
+<svg id="{{ id }}" width="125" height="125" viewBox="0 0 125 125" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="62.5" cy="62.5" r="62.5"/>
+<path d="M107.616 62.0864L39.321 101.516L39.321 22.6565L107.616 62.0864Z"/>
+</svg>
+<script>
+ document.addEventListener('DOMContentLoaded', () => {
+
+    const playButton = document.getElementById('{{ id }}');
+    const video = playButton.parentElement.querySelector('video');
+    video.addEventListener('play', e => {
+      video.controls = 'controls';
+      playButton.style.opacity = '0';
+      playButton.style.pointerEvents = 'none';
+    })
+
+    video.addEventListener('pause', e => {
+      video.controls = '';
+      playButton.style.opacity = '1';
+      playButton.style.pointerEvents = 'auto';
+    })
+
+    video.addEventListener('click', () => video.play());
+
+    playButton.addEventListener('click', () => video.play());
+ })
+</script>

@@ -1,10 +1,13 @@
 {{ 'pp-hero.css' | asset_url | stylesheet_tag }}
 
+{% assign metaobj = shop.metaobjects['app--6007307--sanity-documents-home'].values %}
+
 <div class="pp-hero color-landing">
   <div class="pp-hero-inner">
-    <h3>{{ section.settings.hero_statement }}</h3>
+    {% for o in metaobj %}
+      <h3>{{ o.introduction }}</h3>
+    {% endfor %}
     {{ 'pp-emblem.svg' | inline_asset_content }}
-
   </div>
 </div>
 
@@ -15,18 +18,6 @@
     "class": "section",
     "disabled_on": {
       "groups": ["header", "footer"]
-    },
-    "settings": [
-      {
-        "type": "text",
-        "id": "hero_statement",
-        "label": "Hero Statement"
-      }
-    ],
-    "presets": [
-      {
-        "name": "pp-hero"
-      }
-    ]
+    }
   }
 {% endschema %}

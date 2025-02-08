@@ -1,0 +1,33 @@
+{
+  "image": {
+    "preview": {
+      "width": 2160,
+      "height": 1500,
+      "url": "https://cdn.shopify.com/s/files/1/0646/8671/9049/files/Issues-Issue-One-Header.png?v=1738527593"
+    },
+    "filename": "Issues-Issue-One-Header.png",
+    "id": "gid://shopify/MediaImage/26838962110537",
+    "url": "https://cdn.shopify.com/s/files/1/0646/8671/9049/files/Issues-Issue-One-Header.png?v=1738527593",
+    "meta": {
+      "fileSize": 6806983,
+      "alt": "",
+      "width": 2160,
+      "height": 1500
+    },
+    "type": "image",
+    "_type": "shopify.asset"
+  },
+  "caption": "When organic matter decomposes, it enters a state of both giving and receiving. Decaying trees become home to networks of insects and fungi, animal remains provide nutrients for scavengers and bacteria, an orange sitting idle in a bowl becomes a playground for mold spores.\n\nDeath comes with remediation. Endings give way to new beginnings. In this limbo, there is a fleeting feeling, a truth just beyond our grasp. A cultural patina exists to navigate this transition, questioning the space between living and nonliving, the suspension between old and new.\n\nWe find ourselves obsessed with negotiating this ‘in-between’: how we face the gradual loss of traditions, how we choose to preserve + remediate, and what we draw from the past in building our future.",
+  "tintImage": false,
+  "includeProduct": true,
+  "productReference": {
+    "_ref": "shopifyProduct-7395502719049",
+    "_type": "reference"
+  },
+  "date": "15.08.2024",
+  "slug": {
+    "_type": "slug",
+    "current": "1737829613901"
+  },
+  "_type": "subpageSectionHeader"
+}

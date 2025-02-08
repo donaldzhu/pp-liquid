@@ -1,0 +1,11 @@
+@use './scss/layout' as *;
+@use './scss/typography' as *;
+
+.pp-image-grid {
+  @include main-container;
+  display: grid;
+  grid-template-columns: repeat(var(--desktop-columns), 1fr);
+  gap: 4.8rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}

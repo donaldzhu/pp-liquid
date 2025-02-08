@@ -20,6 +20,7 @@
 
 button.pp-button {
   color: rgb(var(--color-foreground));
+  text-transform: uppercase;
 }
 button.pp-button, button.pp-button-active {
   display: flex;
@@ -59,10 +60,26 @@ button.pp-button-active, button.pp-button:hover {
   color: rgb(var(--color-background));
   transition: all 0.15s ease-in-out;
 }
+button.pp-button[disabled=true] {
+  opacity: 0.5;
+  pointer-events: none;
+}
 
 h2,
 p {
   font-family: var(--pp-font-body-family);
   font-size: var(--pp-font-body-size);
   line-height: 1.12;
+}
+
+img.drop-shadow {
+  filter: drop-shadow(1px 1px 15px rgba(0, 0, 0, 0.25));
+}
+
+:root {
+  --pp-rounded-corners: 20px;
+}
+
+img.rounded {
+  border-radius: var(--pp-rounded-corners);
 }

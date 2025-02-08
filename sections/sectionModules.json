@@ -1,0 +1,260 @@
+[
+  {
+    "_key": "ca714d6bfc1b",
+    "_type": "fullWidthVideo",
+    "video": {
+      "_type": "shopify.asset",
+      "filename": "5dd65a7dfd6b4a3f91e11b1243f21e36.mp4",
+      "id": "gid://shopify/Video/26840988024905",
+      "meta": {
+        "alt": "",
+        "duration": 2700,
+        "fileSize": 5447647,
+        "height": 1080,
+        "width": 1920
+      },
+      "preview": {
+        "height": 1080,
+        "url": "https://cdn.shopify.com/s/files/1/0646/8671/9049/files/preview_images/5dd65a7dfd6b4a3f91e11b1243f21e36.thumbnail.0000000000.jpg?v=1738548533",
+        "width": 1920
+      },
+      "type": "video",
+      "url": "https://cdn.shopify.com/videos/c/o/v/5dd65a7dfd6b4a3f91e11b1243f21e36.mp4"
+    }
+  },
+  {
+    "_key": "cb51c145fadd",
+    "_type": "splitLayoutContainer",
+    "layout": {
+      "_type": "splitLayout",
+      "leftSide": {
+        "_type": "splitLayoutPlane",
+        "contentType": "inset",
+        "insetContents": [
+          {
+            "_key": "e3685f22aef1",
+            "_type": "insetImage",
+            "caption": "Lorem ipsum, Shaheer Zazai",
+            "image": {
+              "_type": "shopify.asset",
+              "filename": "Events-Launch-Events-1.png",
+              "id": "gid://shopify/MediaImage/26840983732297",
+              "meta": {
+                "alt": "",
+                "fileSize": 1291435,
+                "height": 910,
+                "width": 1326
+              },
+              "preview": {
+                "height": 910,
+                "url": "https://cdn.shopify.com/s/files/1/0646/8671/9049/files/Events-Launch-Events-1.png?v=1738548170",
+                "width": 1326
+              },
+              "type": "image",
+              "url": "https://cdn.shopify.com/s/files/1/0646/8671/9049/files/Events-Launch-Events-1.png?v=1738548170"
+            },
+            "insetSize": "Full Width"
+          },
+          {
+            "_key": "03af2a48cd28",
+            "_type": "insetImage",
+            "caption": "Lorem ipsum, Shaheer Zazai",
+            "image": {
+              "_type": "shopify.asset",
+              "filename": "Events-Launch-Events-2.png",
+              "id": "gid://shopify/MediaImage/26840983568457",
+              "meta": {
+                "alt": "",
+                "fileSize": 763467,
+                "height": 662,
+                "width": 978
+              },
+              "preview": {
+                "height": 662,
+                "url": "https://cdn.shopify.com/s/files/1/0646/8671/9049/files/Events-Launch-Events-2.png?v=1738548169",
+                "width": 978
+              },
+              "type": "image",
+              "url": "https://cdn.shopify.com/s/files/1/0646/8671/9049/files/Events-Launch-Events-2.png?v=1738548169"
+            },
+            "insetSize": "Large"
+          }
+        ],
+        "verticalAlignment": "justified"
+      },
+      "rightSide": {
+        "_type": "splitLayoutPlane",
+        "caption": "Lorem ipsum, Shaheer Zazai",
+        "contentType": "fullSizeImage",
+        "image": {
+          "_type": "shopify.asset",
+          "filename": "Events-Launch-Events-3.png",
+          "id": "gid://shopify/MediaImage/26840983896137",
+          "meta": {
+            "alt": "",
+            "fileSize": 3469127,
+            "height": 1920,
+            "width": 1276
+          },
+          "preview": {
+            "height": 1920,
+            "url": "https://cdn.shopify.com/s/files/1/0646/8671/9049/files/Events-Launch-Events-3.png?v=1738548172",
+            "width": 1276
+          },
+          "type": "image",
+          "url": "https://cdn.shopify.com/s/files/1/0646/8671/9049/files/Events-Launch-Events-3.png?v=1738548172"
+        },
+        "verticalAlignment": "center"
+      }
+    }
+  },
+  {
+    "_key": "9f300e53e2de2aea123b409935f6e85d",
+    "_type": "fullWidthVideo",
+    "video": {
+      "_type": "shopify.asset",
+      "filename": "5dd65a7dfd6b4a3f91e11b1243f21e36.mp4",
+      "id": "gid://shopify/Video/26840988024905",
+      "meta": {
+        "alt": "",
+        "duration": 2700,
+        "fileSize": 5447647,
+        "height": 1080,
+        "width": 1920
+      },
+      "preview": {
+        "height": 1080,
+        "url": "https://cdn.shopify.com/s/files/1/0646/8671/9049/files/preview_images/5dd65a7dfd6b4a3f91e11b1243f21e36.thumbnail.0000000000.jpg?v=1738548533",
+        "width": 1920
+      },
+      "type": "video",
+      "url": "https://cdn.shopify.com/videos/c/o/v/5dd65a7dfd6b4a3f91e11b1243f21e36.mp4"
+    }
+  },
+  {
+    "_key": "f676aef0495f",
+    "_type": "imageGrid",
+    "conformHeight": true,
+    "desktopColumnCount": 2,
+    "hideOnMobile": false,
+    "images": [
+      {
+        "_key": "c6781d40ef40",
+        "_type": "sectionImage",
+        "caption": "Lorem ipsum, Shaheer Zazai",
+        "hideOnMobile": false,
+        "image": {
+          "_type": "shopify.asset",
+          "filename": "Events-Launch-Events-4.png",
+          "id": "gid://shopify/MediaImage/26840983601225",
+          "meta": {
+            "alt": "",
+            "fileSize": 1257852,
+            "height": 908,
+            "width": 1324
+          },
+          "preview": {
+            "height": 908,
+            "url": "https://cdn.shopify.com/s/files/1/0646/8671/9049/files/Events-Launch-Events-4.png?v=1738548170",
+            "width": 1324
+          },
+          "type": "image",
+          "url": "https://cdn.shopify.com/s/files/1/0646/8671/9049/files/Events-Launch-Events-4.png?v=1738548170"
+        }
+      },
+      {
+        "_key": "8dc2b7fa246d",
+        "_type": "sectionImage",
+        "caption": "Lorem ipsum, Shaheer Zazai",
+        "hideOnMobile": false,
+        "image": {
+          "_type": "shopify.asset",
+          "filename": "Events-Launch-Events-5.png",
+          "id": "gid://shopify/MediaImage/26840983666761",
+          "meta": {
+            "alt": "",
+            "fileSize": 1363646,
+            "height": 908,
+            "width": 1282
+          },
+          "preview": {
+            "height": 908,
+            "url": "https://cdn.shopify.com/s/files/1/0646/8671/9049/files/Events-Launch-Events-5.png?v=1738548170",
+            "width": 1282
+          },
+          "type": "image",
+          "url": "https://cdn.shopify.com/s/files/1/0646/8671/9049/files/Events-Launch-Events-5.png?v=1738548170"
+        }
+      }
+    ],
+    "mobileColumnCount": 1,
+    "roundedCorners": true
+  },
+  {
+    "_key": "04e1dcfa7bd9",
+    "_type": "splitLayoutContainer",
+    "layout": {
+      "_type": "splitLayout",
+      "leftSide": {
+        "_type": "splitLayoutPlane",
+        "caption": "Lorem ipsum, Shaheer Zazai",
+        "contentType": "fullSizeImage",
+        "image": {
+          "_type": "shopify.asset",
+          "filename": "Events-Launch-Events-6.png",
+          "id": "gid://shopify/MediaImage/26840983863369",
+          "meta": {
+            "alt": "",
+            "fileSize": 1986789,
+            "height": 1912,
+            "width": 1400
+          },
+          "preview": {
+            "height": 1912,
+            "url": "https://cdn.shopify.com/s/files/1/0646/8671/9049/files/Events-Launch-Events-6.png?v=1738548171",
+            "width": 1400
+          },
+          "type": "image",
+          "url": "https://cdn.shopify.com/s/files/1/0646/8671/9049/files/Events-Launch-Events-6.png?v=1738548171"
+        },
+        "verticalAlignment": "center"
+      },
+      "rightSide": {
+        "_type": "splitLayoutPlane",
+        "contentType": "inset",
+        "insetContents": [
+          {
+            "_key": "dc9ffdaa4af3",
+            "_type": "excerpt",
+            "excerpt": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.\n\nEaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. "
+          },
+          {
+            "_key": "5cba156d7461",
+            "_type": "insetImage",
+            "caption": "Lorem ipsum, Shaheer Zazai",
+            "image": {
+              "_type": "shopify.asset",
+              "filename": "Events-Launch-Events-7.png",
+              "id": "gid://shopify/MediaImage/26840983633993",
+              "meta": {
+                "alt": "",
+                "fileSize": 1233453,
+                "height": 1114,
+                "width": 744
+              },
+              "preview": {
+                "height": 1114,
+                "url": "https://cdn.shopify.com/s/files/1/0646/8671/9049/files/Events-Launch-Events-7.png?v=1738548170",
+                "width": 744
+              },
+              "type": "image",
+              "url": "https://cdn.shopify.com/s/files/1/0646/8671/9049/files/Events-Launch-Events-7.png?v=1738548170"
+            },
+            "insetSize": "Medium"
+          }
+        ],
+        "verticalAlignment": "flushed-bottom"
+      }
+    }
+  }
+]

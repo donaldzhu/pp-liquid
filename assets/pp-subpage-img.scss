@@ -1,0 +1,25 @@
+@use './scss/typography' as *;
+@use './scss/layout' as *;
+
+p.pp-subpage-img-caption {
+  @include pp-caption-type;
+  margin: 2rem 0;
+}
+
+h2.pp-subpage-section-title {
+  width: $main-container-width;
+  opacity: 0;
+
+  >span {
+    @include flex(space-between);
+    width: $main-container-width;
+
+    &.pp-subpage-section-title-single-word {
+      justify-content: center;
+    }
+
+    >.pp-subpage-section-title-broken-line {
+      margin-left: auto;
+    }
+  }
+}

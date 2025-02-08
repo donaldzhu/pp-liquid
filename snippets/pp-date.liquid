@@ -1,7 +1,15 @@
 {% liquid
-  assign date_components = date | split: '.'
+assign date_components = date | split: '-'
+assign start_date_components = date_components[0] | split: '.'
+assign end_date_components = date_components[1] | split: '.'
 %}
 
-{% for date_component in date_components %}
+{% for date_component in start_date_components %}
   <span>{{ date_component }}{% if forloop.last == false %}.{% endif %}</span>
 {% endfor %}
+{% if end_date_components != blank %}
+  <span>-</span>
+  {% for date_component in end_date_components %}
+    <span>{{ date_component }}{% if forloop.last == false %}.{% endif %}</span>
+  {% endfor %}
+{% endif %}

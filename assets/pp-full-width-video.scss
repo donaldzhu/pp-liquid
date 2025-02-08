@@ -1,0 +1,40 @@
+@use './scss/typography' as *;
+@use './scss/layout' as *;
+
+.pp-full-width-video {
+  position: relative;
+  display: flex;
+  cursor: pointer;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+
+  img,
+  video {
+    width: $main-container-width;
+    margin: 0 $x-padding;
+
+    border-radius: var(--pp-rounded-corners);
+  }
+
+  svg {
+    @include flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 125px;
+    height: 125px;
+    border-radius: 100%;
+    z-index: 9;
+
+    circle {
+      fill: rgba(var(--color-background));
+    }
+
+    path {
+      fill: rgba(var(--color-foreground));
+    }
+
+    transition: opacity 0.1s ease-in-out;
+  }
+}

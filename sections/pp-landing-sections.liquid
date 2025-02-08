@@ -7,18 +7,12 @@
 <div class="pp-landing-sections">
   {% for o in metaobj -%}
     {% for s in o.modules.value -%}
-      {% comment %} <div class="pp-landing-section">
-        <h2>{{ s.title }}</h2>
-        <p>{{ s.text }}</p>
-      </div> {% endcomment %}
       {% if s._type == 'landingSection' %}
         <div class="pp-landing-section">
           {% render 'pp-landing-section', sectionData: s %}
         </div>
       {% elsif s._type == 'pullQuote' %}
-        {% comment %} <div class="pp-pull-quote">
-          {% render 'pp-pull-quote', sectionData: s %}
-        </div> {% endcomment %}
+        {% render 'pp-pull-quote', sectionData: s %}
       {% endif %}
     {%- endfor -%}
   {%- endfor -%}

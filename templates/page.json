@@ -1,14 +1,10 @@
 {
   "sections": {
-    "main": {
-      "type": "main-page",
-      "settings": {
-        "padding_top": 28,
-        "padding_bottom": 28
-      }
+    "pp-subpage-sections": {
+      "type": "pp-subpage-sections"
     }
   },
   "order": [
-    "main"
+    "pp-subpage-sections"
   ]
 }

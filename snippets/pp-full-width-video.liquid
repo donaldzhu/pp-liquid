@@ -1,0 +1,15 @@
+{{ 'pp-full-width-video.css' | asset_url | stylesheet_tag }}
+
+{% assign video = sectionData.video %}
+<div class="pp-full-width-video">
+  {% render 'play-button' %}
+  <video
+    playsinline="playsinline"
+    preload="metadata"
+    poster="{{ video.preview.url }}"
+    loop>
+    <source src="{{ video.url }}" type="video/mp4"><img src="{{ video.preview.url | file_img_url }}" loading="lazy">
+  </video>
+</div>
+
+

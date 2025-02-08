@@ -1,0 +1,24 @@
+p.pp-subpage-img-caption {
+  font-size: 1.6rem;
+  line-height: 1.2;
+  font-family: var(--pp-font-heading-family);
+  letter-spacing: 0.01em;
+  margin: 2rem 0;
+}
+
+h2.pp-subpage-section-title {
+  width: calc(100vw - 6.4rem);
+  opacity: 0;
+}
+h2.pp-subpage-section-title > span {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100vw - 6.4rem);
+}
+h2.pp-subpage-section-title > span.pp-subpage-section-title-single-word {
+  justify-content: center;
+}
+h2.pp-subpage-section-title > span > .pp-subpage-section-title-broken-line {
+  margin-left: auto;
+}

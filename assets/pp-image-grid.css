@@ -1,0 +1,9 @@
+.pp-image-grid {
+  padding: 0 3.2rem 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(var(--desktop-columns), 1fr);
+  gap: 4.8rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}

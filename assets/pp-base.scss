@@ -30,7 +30,7 @@
 
 button.pp-button {
   color: rgb(var(--color-foreground));
-
+  text-transform: uppercase;
 
   &,
   &-active {
@@ -77,9 +77,26 @@ button.pp-button {
     color: rgb(var(--color-background));
     transition: all $button-transition;
   }
+
+  &[disabled='true'] {
+    opacity: 0.5;
+    pointer-events: none;
+  }
 }
 
 h2,
 p {
   @include pp-body-type;
+}
+
+img.drop-shadow {
+  filter: drop-shadow(1px 1px 15px rgba(0, 0, 0, 0.25));
+}
+
+:root {
+  --pp-rounded-corners: 20px;
+}
+
+img.rounded {
+  border-radius: var(--pp-rounded-corners);
 }

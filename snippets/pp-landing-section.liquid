@@ -1,23 +1,21 @@
 {{ 'pp-landing-section.css' | asset_url | stylesheet_tag }}
 
-{% assign title_array = sectionData.title | split: " " %}
+{%  liquid
+  assign title_array = sectionData.title | split: " "
+  assign idSuffix = "now" | date: "%N"
+  assign id = "PP-Landing-Section-" | append: idSuffix
+ %}
 
 {% style %}
   {% if title_array.size == 3 %}
-    .pp-landing-section h2 > span:nth-child(2) {
+    #{{ id }} h2 > span:nth-child(2) {
       position: absolute;
       left: 50vw;
     }
   {% endif %}
 {% endstyle %}
 
-<script>
-  (() => {
-
-  })();
-</script>
-
-<div class="pp-landing-section">
+<div class="pp-landing-section" id="{{ id }}">
   <h2>
     {% for item in title_array %}
       <span>{{ item }}</span>

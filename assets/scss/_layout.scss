@@ -1,4 +1,6 @@
 $x-padding: 3.2rem;
+$main-container-width: calc(100vw - $x-padding * 2);
+$half-container-width: calc(50vw - 3rem - $x-padding);
 $y-padding: 4.5rem;
 $button-transition: 0.15s ease-in-out;
 

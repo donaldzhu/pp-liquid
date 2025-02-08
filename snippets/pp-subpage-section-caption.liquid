@@ -1,0 +1,105 @@
+{% liquid
+  assign idSuffix = "now" | date: "%N"
+  assign id = "pp-subpage-section-caption-" | append: idSuffix
+%}
+
+
+<script>
+  (() => {
+    const flowCaption = () => {
+      const captionElement = document.getElementById('{{ id }}')
+      const tempColumn = captionElement.querySelector('.pp-subpage-section-caption-temp')
+      const leftColumn = captionElement.querySelector('.pp-subpage-section-caption-left-column')
+      const rightColumn = captionElement.querySelector('.pp-subpage-section-caption-right-column')
+      const productDetails = captionElement.querySelector('.pp-subpage-section-product-details')
+      const equalColumns = captionElement.querySelector('.pp-subpage-section-caption-equal-columns')
+      tempColumn.style.visibility = 'visible'
+      leftColumn.style.display = 'none'
+      rightColumn.style.display = 'none'
+      equalColumns.style.display = 'none'
+      equalColumns.style.opacity = 0
+
+      const tempContainers = Array.from(captionElement.querySelector('.pp-subpage-section-caption-temp').children)
+      const containerHeights = tempContainers.map(container => container.getBoundingClientRect().height)
+      const halfHeight = containerHeights.reduce((acc, curr) => acc + curr, 0) / 2
+
+      const leftColumnElements = []
+      const rightColumnElements = []
+      let columnHeight = 0
+      let distributeEqually = false
+      for (let i = 0; i < containerHeights.length; i++) {
+        const height = containerHeights[i];
+        const exceededPercentage = (columnHeight + height - halfHeight) / halfHeight
+        if (exceededPercentage > 0) {
+          if (exceededPercentage >= 1) {
+            distributeEqually = true
+            break
+          }
+          leftColumnElements.push(tempContainers[i].cloneNode(true))
+          rightColumnElements.push(...tempContainers.slice(i + 1).map(p => p.cloneNode(true)))
+          break
+        }
+        columnHeight += height
+        leftColumnElements.push(tempContainers[i].cloneNode(true))
+      }
+
+      if (distributeEqually) {
+        equalColumns.style.display = 'block'
+        equalColumns.style.opacity = 1
+      } else {
+        leftColumn.style.display = 'block'
+        rightColumn.style.display = 'block'
+        leftColumn.replaceChildren(...leftColumnElements)
+        rightColumn.replaceChildren(...[rightColumnElements, productDetails].filter(e => e).flat())
+      }
+
+      tempColumn.style.visibility = 'hidden'
+    }
+    document.addEventListener('DOMContentLoaded', flowCaption)
+    window.addEventListener('resize', flowCaption)
+  })()
+</script>
+
+<div class="pp-subpage-section-caption" id="{{ id }}">
+  {% assign classNames = 'pp-subpage-section-caption-temp_pp-subpage-section-caption-equal-columns' |  split: '_' %}
+  {% for className in classNames %}
+    <div class="{{ className }}" >
+      {% assign lines = caption | newline_to_br | split: '<br />' %}
+      {% for line in lines %}
+        {% if line != blank %}
+          <p>{{ line }}</p>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% endfor %}
+  {% if includeProduct %}
+    <div class="pp-subpage-section-product-details" >
+    {% for p in collections.all.products %}
+      {% assign productId = p.id | prepend: 'shopifyProduct-' %}
+      {% if productId == product._ref %}
+        <p>
+          {{ p.metafields.custom.dimension }}, {{ p.metafields.custom.page_count }} pgs
+        </p>
+        <p>
+          {{ p.metafields.custom.binding_and_finish }}
+        </p>
+        <p>
+          printed by {{ p.metafields.custom.printer }}
+        </p>
+        {% if p.variant-inventory_quantity.inventory_quantity > 0 %}
+        <button class="pp-button">
+          Add to Cart
+        </button>
+        {% else %}
+        <button class="pp-button" disabled="true">
+          Sold Out
+        </button>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+    </div>
+  {% endif %}
+  <div class="pp-subpage-section-caption-left-column" ></div>
+  <div class="pp-subpage-section-caption-right-column" ></div>
+
+</div>

@@ -1,0 +1,83 @@
+{{ 'pp-subpage-section.css' | asset_url | stylesheet_tag }}
+
+
+{% liquid
+  assign section_id = 'PP-Subpage-Section-' | append: section.id
+  assign section_title_className = 'pp-subpage-section-title'
+  assign metaobj = shop.metaobjects['app--6007307--sanity-documents-page'].values
+  assign subpath = request.path | remove_first: '/pages/'
+%}
+
+
+{% for o in metaobj %}
+  {% if o.slug == subpath %}
+    {% style %}
+      :root {
+        --pp-dot-color: {{ o.dotColor.value.rgb.r }},
+        {{ o.dotColor.value.rgb.g }},
+        {{ o.dotColor.value.rgb.b }};
+
+      }
+
+      :root,
+      .color-{{ o.slug }} {
+        --color-background: {{ o.backgroundColor.value.rgb.r }},
+        {{ o.backgroundColor.value.rgb.g }},
+        {{ o.backgroundColor.value.rgb.b }};
+        --color-foreground: {{ o.textColor.value.rgb.r }},
+        {{ o.textColor.value.rgb.g }},
+        {{ o.textColor.value.rgb.b }};
+      }
+    {% endstyle %}
+    {% for i in o.pageSections.value %}
+      {% render 'pp-subpage-section', pageData: o, sectionData: i %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+
+
+{% schema %}
+  {
+    "name": "Subpage Sections",
+    "tag": "section",
+    "class": "section",
+    "disabled_on": {
+      "groups": ["header", "footer"]
+    },
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_title",
+        "label": "Section Title",
+        "default": "TEST"
+      },
+      {
+        "type": "image_picker",
+        "id": "primary_image",
+        "label": "Primary Image"
+      },
+      {
+        "type": "text",
+        "id": "start_date",
+        "label": "Start Date",
+        "info": "Date format: DD.MM.YYYY"
+      },
+      {
+        "type": "text",
+        "id": "end_date",
+        "label": "End Date",
+        "info": "Date format: DD.MM.YYYY"
+      },
+      {
+        "type": "textarea",
+        "id": "description",
+        "label": "Description"
+      }
+    ],
+    "presets": [
+      {
+        "name": "pp-subpage-sections"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,36 @@
+{{ 'pp-split-layout.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+
+{%- endstyle -%}
+
+
+<div class="pp-split-layout">
+  {% assign planes = 'leftSide_rightSide' | split: '_' %}
+  {% for plane in planes %}
+    {% assign content = sectionData.layout[plane] %}
+    <div class="pp-split-layout-plane pp-split-layout-plane-{{ content.verticalAlignment }} pp-split-layout-plane-{% if content.contentType == 'fullSizeImage' %}full-size{% elsif content.contentType == 'inset' %}inset{% endif %}">
+      {% if content.contentType == 'fullSizeImage' %}
+        {% render 'pp-subpage-img', content: content %}
+      {% else %}
+        {% for insetContent in content.insetContents %}
+          {% if insetContent._type == 'insetImage' %}
+            <div>
+              {% render 'pp-subpage-img', content: insetContent %}
+            </div>
+          {% else %}
+            <div>
+              {% assign lines = insetContent.excerpt | newline_to_br | split: '<br />' %}
+              {% for line in lines %}
+                {% if line != blank %}
+                  <p class="pp-split-layout-plane-excerpt">{{ line }}</p>
+                {% endif %}
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>
+

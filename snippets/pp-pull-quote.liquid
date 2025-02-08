@@ -1,0 +1,23 @@
+{{ 'pp-pull-quote.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  {% if sectionColor %}
+    .pp-pull-quote {
+      background-color: {{ sectionColor.background }};
+    }
+    .pp-pull-quote h4,
+    .pp-pull-quote p {
+      color: {{ sectionColor.text }};
+    }
+  {% endif %}
+{%- endstyle -%}
+
+
+<div class="pp-pull-quote">
+  <div class="pp-pull-quote-inner">
+    {% render 'pp-logo', color: sectionColor.text %}
+    <h4>{{ sectionData.pullQuote }}</h4>
+    <p>{{ sectionData.pullQuoteAttribution }}</p>
+  </div>
+</div>
+

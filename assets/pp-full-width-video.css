@@ -1,0 +1,33 @@
+.pp-full-width-video {
+  position: relative;
+  display: flex;
+  cursor: pointer;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+.pp-full-width-video img,
+.pp-full-width-video video {
+  width: calc(100vw - 6.4rem);
+  margin: 0 3.2rem;
+  border-radius: var(--pp-rounded-corners);
+}
+.pp-full-width-video svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 125px;
+  height: 125px;
+  border-radius: 100%;
+  z-index: 9;
+  transition: opacity 0.1s ease-in-out;
+}
+.pp-full-width-video svg circle {
+  fill: rgba(var(--color-background));
+}
+.pp-full-width-video svg path {
+  fill: rgba(var(--color-foreground));
+}

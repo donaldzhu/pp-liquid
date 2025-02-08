@@ -1,0 +1,38 @@
+{{ 'pp-subpage-section.css' | asset_url | stylesheet_tag }}
+
+
+{% liquid
+  assign sectionHeader = sectionData.sectionHeader.value
+%}
+
+<div class="pp-subpage-section">
+  <div class="pp-subpage-section-header-container">
+    <div class="pp-subpage-section-dot"></div>
+    <h1>{{ pageData.header }}</h1>
+    {% render 'pp-subpage-section-title', title: sectionData.header %}
+  </div>
+  <div class="pp-subpage-section-image-container{% if sectionHeader.tintImage %} pp-subpage-section-tinted-header{% endif %}">
+    {% if sectionHeader.tintImage %}
+      <div></div>
+      <div></div>
+    {% endif %}
+    <img src="{{ sectionHeader.image.filename | file_url }}">
+  </div>
+  <p class="pp-subpage-section-date">
+    {% render 'pp-date', date: sectionHeader.date %}
+  </p>
+  {% render 'pp-subpage-section-caption', caption: sectionHeader.caption, includeProduct: sectionHeader.includeProduct, product: sectionHeader.product %}
+  {% for modules in sectionData.sectionModules.value %}
+    {% case modules._type %}
+      {% when 'pullQuote' %}
+        {% render 'pp-pull-quote', sectionData: modules %}
+      {% when 'imageGrid' %}
+        {% render 'pp-image-grid', sectionData: modules %}
+      {% when 'splitLayoutContainer' %}
+        {% render 'pp-split-layout', sectionData: modules %}
+      {% when 'fullWidthVideo' %}
+        {% render 'pp-full-width-video' sectionData: modules %}
+    {% endcase %}
+  {% endfor %}
+</div>
+

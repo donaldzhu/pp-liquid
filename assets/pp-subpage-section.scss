@@ -6,11 +6,22 @@ section:not(:first-child) h1 {
 }
 
 .pp-subpage-section {
+  &:first-of-type {
+    .pp-subpage-section-dot {
+      margin-top: 20rem;
+    }
+  }
+
+  &:not(:first-of-type) {
+    .pp-subpage-section-dot {
+      margin-top: 40rem;
+    }
+  }
+
   .pp-subpage-section-header-container {
     @include main-container;
     @include flex;
     flex-direction: column;
-
 
     .pp-subpage-section-dot {
       display: block;
@@ -18,7 +29,7 @@ section:not(:first-child) h1 {
       height: 4.3rem;
       background-color: rgb(var(--pp-dot-color));
       border-radius: 100%;
-      margin: 20rem 0 1.5rem;
+      margin-bottom: 1.5rem;
     }
 
 
@@ -40,14 +51,99 @@ section:not(:first-child) h1 {
     }
   }
 
+  .pp-subpage-section-image-container {
+    position: relative;
+  }
+
   img {
     width: 100%;
+    display: flex;
+  }
+
+  .pp-subpage-section-tinted-header {
+    div {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 9;
+      display: block;
+
+      &:first-child {
+        background-color: rgba(var(--color-background));
+        mix-blend-mode: multiply;
+      }
+
+      &:nth-child(2) {
+        background-color: rgba(var(--color-foreground));
+        mix-blend-mode: screen;
+      }
+    }
+
+    img {
+      filter: grayscale(100%);
+    }
   }
 
   .pp-subpage-section-date {
     @include main-container;
     @include flex(space-between);
     margin-top: 3.75rem;
+    margin-bottom: 5.25rem;
     line-height: 1.2;
+  }
+
+  .pp-subpage-section-caption {
+    @include pp-body-type;
+    padding-bottom: 6rem; // TODO
+    position: relative;
+
+    .pp-subpage-section-caption-temp {
+      padding-left: $x-padding;
+      width: $half-container-width;
+      opacity: 0;
+      position: fixed;
+    }
+
+    .pp-subpage-section-caption-equal-columns {
+      @include main-container;
+      column-count: 2;
+      column-gap: 6rem;
+      display: block;
+      opacity: 0;
+    }
+
+    $left: calc(50vw - $x-padding);
+
+    .pp-subpage-section-caption-left-column {
+      width: 50vw;
+      padding: 0 $x-padding 0 3rem;
+    }
+
+    .pp-subpage-section-caption-right-column {
+      position: absolute;
+      top: 0;
+      left: 50vw;
+      padding: 0 3rem 0 $x-padding;
+      width: 50vw;
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 1.12em;
+    }
+
+    .pp-subpage-section-product-details {
+      margin-top: 10rem;
+
+      p {
+        margin: 0;
+      }
+
+      p:last-of-type {
+        margin-bottom: 2rem;
+      }
+    }
   }
 }
