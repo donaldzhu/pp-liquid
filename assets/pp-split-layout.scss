@@ -1,36 +1,67 @@
 @use './scss/layout' as *;
 @use './scss/typography' as *;
 
+@mixin split-layout-plane ($gap) {
+  gap: $gap;
+  $width: calc(50vw - $gap / 2 - $x-padding);
+
+  .pp-split-layout-plane {
+    width: $width;
+
+    &.pp-split-layout-plane-full-size {
+      width: calc($width * 1.2);
+    }
+
+    &.pp-split-layout-plane-inset {
+      width: calc($width * 0.8);
+    }
+  }
+}
+
 .pp-split-layout {
   @include main-container;
   @include flex(space-between);
   align-items: stretch;
-  gap: 6rem;
   padding-top: 3rem;
   padding-bottom: 3rem;
+
+  @include split-layout-plane($gap);
+
+  @media (min-width: 1440px) {
+    @include split-layout-plane($gap-max);
+  }
+
+  @media (max-width: 1024px) {
+    @include split-layout-plane($gap-min);
+  }
 
   .pp-split-layout-plane {
     @include flex;
     flex-direction: column;
-
-    width: $half-container-width;
     flex: none;
 
-
-    &.pp-split-layout-plane-full-size {
-      width: calc($half-container-width * 1.2);
-    }
-
-    &.pp-split-layout-plane-inset {
-      width: calc($half-container-width * 0.8);
+    >* {
+      width: 100%;
     }
 
     >div:nth-of-type(2) {
-      margin-top: 15rem;
+      margin-top: 20rem;
     }
 
     &-justified {
       justify-content: space-between;
+
+
+      .pp-split-layout-plane-excerpt-container {
+        &:first-child {
+          margin-top: 30rem;
+        }
+
+        &:last-child {
+          margin-bottom: 30rem;
+        }
+      }
+
     }
 
     &-center {
@@ -61,12 +92,10 @@
 
   .pp-split-layout-plane-excerpt {
     @include pp-caption-type;
-  }
-
-  .pp-split-layout-plane-excerpt {
-    width: 40rem;
+    max-width: 40rem;
     text-align: center;
     margin: 0;
+    justify-self: center;
 
     &:not(:last-child) {
       margin-bottom: 1.2em;

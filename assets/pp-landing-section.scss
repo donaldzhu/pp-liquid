@@ -3,10 +3,12 @@
 
 .pp-landing-section {
   .pp-landing-section-image-container {
-    @include flex;
+    display: flex;
+    width: 100vw;
+    overflow: hidden;
 
     img {
-      flex-grow: 1;
+      height: auto;
     }
   }
 
@@ -18,17 +20,25 @@
     text-transform: uppercase;
   }
 
-  p {
-    $left: calc(50vw - $x-padding);
-    width: calc(50vw + $x-padding);
-    margin: 0;
-    padding: $y-padding $x-padding 5.6rem;
-    text-indent: calc(-1 * $left);
-    position: relative;
-    left: $left;
-  }
+  $left: calc(50vw - $x-padding);
 
-  button {
-    margin-top: 3.2rem;
+  .pp-landing-section-text-container {
+
+    p,
+    >div {
+      position: relative;
+      left: $left;
+    }
+
+    p {
+      width: calc(50vw + $x-padding);
+      margin: 0;
+      padding: $y-padding $x-padding 0;
+      text-indent: calc(-1 * $left);
+    }
+
+    >div {
+      padding: 3.2rem $x-padding 5.6rem;
+    }
   }
 }

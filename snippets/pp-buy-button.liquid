@@ -1,0 +1,23 @@
+{%- form 'product',
+  product,
+  id: 'product-form',
+  class: 'product-form',
+  novalidate: 'novalidate',
+  data-type: 'add-to-cart-form'
+-%}
+  <input
+    type="hidden"
+    name="id"
+    value="{{ product.selected_or_first_available_variant.id }}"
+    {% if product.selected_or_first_available_variant.available == false%}disabled{% endif %}
+    class="product-variant-id">
+  <div class="product-form__buttons">
+    <button
+      type="submit"
+      name="add"
+      class="pp-button"
+      {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}>
+        <span>{%- if product.selected_or_first_available_variant.available -%}{{ buttonText | default: 'BUY NOW' }}{%- else -%}SOLD OUT{%- endif -%}</span>
+    </button>
+  </div>
+{%- endform -%}

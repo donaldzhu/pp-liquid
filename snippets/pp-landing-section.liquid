@@ -13,6 +13,9 @@
       left: 50vw;
     }
   {% endif %}
+  #{{ id }} .pp-landing-section-image-container img {
+    width: {{ 100 | divided_by: sectionData.sectionMedia.size }}%;
+  }
 {% endstyle %}
 
 <div class="pp-landing-section" id="{{ id }}">
@@ -31,11 +34,19 @@
   <div class="pp-landing-section-text-container">
     <p>
       {{ sectionData.caption }}
-      <button class="pp-button" disabled="{% if sectionData.ctaType == 'buyNow' %}true{% endif %}">
-        <a href="{{ sectionData.navigation }}">
-          {% if sectionData.ctaType == 'buyNow' %}SOLD OUT{% else %}READ MORE{% endif %}
-        </a>
-      </button>
     </p>
-  </div>
+    <div>
+      {% if sectionData.ctaType == 'buyNow' %}
+        {% for product in collections.all.products %}
+          {% assign productId = product.id | prepend: 'shopifyProduct-' %}
+          {% if productId == sectionData.product._ref %}
+            {% render 'pp-buy-button', product: product %}
+          {% endif %}
+        {% endfor %}
+      {% else %}
+      <button class="pp-button">
+        <a href="pages/{{ sectionData.navigation }}">READ MORE</a>
+      </button>
+      {% endif %}
+    </div>
 </div>

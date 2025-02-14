@@ -1,6 +1,8 @@
 @use './scss/layout' as *;
 @use './scss/typography' as *;
 
+
+
 section:not(:first-child) h1 {
   display: none;
 }
@@ -38,6 +40,7 @@ section:not(:first-child) h1 {
       line-height: 0.87;
       width: 100%;
       text-align: center;
+      text-transform: uppercase;
     }
 
     h2 {
@@ -48,6 +51,7 @@ section:not(:first-child) h1 {
       justify-content: space-between;
       line-height: 0.87;
       margin: 7.5rem 0 4rem;
+      text-transform: lowercase;
     }
   }
 
@@ -96,37 +100,77 @@ section:not(:first-child) h1 {
 
   .pp-subpage-section-caption {
     @include pp-body-type;
-    padding-bottom: 6rem; // TODO
+    padding-bottom: 6rem;
     position: relative;
 
     .pp-subpage-section-caption-temp {
       padding-left: $x-padding;
-      width: $half-container-width;
       opacity: 0;
       position: fixed;
+      width: calc(50vw - $gap / 2 - $x-padding);
+
+      @media (min-width: 1440px) {
+        width: calc(50vw - $gap-max / 2 - $x-padding);
+      }
+
+      @media (max-width: 1024px) {
+        width: calc(50vw - $gap-min / 2 - $x-padding);
+      }
     }
 
     .pp-subpage-section-caption-equal-columns {
       @include main-container;
       column-count: 2;
-      column-gap: 6rem;
+      column-gap: $gap;
+
+      @media (min-width: 1440px) {
+        column-gap: $gap-max;
+      }
+
+      @media (max-width: 1024px) {
+        column-gap: $gap-min;
+      }
+
       display: block;
       opacity: 0;
+
+
     }
 
     $left: calc(50vw - $x-padding);
 
-    .pp-subpage-section-caption-left-column {
+    .pp-subpage-section-caption-left-column,
+    .pp-subpage-section-caption-right-column {
       width: 50vw;
-      padding: 0 $x-padding 0 3rem;
+      padding: 0 $x-padding 0;
+    }
+
+    .pp-subpage-section-caption-left-column {
+      padding-right: calc($gap / 2);
+
+      @media (min-width: 1440px) {
+        padding-right: calc($gap-max / 2);
+      }
+
+      @media (max-width: 1024px) {
+        padding-right: calc($gap-min / 2);
+      }
     }
 
     .pp-subpage-section-caption-right-column {
       position: absolute;
       top: 0;
       left: 50vw;
-      padding: 0 3rem 0 $x-padding;
-      width: 50vw;
+
+      padding-left: calc($gap / 2);
+
+      @media (min-width: 1440px) {
+        padding-left: calc($gap-max / 2);
+      }
+
+      @media (max-width: 1024px) {
+        padding-left: calc($gap-min / 2);
+      }
     }
 
     p {

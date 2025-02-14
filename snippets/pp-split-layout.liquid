@@ -19,7 +19,7 @@
               {% render 'pp-subpage-img', content: insetContent %}
             </div>
           {% else %}
-            <div>
+            <div class="pp-split-layout-plane-excerpt-container">
               {% assign lines = insetContent.excerpt | newline_to_br | split: '<br />' %}
               {% for line in lines %}
                 {% if line != blank %}

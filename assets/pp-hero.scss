@@ -18,7 +18,10 @@
     @include flex;
     @include size-to-emblem;
     max-width: 1140px;
+    width: $main-container-width;
+    height: fit-content;
     margin: 0 auto;
+    padding: 14rem 0;
     position: relative;
 
     h3 {
@@ -26,12 +29,14 @@
       letter-spacing: 0.01em;
       line-height: 1.1667;
       text-align: center;
+      margin: 0;
     }
 
     svg {
       max-width: $emblem-max-width;
       position: absolute;
       top: 0;
+      /*       transform: translateY(-50%); */
     }
   }
 }

@@ -3,7 +3,17 @@
   width: 100%;
   display: grid;
   grid-template-columns: repeat(var(--desktop-columns), 1fr);
-  gap: 4.8rem;
   padding-top: 3rem;
   padding-bottom: 3rem;
+  gap: calc(3.8461538462vw + -0.7384615385rem);
+}
+@media (min-width: 1440px) {
+  .pp-image-grid {
+    gap: 4.8rem;
+  }
+}
+@media (max-width: 1024px) {
+  .pp-image-grid {
+    gap: 3rem;
+  }
 }

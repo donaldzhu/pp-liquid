@@ -1,10 +1,10 @@
 .pp-landing-section .pp-landing-section-image-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100vw;
+  overflow: hidden;
 }
 .pp-landing-section .pp-landing-section-image-container img {
-  flex-grow: 1;
+  height: auto;
 }
 .pp-landing-section h2 {
   display: flex;
@@ -16,14 +16,17 @@
   margin: 0;
   text-transform: uppercase;
 }
-.pp-landing-section p {
-  width: calc(50vw + 3.2rem);
-  margin: 0;
-  padding: 4.5rem 3.2rem 5.6rem;
-  text-indent: calc(-1 * (50vw - 3.2rem));
+.pp-landing-section .pp-landing-section-text-container p,
+.pp-landing-section .pp-landing-section-text-container > div {
   position: relative;
   left: calc(50vw - 3.2rem);
 }
-.pp-landing-section button {
-  margin-top: 3.2rem;
+.pp-landing-section .pp-landing-section-text-container p {
+  width: calc(50vw + 3.2rem);
+  margin: 0;
+  padding: 4.5rem 3.2rem 0;
+  text-indent: calc(-1 * (50vw - 3.2rem));
+}
+.pp-landing-section .pp-landing-section-text-container > div {
+  padding: 3.2rem 3.2rem 5.6rem;
 }

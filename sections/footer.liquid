@@ -1,22 +1,20 @@
 {{ 'footer.css' | asset_url | stylesheet_tag }}
 
+{% assign metaobj = shop.metaobjects['app--6007307--sanity-documents-settings'].values %}
+
 <footer class="pp-footer">
   <div class="footer-menu">
     <ul role="list">
       {% for link in linklists.footer.links %}
         <li>
-          <a
-            id="FooterMenu-{{ link.handle }}"
-            href="{{ link.url }}"
-            {% if link.current %}
-            aria-current="page"
-            {% endif %}
-            {% if link.type == 'http_link' %}
-            target="_blank"
-            {% endif %}>
+          <a href="{{ link.url }}" {% if link.current %} aria-current="page" {% endif %}>
             {{ link.title | escape }}
           </a>
         </li>
+      {% endfor %}
+      {% for o in metaobj %}
+        <li><a href="{{ o.footer.value.instagram }}" target="_blank">Instagram</a></li>
+        <li><a href="mailto:{{ o.footer.value.email }}">Email</a></li>
       {% endfor %}
     </ul>
     <div class="logo-container{% if request.path != '/' %}-colored{% endif %}">

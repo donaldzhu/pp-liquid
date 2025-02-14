@@ -31,7 +31,7 @@
         const height = containerHeights[i];
         const exceededPercentage = (columnHeight + height - halfHeight) / halfHeight
         if (exceededPercentage > 0) {
-          if (exceededPercentage >= 1) {
+          if (exceededPercentage >= 0.5) {
             distributeEqually = true
             break
           }
@@ -74,27 +74,19 @@
   {% endfor %}
   {% if includeProduct %}
     <div class="pp-subpage-section-product-details" >
-    {% for p in collections.all.products %}
-      {% assign productId = p.id | prepend: 'shopifyProduct-' %}
-      {% if productId == product._ref %}
+    {% for product in collections.all.products %}
+      {% assign productId = product.id | prepend: 'shopifyProduct-' %}
+      {% if productId == productReference %}
         <p>
-          {{ p.metafields.custom.dimension }}, {{ p.metafields.custom.page_count }} pgs
+          {{ product.metafields.custom.dimension }}, {{ product.metafields.custom.page_count }} pgs
         </p>
         <p>
-          {{ p.metafields.custom.binding_and_finish }}
+          {{ product.metafields.custom.binding_and_finish }}
         </p>
         <p>
-          printed by {{ p.metafields.custom.printer }}
+          printed by {{ product.metafields.custom.printer }}
         </p>
-        {% if p.variant-inventory_quantity.inventory_quantity > 0 %}
-        <button class="pp-button">
-          Add to Cart
-        </button>
-        {% else %}
-        <button class="pp-button" disabled="true">
-          Sold Out
-        </button>
-        {% endif %}
+        {% render 'pp-buy-button', product: product, buttonText: 'ADD TO CART' %}
       {% endif %}
     {% endfor %}
     </div>

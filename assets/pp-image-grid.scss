@@ -5,7 +5,17 @@
   @include main-container;
   display: grid;
   grid-template-columns: repeat(var(--desktop-columns), 1fr);
-  gap: 4.8rem;
   padding-top: 3rem;
   padding-bottom: 3rem;
+
+  $gap: dynamic-size(3.2rem, 4.8rem);
+  gap: $gap;
+
+  @media (min-width: 1440px) {
+    gap: 4.8rem;
+  }
+
+  @media (max-width: 1024px) {
+    gap: 3rem
+  }
 }

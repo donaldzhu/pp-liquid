@@ -1,6 +1,28 @@
+@use 'sass:math';
+
 $x-padding: 3.2rem;
 $main-container-width: calc(100vw - $x-padding * 2);
-$half-container-width: calc(50vw - 3rem - $x-padding);
+
+@function dynamic-size($min, $max) {
+  $min-width: 102.4rem;
+  $max-width: 144.0rem;
+  $delta-y: $max - $min;
+  $delta-x: $max-width - $min-width;
+
+  $m: math.div($delta-y, $delta-x);
+  @debug $m;
+  $b: $min - $m * $min-width;
+  @return calc(#{$m * 100}vw + #{$b});
+}
+
+$gap-min: 3.2rem;
+$gap-max: 6rem;
+$gap: dynamic-size($gap-min, $gap-max);
+
+$half-container-width: calc(50vw - $gap / 2 - $x-padding);
+
+
+
 $y-padding: 4.5rem;
 $button-transition: 0.15s ease-in-out;
 

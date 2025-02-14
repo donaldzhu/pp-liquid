@@ -21,7 +21,7 @@
   <p class="pp-subpage-section-date">
     {% render 'pp-date', date: sectionHeader.date %}
   </p>
-  {% render 'pp-subpage-section-caption', caption: sectionHeader.caption, includeProduct: sectionHeader.includeProduct, product: sectionHeader.product %}
+  {% render 'pp-subpage-section-caption', caption: sectionHeader.caption, includeProduct: sectionHeader.includeProduct, productReference: sectionHeader.product._ref %}
   {% for modules in sectionData.sectionModules.value %}
     {% case modules._type %}
       {% when 'pullQuote' %}

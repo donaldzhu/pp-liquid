@@ -40,17 +40,19 @@ button.pp-button {
     border: 1px solid rgb(var(--color-foreground));
     border-radius: calc($button-height / 2);
     height: $button-height;
-    padding: 0 3rem;
+
     cursor: pointer;
 
+    span,
     a {
       border: none;
       text-transform: uppercase;
       display: block;
       min-height: auto;
       min-width: auto;
-      padding: 0;
+      padding: calc(($button-height - (var(--pp-font-body-size) * 1.12)) / 2) 3rem;
       text-decoration: none;
+
 
       &,
       &:active,
@@ -65,6 +67,7 @@ button.pp-button {
     }
 
     &,
+    span,
     a {
       background: none;
       @include pp-body-type;
@@ -78,7 +81,7 @@ button.pp-button {
     transition: all $button-transition;
   }
 
-  &[disabled='true'] {
+  &[disabled] {
     opacity: 0.5;
     pointer-events: none;
   }
