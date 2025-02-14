@@ -7,6 +7,14 @@
     <meta name="theme-color" content="">
     <link rel="canonical" href="{{ canonical_url }}">
 
+    {% assign redirect_paths = 'products_collections_blogs_search_account_policies' | split: '_' %}
+    {% assign path = request.path | remove: '/' %}
+    {%- if redirect_paths contains path -%}
+      <script>
+        window.location.href = '/';
+      </script>
+    {%- endif -%}
+
     {% style %}
       @font-face {
         font-family: 'XanhMono';
