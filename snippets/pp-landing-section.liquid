@@ -35,7 +35,7 @@
     <p>
       {{ sectionData.caption }}
     </p>
-    <div>
+    <div class="pp-landing-section-button-container">
       {% if sectionData.ctaType == 'buyNow' %}
         {% for product in collections.all.products %}
           {% assign productId = product.id | prepend: 'shopifyProduct-' %}

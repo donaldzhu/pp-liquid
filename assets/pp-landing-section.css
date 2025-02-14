@@ -30,3 +30,6 @@
 .pp-landing-section .pp-landing-section-text-container > div {
   padding: 3.2rem 3.2rem 5.6rem;
 }
+.pp-landing-section .pp-landing-section-button-container {
+  width: fit-content;
+}

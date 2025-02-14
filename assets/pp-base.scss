@@ -8,6 +8,11 @@
   --pp-font-heading-size: 4rem;
   --pp-font-body-size: 2.4rem;
 
+  @media screen and (max-width: $screen-mobile) {
+    --pp-font-heading-size: 1.4rem;
+    --pp-font-body-size: 1.2rem;
+  }
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -31,16 +36,17 @@
 button.pp-button {
   color: rgb(var(--color-foreground));
   text-transform: uppercase;
+  letter-spacing: 0.01em;
 
   &,
   &-active {
     $button-height: 4.2rem;
-    @include flex;
-
-    border: 1px solid rgb(var(--color-foreground));
     border-radius: calc($button-height / 2);
     height: $button-height;
+    padding: 0;
 
+    @include flex;
+    border: 1px solid rgb(var(--color-foreground));
     cursor: pointer;
 
     span,
@@ -50,9 +56,7 @@ button.pp-button {
       display: block;
       min-height: auto;
       min-width: auto;
-      padding: calc(($button-height - (var(--pp-font-body-size) * 1.12)) / 2) 3rem;
       text-decoration: none;
-
 
       &,
       &:active,
@@ -71,6 +75,29 @@ button.pp-button {
     a {
       background: none;
       @include pp-body-type;
+    }
+
+    @media screen and (max-width: $screen-mobile) {
+      $button-height: 2rem;
+      border-radius: calc($button-height / 2);
+      height: $button-height;
+      border-width: 0.5px;
+
+      span,
+      a {
+        padding: calc(($button-height - (var(--pp-font-body-size) * 1.12)) / 2) 1.5rem;
+      }
+    }
+
+    @media screen and (min-width: #{$screen-mobile + 1}) {
+      $button-height: 4.2rem;
+      border-radius: calc($button-height / 2);
+      height: $button-height;
+
+      span,
+      a {
+        padding: calc(($button-height - (var(--pp-font-body-size) * 1.12)) / 2) 3rem;
+      }
     }
   }
 

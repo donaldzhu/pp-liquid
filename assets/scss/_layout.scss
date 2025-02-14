@@ -1,17 +1,19 @@
 @use 'sass:math';
 
+$screen-desktop-large: 144.0rem;
+$screen-desktop-small: 102.4rem;
+$screen-mobile: 42rem;
+
 $x-padding: 3.2rem;
 $main-container-width: calc(100vw - $x-padding * 2);
 
 @function dynamic-size($min, $max) {
-  $min-width: 102.4rem;
-  $max-width: 144.0rem;
   $delta-y: $max - $min;
-  $delta-x: $max-width - $min-width;
+  $delta-x: $screen-desktop-large - $screen-desktop-small;
 
   $m: math.div($delta-y, $delta-x);
   @debug $m;
-  $b: $min - $m * $min-width;
+  $b: $min - $m * $screen-desktop-small;
   @return calc(#{$m * 100}vw + #{$b});
 }
 

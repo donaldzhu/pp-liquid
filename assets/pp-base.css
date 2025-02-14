@@ -6,6 +6,12 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+@media screen and (max-width: 42rem) {
+  :root {
+    --pp-font-heading-size: 1.4rem;
+    --pp-font-body-size: 1.2rem;
+  }
+}
 :root ul li::marker {
   content: none;
 }
@@ -21,14 +27,16 @@
 button.pp-button {
   color: rgb(var(--color-foreground));
   text-transform: uppercase;
+  letter-spacing: 0.01em;
 }
 button.pp-button, button.pp-button-active {
+  border-radius: 2.1rem;
+  height: 4.2rem;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   border: 1px solid rgb(var(--color-foreground));
-  border-radius: 2.1rem;
-  height: 4.2rem;
   cursor: pointer;
 }
 button.pp-button span,
@@ -39,7 +47,6 @@ button.pp-button-active a {
   display: block;
   min-height: auto;
   min-width: auto;
-  padding: calc((4.2rem - var(--pp-font-body-size) * 1.12) / 2) 3rem;
   text-decoration: none;
 }
 button.pp-button span, button.pp-button span:active, button.pp-button span:visited,
@@ -67,6 +74,29 @@ button.pp-button-active a {
   font-family: var(--pp-font-body-family);
   font-size: var(--pp-font-body-size);
   line-height: 1.12;
+}
+@media screen and (max-width: 42rem) {
+  button.pp-button, button.pp-button-active {
+    border-radius: 1rem;
+    height: 2rem;
+    border-width: 0.5px;
+  }
+  button.pp-button span,
+button.pp-button a, button.pp-button-active span,
+button.pp-button-active a {
+    padding: calc((2rem - var(--pp-font-body-size) * 1.12) / 2) 1.5rem;
+  }
+}
+@media screen and (min-width: 43rem) {
+  button.pp-button, button.pp-button-active {
+    border-radius: 2.1rem;
+    height: 4.2rem;
+  }
+  button.pp-button span,
+button.pp-button a, button.pp-button-active span,
+button.pp-button-active a {
+    padding: calc((4.2rem - var(--pp-font-body-size) * 1.12) / 2) 3rem;
+  }
 }
 button.pp-button-active, button.pp-button:hover {
   background-color: rgb(var(--color-foreground));
