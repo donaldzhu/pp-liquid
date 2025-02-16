@@ -13,8 +13,9 @@
     headerElement.style.opacity = 1
 
     const charWidth = 650 / 1000
-    const X_PADDING = 32
-    const maxCharsPerLine = Math.floor((window.innerWidth - X_PADDING * 2) / (charWidth * 175) )
+    const X_PADDING = isMobile() ? 18 : 32
+    const fontSize = isMobile() ? 48 : 175 //TODO
+    const maxCharsPerLine = Math.floor((window.innerWidth - X_PADDING * 2) / (charWidth * fontSize) )
     const lines = title.split('\n');
     const splitLines = lines.map(line => [...line.matchAll(/[a-zA-Z0-9_-]+([^a-zA-Z0-9_-]*)/gi)].map(matched => matched[0].trim()))
 

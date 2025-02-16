@@ -1,3 +1,13 @@
+.pp-subpage-img-container {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 420px) {
+  .pp-subpage-img-container {
+    margin-bottom: 2rem;
+  }
+}
+
 p.pp-subpage-img-caption {
   font-size: 1.6rem;
   line-height: 1.2;
@@ -5,16 +15,26 @@ p.pp-subpage-img-caption {
   letter-spacing: 0.01em;
   margin: 2rem 0;
 }
+@media screen and (max-width: 420px) {
+  p.pp-subpage-img-caption {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 420px) {
+  p.pp-subpage-img-caption {
+    margin: 1.5rem 0 3rem;
+  }
+}
 
 h2.pp-subpage-section-title {
-  width: calc(100vw - 6.4rem);
+  width: calc(100vw - var(--pp-x-padding) * 2);
   opacity: 0;
 }
 h2.pp-subpage-section-title > span {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: calc(100vw - 6.4rem);
+  width: calc(100vw - var(--pp-x-padding) * 2);
 }
 h2.pp-subpage-section-title > span.pp-subpage-section-title-single-word {
   justify-content: center;

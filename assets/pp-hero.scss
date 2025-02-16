@@ -1,28 +1,47 @@
 @use './scss/layout' as *;
 @use './scss/typography' as *;
+@use 'sass:math';
 
+$emblem-height-to-width-ratio: math.div(535, 433);
 
 .pp-hero {
-  $emblem-max-width: 535px;
-  $emblem-max-height: 433px;
-  $emblem-height-to-width-ratio: $emblem-max-height / $emblem-max-width;
-  $emblem-height: 45vw * $emblem-height-to-width-ratio;
+  @include flex;
+  width: $main-container-width;
+  height: fit-content;
 
-  @mixin size-to-emblem {
-    height: $emblem-height;
-    max-height: $emblem-max-height;
+  margin: 0 auto;
+
+  // TODO
+  @media #{$desktop} {
+    padding: 4rem 0 1rem;
+
+    .pp-hero-inner {
+      max-width: 114rem;
+      min-height: 433px;
+
+      svg {
+        max-width: 535px;
+        height: 433px;
+      }
+    }
   }
 
-  padding: 40px 0 10px;
+  @media #{$mobile} {
+    padding: 5rem 0;
+
+    .pp-hero-inner {
+      max-width: 36rem;
+      min-height: 149px;
+
+      svg {
+        max-width: 184px;
+        height: 149px;
+      }
+    }
+  }
 
   .pp-hero-inner {
     @include flex;
-    @include size-to-emblem;
-    max-width: 1140px;
-    width: $main-container-width;
-    height: fit-content;
-    margin: 0 auto;
-    padding: 14rem 0;
     position: relative;
 
     h3 {
@@ -34,10 +53,8 @@
     }
 
     svg {
-      max-width: $emblem-max-width;
       position: absolute;
       top: 0;
-      /*       transform: translateY(-50%); */
     }
   }
 }

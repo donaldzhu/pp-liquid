@@ -8,6 +8,11 @@
     max-width: 88.5rem;
     padding: 23.5rem 0;
 
+    @media #{$mobile} {
+      max-width: 27.5rem;
+      padding: 12.5rem 0;
+    }
+
     h2 {
       @include pp-heading-type;
     }
@@ -15,6 +20,10 @@
     p {
       @include pp-body-type;
       padding: 3.2rem 0;
+
+      @media #{$mobile} {
+        padding: 1.2rem 0 1.8rem;
+      }
     }
 
     h2,
@@ -33,14 +42,22 @@
     }
 
     .pp-newsletter-form-email {
+      width: 375px;
+
+      @media #{$mobile} {
+        width: 220px;
+      }
 
       &,
       &:focus,
       &:focus-visible {
         @include pp-body-type;
         height: 4rem;
-        max-width: 37.5rem;
-        width: 100%;
+
+        @media #{$mobile} {
+          height: 2.5rem;
+        }
+
         border: none;
         outline: none;
         box-shadow: none;
@@ -55,6 +72,10 @@
     width: 100%;
     gap: 2.4rem;
 
+    @media #{$mobile} {
+      flex-direction: column;
+      gap: 2.1rem;
+    }
 
   }
 }

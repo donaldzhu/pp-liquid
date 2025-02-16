@@ -1,19 +1,24 @@
 @use 'sass:math';
 
-$screen-desktop-large: 144.0rem;
-$screen-desktop-small: 102.4rem;
-$screen-mobile: 42rem;
+$screen-desktop-large: 1440px;
+$screen-desktop-small: 1024px;
+$screen-mobile: 420px;
 
-$x-padding: 3.2rem;
-$main-container-width: calc(100vw - $x-padding * 2);
+$desktop: 'screen and (min-width: #{$screen-mobile + 1px})';
+$mobile: 'screen and (max-width: #{$screen-mobile})';
+
+$x-padding-desktop: 3.2rem;
+$x-padding-mobile: 1.8rem;
+$y-mobile-padding: 2rem;
+
+$main-container-width: calc(100vw - var(--pp-x-padding) * 2);
 
 @function dynamic-size($min, $max) {
   $delta-y: $max - $min;
-  $delta-x: $screen-desktop-large - $screen-desktop-small;
+  $delta-x: 144.0rem - 102.4rem;
 
   $m: math.div($delta-y, $delta-x);
-  @debug $m;
-  $b: $min - $m * $screen-desktop-small;
+  $b: $min - $m * 102.4rem;
   @return calc(#{$m * 100}vw + #{$b});
 }
 
@@ -21,11 +26,9 @@ $gap-min: 3.2rem;
 $gap-max: 6rem;
 $gap: dynamic-size($gap-min, $gap-max);
 
-$half-container-width: calc(50vw - $gap / 2 - $x-padding);
+$half-container-width: calc(50vw - $gap / 2 - var(--pp-x-padding));
 
 
-
-$y-padding: 4.5rem;
 $button-transition: 0.15s ease-in-out;
 
 @mixin flex ($justify: center, $align: center) {
@@ -35,6 +38,6 @@ $button-transition: 0.15s ease-in-out;
 }
 
 @mixin main-container($top-margin: 0, $bottom-margin: 0) {
-  padding: $top-margin $x-padding $bottom-margin;
+  padding: $top-margin var(--pp-x-padding) $bottom-margin;
   width: 100%;
 }

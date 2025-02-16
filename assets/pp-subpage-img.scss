@@ -1,9 +1,22 @@
 @use './scss/typography' as *;
 @use './scss/layout' as *;
 
+.pp-subpage-img-container {
+  display: flex;
+  flex-direction: column;
+
+  @media #{$mobile} {
+    margin-bottom: $y-mobile-padding;
+  }
+}
+
 p.pp-subpage-img-caption {
   @include pp-caption-type;
   margin: 2rem 0;
+
+  @media #{$mobile} {
+    margin: 1.5rem 0 3rem;
+  }
 }
 
 h2.pp-subpage-section-title {

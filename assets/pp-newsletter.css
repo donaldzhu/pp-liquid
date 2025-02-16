@@ -7,6 +7,12 @@
   max-width: 88.5rem;
   padding: 23.5rem 0;
 }
+@media screen and (max-width: 420px) {
+  .pp-newsletter .pp-newsletter-inner {
+    max-width: 27.5rem;
+    padding: 12.5rem 0;
+  }
+}
 .pp-newsletter .pp-newsletter-inner h2 {
   font-family: var(--pp-font-heading-family);
   font-weight: normal;
@@ -18,6 +24,11 @@
   font-size: var(--pp-font-body-size);
   line-height: 1.12;
   padding: 3.2rem 0;
+}
+@media screen and (max-width: 420px) {
+  .pp-newsletter .pp-newsletter-inner p {
+    padding: 1.2rem 0 1.8rem;
+  }
 }
 .pp-newsletter .pp-newsletter-inner h2,
 .pp-newsletter .pp-newsletter-inner p {
@@ -31,17 +42,28 @@
   margin: 0;
   max-width: initial;
 }
+.pp-newsletter .pp-newsletter-form-wrapper .pp-newsletter-form-email {
+  width: 375px;
+}
+@media screen and (max-width: 420px) {
+  .pp-newsletter .pp-newsletter-form-wrapper .pp-newsletter-form-email {
+    width: 220px;
+  }
+}
 .pp-newsletter .pp-newsletter-form-wrapper .pp-newsletter-form-email, .pp-newsletter .pp-newsletter-form-wrapper .pp-newsletter-form-email:focus, .pp-newsletter .pp-newsletter-form-wrapper .pp-newsletter-form-email:focus-visible {
   font-family: var(--pp-font-body-family);
   font-size: var(--pp-font-body-size);
   line-height: 1.12;
   height: 4rem;
-  max-width: 37.5rem;
-  width: 100%;
   border: none;
   outline: none;
   box-shadow: none;
   padding: 0 1rem;
+}
+@media screen and (max-width: 420px) {
+  .pp-newsletter .pp-newsletter-form-wrapper .pp-newsletter-form-email, .pp-newsletter .pp-newsletter-form-wrapper .pp-newsletter-form-email:focus, .pp-newsletter .pp-newsletter-form-wrapper .pp-newsletter-form-email:focus-visible {
+    height: 2.5rem;
+  }
 }
 .pp-newsletter .pp-newsletter-form-field-wrapper {
   display: flex;
@@ -49,4 +71,10 @@
   align-items: center;
   width: 100%;
   gap: 2.4rem;
+}
+@media screen and (max-width: 420px) {
+  .pp-newsletter .pp-newsletter-form-field-wrapper {
+    flex-direction: column;
+    gap: 2.1rem;
+  }
 }

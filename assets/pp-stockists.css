@@ -1,10 +1,17 @@
 .pp-stockists {
   display: flex;
-  padding: 4.5rem 3.2rem 13.5rem;
+  padding: var(--pp-y-padding) var(--pp-x-padding) 13.5rem;
   width: 100%;
   position: relative;
   overflow: hidden;
   margin-top: 14rem;
+}
+@media screen and (max-width: 420px) {
+  .pp-stockists {
+    margin-top: 0;
+    padding: var(--pp-y-padding) var(--pp-x-padding) 8rem;
+    width: 100%;
+  }
 }
 .pp-stockists h2,
 .pp-stockists p {
@@ -16,6 +23,7 @@
 }
 .pp-stockists p {
   margin: 0;
+  line-height: 1.4;
 }
 .pp-stockists p a.pp-stockists-link, .pp-stockists p a.pp-stockists-link:hover, .pp-stockists p a.pp-stockists-link:active {
   text-decoration: none;

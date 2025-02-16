@@ -1,11 +1,15 @@
 .pp-image-grid {
-  padding: 0 3.2rem 0;
+  padding: 0 var(--pp-x-padding) 0;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(var(--desktop-columns), 1fr);
   padding-top: 3rem;
   padding-bottom: 3rem;
   gap: calc(3.8461538462vw + -0.7384615385rem);
+}
+.pp-image-grid img {
+  width: 100%;
+  height: auto;
 }
 @media (min-width: 1440px) {
   .pp-image-grid {
@@ -16,4 +20,15 @@
   .pp-image-grid {
     gap: 3rem;
   }
+}
+@media screen and (max-width: 420px) {
+  .pp-image-grid {
+    grid-template-columns: repeat(var(--mobile-columns), 1fr);
+    gap: 2rem;
+    padding-top: 0;
+    padding-bottom: 2rem;
+  }
+}
+.pp-image-grid .pp-subpage-img-container {
+  margin-bottom: 0;
 }

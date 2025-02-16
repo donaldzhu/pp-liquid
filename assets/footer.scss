@@ -45,8 +45,20 @@ footer {
 
 .footer-menu ul {
   @include flex;
+
   margin: 0;
   width: 100%;
   gap: 4.5rem;
   padding: 8.5rem 0 4.5rem;
+
+
+  @media #{$mobile} {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 5rem 0 4rem;
+
+    a {
+      text-decoration: none;
+    }
+  }
 }

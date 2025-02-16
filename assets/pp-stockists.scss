@@ -2,10 +2,16 @@
 
 .pp-stockists {
   display: flex;
-  @include main-container($y-padding, 13.5rem);
+  @include main-container(var(--pp-y-padding), 13.5rem);
   position: relative;
   overflow: hidden;
   margin-top: 14rem;
+
+  @media #{$mobile} {
+    margin-top: 0;
+    @include main-container(var(--pp-y-padding), 8rem);
+  }
+
 
   h2,
   p {
@@ -19,6 +25,7 @@
 
   p {
     margin: 0;
+    line-height: 1.4;
 
     a.pp-stockists-link {
 

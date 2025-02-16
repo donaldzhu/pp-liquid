@@ -11,12 +11,20 @@ section:not(:first-child) h1 {
   &:first-of-type {
     .pp-subpage-section-dot {
       margin-top: 20rem;
+
+      @media #{$mobile} {
+        margin-top: 10rem;
+      }
     }
   }
 
   &:not(:first-of-type) {
     .pp-subpage-section-dot {
       margin-top: 40rem;
+
+      @media #{$mobile} {
+        margin-top: 10rem;
+      }
     }
   }
 
@@ -28,10 +36,14 @@ section:not(:first-child) h1 {
     .pp-subpage-section-dot {
       display: block;
       width: 4.3rem;
-      height: 4.3rem;
+      aspect-ratio: 1;
       background-color: rgb(var(--pp-dot-color));
       border-radius: 100%;
       margin-bottom: 1.5rem;
+
+      @media #{$mobile} {
+        width: 1.5rem;
+      }
     }
 
 
@@ -50,19 +62,30 @@ section:not(:first-child) h1 {
       flex-wrap: wrap;
       justify-content: space-between;
       line-height: 0.87;
-      margin: 7.5rem 0 4rem;
+      margin: 7rem 0 4rem;
       text-transform: lowercase;
+
+      @media #{$mobile} {
+        font-size: 4.8rem;
+        margin: 4rem 0 1.5rem;
+      }
     }
   }
 
   .pp-subpage-section-image-container {
     position: relative;
+
+    img {
+      width: 100%;
+      display: flex;
+
+      @media #{$mobile} {
+        height: 550px;
+        object-fit: cover;
+      }
+    }
   }
 
-  img {
-    width: 100%;
-    display: flex;
-  }
 
   .pp-subpage-section-tinted-header {
     div {
@@ -96,6 +119,11 @@ section:not(:first-child) h1 {
     margin-top: 3.75rem;
     margin-bottom: 5.25rem;
     line-height: 1.2;
+
+    @media #{$mobile} {
+      margin-top: 1.4rem;
+      margin-bottom: 3rem;
+    }
   }
 
   .pp-subpage-section-caption {
@@ -103,18 +131,22 @@ section:not(:first-child) h1 {
     padding-bottom: 6rem;
     position: relative;
 
+    @media #{$mobile} {
+      padding-bottom: 4rem; // TODO
+    }
+
     .pp-subpage-section-caption-temp {
-      padding-left: $x-padding;
+      padding-left: var(--pp-x-padding);
       opacity: 0;
       position: fixed;
-      width: calc(50vw - $gap / 2 - $x-padding);
+      width: calc(50vw - $gap / 2 - var(--pp-x-padding));
 
       @media (min-width: 1440px) {
-        width: calc(50vw - $gap-max / 2 - $x-padding);
+        width: calc(50vw - $gap-max / 2 - var(--pp-x-padding));
       }
 
       @media (max-width: 1024px) {
-        width: calc(50vw - $gap-min / 2 - $x-padding);
+        width: calc(50vw - $gap-min / 2 - var(--pp-x-padding));
       }
     }
 
@@ -134,15 +166,19 @@ section:not(:first-child) h1 {
       display: block;
       opacity: 0;
 
-
+      @media #{$mobile} {
+        visibility: visible;
+        opacity: 1;
+        column-count: 1;
+      }
     }
 
-    $left: calc(50vw - $x-padding);
+    $left: calc(50vw - var(--pp-x-padding));
 
     .pp-subpage-section-caption-left-column,
     .pp-subpage-section-caption-right-column {
       width: 50vw;
-      padding: 0 $x-padding 0;
+      padding: 0 var(--pp-x-padding) 0;
     }
 
     .pp-subpage-section-caption-left-column {
@@ -181,12 +217,18 @@ section:not(:first-child) h1 {
     .pp-subpage-section-product-details {
       margin-top: 10rem;
 
+      @media #{$mobile} {
+        @include main-container;
+        @include flex(space-between);
+        margin-top: 0;
+      }
+
       p {
         margin: 0;
       }
 
       p:last-of-type {
-        margin-bottom: 2rem;
+        margin-bottom: calc(var(--pp-font-body-size) * 1.12);
       }
     }
   }

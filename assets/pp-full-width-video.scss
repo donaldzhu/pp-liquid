@@ -5,13 +5,17 @@
   position: relative;
   display: flex;
   cursor: pointer;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding: 3rem 0;
+
+  @media #{$mobile} {
+    padding-top: 0;
+    padding-bottom: $y-mobile-padding;
+  }
 
   img,
   video {
     width: $main-container-width;
-    margin: 0 $x-padding;
+    margin: 0 var(--pp-x-padding);
 
     border-radius: var(--pp-rounded-corners);
   }
@@ -23,9 +27,13 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 125px;
-    height: 125px;
+    aspect-ratio: 1;
     border-radius: 100%;
     z-index: 9;
+
+    @media #{$mobile} {
+      width: 40px;
+    }
 
     circle {
       fill: rgba(var(--color-background));

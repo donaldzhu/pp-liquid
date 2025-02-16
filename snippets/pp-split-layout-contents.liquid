@@ -1,0 +1,12 @@
+{% if contentType == 'fullSizeImage' %}
+  {% render 'pp-subpage-img', content: content %}
+{% else %}
+  {% if keyId %}
+    {% assign insetContent = content.insetContents | where: '_key', keyId | first %}
+    {% render 'pp-split-layout-inset-contents', insetContent: insetContent %}
+  {% else %}
+    {% for insetContent in content.insetContents %}
+      {% render 'pp-split-layout-inset-contents', insetContent: insetContent %}
+    {% endfor %}
+  {% endif %}
+{% endif %}

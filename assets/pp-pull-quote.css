@@ -1,15 +1,25 @@
 .pp-pull-quote {
   padding: 14rem 0;
 }
+@media screen and (max-width: 420px) {
+  .pp-pull-quote {
+    padding: 6rem 0;
+  }
+}
 .pp-pull-quote .pp-pull-quote-inner {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   max-width: 885px;
-  width: calc(100vw - 6.4rem);
+  width: calc(100vw - var(--pp-x-padding) * 2);
   margin: 0 auto;
   position: relative;
+}
+@media screen and (max-width: 420px) {
+  .pp-pull-quote .pp-pull-quote-inner {
+    max-width: 36rem;
+  }
 }
 .pp-pull-quote .pp-pull-quote-inner h4 {
   font-family: var(--pp-font-heading-family);
@@ -20,10 +30,20 @@
   text-align: center;
   margin: 3rem 0;
 }
+@media screen and (max-width: 420px) {
+  .pp-pull-quote .pp-pull-quote-inner h4 {
+    margin: 1.6rem 0;
+  }
+}
 .pp-pull-quote .pp-pull-quote-inner p {
   margin: 0;
   text-transform: uppercase;
 }
 .pp-pull-quote .pp-pull-quote-inner svg {
   width: 70px;
+}
+@media screen and (max-width: 420px) {
+  .pp-pull-quote .pp-pull-quote-inner svg {
+    width: 42px;
+  }
 }

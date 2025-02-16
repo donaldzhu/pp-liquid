@@ -1,17 +1,41 @@
 .pp-hero {
-  padding: 40px 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(100vw - var(--pp-x-padding) * 2);
+  height: fit-content;
+  margin: 0 auto;
+}
+@media screen and (min-width: 421px) {
+  .pp-hero {
+    padding: 4rem 0 1rem;
+  }
+  .pp-hero .pp-hero-inner {
+    max-width: 114rem;
+    min-height: 433px;
+  }
+  .pp-hero .pp-hero-inner svg {
+    max-width: 535px;
+    height: 433px;
+  }
+}
+@media screen and (max-width: 420px) {
+  .pp-hero {
+    padding: 5rem 0;
+  }
+  .pp-hero .pp-hero-inner {
+    max-width: 36rem;
+    min-height: 149px;
+  }
+  .pp-hero .pp-hero-inner svg {
+    max-width: 184px;
+    height: 149px;
+  }
 }
 .pp-hero .pp-hero-inner {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 36.4205607477vw;
-  max-height: 433px;
-  max-width: 1140px;
-  width: calc(100vw - 6.4rem);
-  height: fit-content;
-  margin: 0 auto;
-  padding: 14rem 0;
   position: relative;
 }
 .pp-hero .pp-hero-inner h3 {
@@ -25,8 +49,6 @@
   margin: 0;
 }
 .pp-hero .pp-hero-inner svg {
-  max-width: 535px;
   position: absolute;
   top: 0;
-  /*       transform: translateY(-50%); */
 }

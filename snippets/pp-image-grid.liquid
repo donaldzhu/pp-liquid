@@ -1,11 +1,11 @@
 {{ 'pp-image-grid.css' | asset_url | stylesheet_tag }}
 
 <div
-  style="--desktop-columns: {{ sectionData.desktopColumnCount }};"
+  style="--desktop-columns: {{ sectionData.desktopColumnCount }}; --mobile-columns: {{ sectionData.mobileColumnCount }};"
 class="pp-image-grid">
   {% for imageField in sectionData.images %}
     <div class="pp-image-grid-item">
-      {% render 'pp-subpage-img', content: imageField %}
+      {% render 'pp-subpage-img', content: imageField, roundedCorners:sectionData.roundedCorners %}
     </div>
   {% endfor %}
 </div>

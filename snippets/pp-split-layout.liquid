@@ -1,35 +1,38 @@
 {{ 'pp-split-layout.css' | asset_url | stylesheet_tag }}
 
-{%- style -%}
-
-{%- endstyle -%}
-
+{% assign planes = 'leftSide_rightSide' | split: '_' %}
 
 <div class="pp-split-layout">
-  {% assign planes = 'leftSide_rightSide' | split: '_' %}
+  <div class="pp-mobile pp-split-layout-plane">
+    {% liquid
+      if sectionData.layout.mobileOrder.size > 0
+        assign mobileOrder = sectionData.layout.mobileOrder
+        for key in mobileOrder
+          assign keyParts = key | split: '-'
+          assign side = keyParts[0] | append: 'Side'
+          assign contentAcronym = keyParts[1]
+          if contentAcronym == 'fs'
+            assign contentType = 'fullSizeImage'
+          else
+            assign contentType = 'inset'
+          endif
+
+          assign keyId = keyParts[2]
+          assign content = sectionData.layout[side]
+          render 'pp-split-layout-contents', content: content, contentType: contentType, keyId: keyId
+        endfor
+      else
+        for plane in planes
+          assign content = sectionData.layout[plane]
+          render 'pp-split-layout-contents', content: content, contentType: content.contentType
+        endfor
+      endif
+    %}
+  </div>
   {% for plane in planes %}
     {% assign content = sectionData.layout[plane] %}
-    <div class="pp-split-layout-plane pp-split-layout-plane-{{ content.verticalAlignment }} pp-split-layout-plane-{% if content.contentType == 'fullSizeImage' %}full-size{% elsif content.contentType == 'inset' %}inset{% endif %}">
-      {% if content.contentType == 'fullSizeImage' %}
-        {% render 'pp-subpage-img', content: content %}
-      {% else %}
-        {% for insetContent in content.insetContents %}
-          {% if insetContent._type == 'insetImage' %}
-            <div>
-              {% render 'pp-subpage-img', content: insetContent %}
-            </div>
-          {% else %}
-            <div class="pp-split-layout-plane-excerpt-container">
-              {% assign lines = insetContent.excerpt | newline_to_br | split: '<br />' %}
-              {% for line in lines %}
-                {% if line != blank %}
-                  <p class="pp-split-layout-plane-excerpt">{{ line }}</p>
-                {% endif %}
-              {% endfor %}
-            </div>
-          {% endif %}
-        {% endfor %}
-      {% endif %}
+    <div class="pp-desktop pp-split-layout-plane pp-split-layout-plane-{{ content.verticalAlignment }} pp-split-layout-plane-{% if content.contentType == 'fullSizeImage' %}full-size{% elsif content.contentType == 'inset' %}inset{% endif %}">
+      {% render 'pp-split-layout-contents', content: content, contentType: content.contentType %}
     </div>
   {% endfor %}
 </div>

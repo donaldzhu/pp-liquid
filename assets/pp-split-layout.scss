@@ -3,7 +3,7 @@
 
 @mixin split-layout-plane ($gap) {
   gap: $gap;
-  $width: calc(50vw - $gap / 2 - $x-padding);
+  $width: calc(50vw - $gap / 2 - var(--pp-x-padding));
 
   .pp-split-layout-plane {
     width: $width;
@@ -35,18 +35,14 @@
     @include split-layout-plane($gap-min);
   }
 
-  .pp-split-layout-plane {
-    @include flex;
+  @media #{$mobile} {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .pp-split-layout-plane.pp-desktop {
     flex-direction: column;
     flex: none;
-
-    >* {
-      width: 100%;
-    }
-
-    >div:nth-of-type(2) {
-      margin-top: 20rem;
-    }
 
     &-justified {
       justify-content: space-between;
@@ -61,7 +57,6 @@
           margin-bottom: 30rem;
         }
       }
-
     }
 
     &-center {
@@ -87,6 +82,55 @@
 
     .pp-subpage-img {
       width: var(--insetSize);
+    }
+
+    @media #{$mobile} {
+      display: none;
+    }
+
+    >div:nth-of-type(2) {
+      margin-top: 20rem;
+    }
+  }
+
+  .pp-split-layout-plane.pp-mobile {
+    width: 100%;
+    flex-direction: column;
+    /*     margin-bottom: $y-mobile-padding; */
+
+    @media #{$desktop} {
+      display: none;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .pp-split-layout-plane {
+    @include flex;
+
+    >* {
+      width: 100%;
+    }
+  }
+
+  $y-padding: 5rem;
+
+  .pp-split-layout-plane:not(:first-child) {
+    .pp-split-layout-plane-excerpt-container {
+      margin-top: $y-padding - $y-mobile-padding;
+    }
+  }
+
+  .pp-split-layout-plane-excerpt-container {
+    @media #{$mobile} {
+      width: 60%;
+      max-width: 300rem;
+
+      margin-top: $y-padding;
+      margin-bottom: $y-padding;
+
     }
   }
 

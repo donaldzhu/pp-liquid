@@ -3,13 +3,17 @@
   --pp-font-body-family: "XanhMono";
   --pp-font-heading-size: 4rem;
   --pp-font-body-size: 2.4rem;
+  --pp-x-padding: 3.2rem;
+  --pp-y-padding: 4.5rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-@media screen and (max-width: 42rem) {
+@media screen and (max-width: 420px) {
   :root {
     --pp-font-heading-size: 1.4rem;
     --pp-font-body-size: 1.2rem;
+    --pp-x-padding: 1.8rem;
+    --pp-y-padding: 1.5rem;
   }
 }
 :root ul li::marker {
@@ -75,19 +79,20 @@ button.pp-button-active a {
   font-size: var(--pp-font-body-size);
   line-height: 1.12;
 }
-@media screen and (max-width: 42rem) {
+@media screen and (max-width: 420px) {
   button.pp-button, button.pp-button-active {
-    border-radius: 1rem;
-    height: 2rem;
+    border-radius: 1.25rem;
+    height: 2.5rem;
     border-width: 0.5px;
   }
   button.pp-button span,
 button.pp-button a, button.pp-button-active span,
 button.pp-button-active a {
-    padding: calc((2rem - var(--pp-font-body-size) * 1.12) / 2) 1.5rem;
+    padding: calc((2.5rem - var(--pp-font-body-size) * 1.12) / 2) 1.5rem;
+    font-size: 1.2rem;
   }
 }
-@media screen and (min-width: 43rem) {
+@media screen and (min-width: 421px) {
   button.pp-button, button.pp-button-active {
     border-radius: 2.1rem;
     height: 4.2rem;
@@ -118,9 +123,19 @@ p {
 img.drop-shadow {
   filter: drop-shadow(1px 1px 15px rgba(0, 0, 0, 0.25));
 }
+@media screen and (max-width: 420px) {
+  img.drop-shadow {
+    filter: drop-shadow(0.4px 0.4px 4px rgba(0, 0, 0, 0.25));
+  }
+}
 
 :root {
   --pp-rounded-corners: 20px;
+}
+@media screen and (max-width: 420px) {
+  :root {
+    --pp-rounded-corners: 10px;
+  }
 }
 
 img.rounded {

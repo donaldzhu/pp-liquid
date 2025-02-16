@@ -1,3 +1,5 @@
+@use './layout' as *;
+
 @mixin pp-body-type {
   font-family: var(--pp-font-body-family);
   font-size: var(--pp-font-body-size);
@@ -13,6 +15,11 @@
 
 @mixin pp-caption-type {
   font-size: 1.6rem;
+
+  @media #{$mobile} {
+    font-size: 0.8rem;
+  }
+
   line-height: 1.2;
   font-family: var(--pp-font-heading-family);
   letter-spacing: 0.01em;

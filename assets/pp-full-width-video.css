@@ -2,13 +2,18 @@
   position: relative;
   display: flex;
   cursor: pointer;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding: 3rem 0;
+}
+@media screen and (max-width: 420px) {
+  .pp-full-width-video {
+    padding-top: 0;
+    padding-bottom: 2rem;
+  }
 }
 .pp-full-width-video img,
 .pp-full-width-video video {
-  width: calc(100vw - 6.4rem);
-  margin: 0 3.2rem;
+  width: calc(100vw - var(--pp-x-padding) * 2);
+  margin: 0 var(--pp-x-padding);
   border-radius: var(--pp-rounded-corners);
 }
 .pp-full-width-video svg {
@@ -20,10 +25,15 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 125px;
-  height: 125px;
+  aspect-ratio: 1;
   border-radius: 100%;
   z-index: 9;
   transition: opacity 0.1s ease-in-out;
+}
+@media screen and (max-width: 420px) {
+  .pp-full-width-video svg {
+    width: 40px;
+  }
 }
 .pp-full-width-video svg circle {
   fill: rgba(var(--color-background));

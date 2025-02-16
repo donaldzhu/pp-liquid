@@ -8,9 +8,14 @@
   --pp-font-heading-size: 4rem;
   --pp-font-body-size: 2.4rem;
 
-  @media screen and (max-width: $screen-mobile) {
+  --pp-x-padding: #{$x-padding-desktop};
+  --pp-y-padding: 4.5rem;
+
+  @media #{$mobile} {
     --pp-font-heading-size: 1.4rem;
     --pp-font-body-size: 1.2rem;
+    --pp-x-padding: #{$x-padding-mobile};
+    --pp-y-padding: 1.5rem;
   }
 
   -webkit-font-smoothing: antialiased;
@@ -77,8 +82,8 @@ button.pp-button {
       @include pp-body-type;
     }
 
-    @media screen and (max-width: $screen-mobile) {
-      $button-height: 2rem;
+    @media #{$mobile} {
+      $button-height: 2.5rem;
       border-radius: calc($button-height / 2);
       height: $button-height;
       border-width: 0.5px;
@@ -86,10 +91,11 @@ button.pp-button {
       span,
       a {
         padding: calc(($button-height - (var(--pp-font-body-size) * 1.12)) / 2) 1.5rem;
+        font-size: 1.2rem;
       }
     }
 
-    @media screen and (min-width: #{$screen-mobile + 1}) {
+    @media #{$desktop} {
       $button-height: 4.2rem;
       border-radius: calc($button-height / 2);
       height: $button-height;
@@ -121,10 +127,18 @@ p {
 
 img.drop-shadow {
   filter: drop-shadow(1px 1px 15px rgba(0, 0, 0, 0.25));
+
+  @media #{$mobile} {
+    filter: drop-shadow(0.4px 0.4px 4px rgba(0, 0, 0, 0.25));
+  }
 }
 
 :root {
   --pp-rounded-corners: 20px;
+
+  @media #{$mobile} {
+    --pp-rounded-corners: 10px;
+  }
 }
 
 img.rounded {

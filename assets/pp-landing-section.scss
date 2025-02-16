@@ -14,13 +14,21 @@
 
   h2 {
     @include flex(space-between, center);
-    @include main-container(14rem, $y-padding);
+
     letter-spacing: 0.01em;
     margin: 0;
     text-transform: uppercase;
+
+    @media #{$desktop} {
+      @include main-container(14rem, var(--pp-y-padding));
+    }
+
+    @media #{$mobile} {
+      @include main-container(3rem, var(--pp-y-padding));
+    }
   }
 
-  $left: calc(50vw - $x-padding);
+  $left: calc(50vw - var(--pp-x-padding));
 
   .pp-landing-section-text-container {
 
@@ -31,14 +39,22 @@
     }
 
     p {
-      width: calc(50vw + $x-padding);
+      width: calc(50vw + var(--pp-x-padding));
       margin: 0;
-      padding: $y-padding $x-padding 0;
+      padding: var(--pp-y-padding) var(--pp-x-padding) 0;
       text-indent: calc(-1 * $left);
+
+      @media #{$mobile} {
+        text-indent: 0;
+      }
     }
 
     >div {
-      padding: 3.2rem $x-padding 5.6rem;
+      padding: 3.2rem var(--pp-x-padding) 5.6rem;
+
+      @media #{$mobile} {
+        padding: 1.5rem var(--pp-x-padding) 2.5rem;
+      }
     }
   }
 
