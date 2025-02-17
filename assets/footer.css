@@ -121,5 +121,5 @@ footer .logo-container-colored:before {
   }
 }
 .footer-menu ul a {
-  text-decoration: none;
+  text-decoration: var(--text-decoration);
 }
