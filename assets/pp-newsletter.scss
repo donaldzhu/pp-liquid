@@ -5,13 +5,10 @@
   @include flex;
 
   .pp-newsletter-inner {
-    max-width: 88.5rem;
-    padding: 23.5rem 0;
-
-    @media #{$mobile} {
-      max-width: 27.5rem;
-      padding: 12.5rem 0;
-    }
+    @include breakpoint-value(--max-width, 88.5rem, 40rem, 27.5rem);
+    @include breakpoint-value(--padding-top, 23.5rem, 18rem, 12.5rem);
+    max-width: var(--max-width);
+    padding: var(--padding-top) 0;
 
     h2 {
       @include pp-heading-type;
@@ -19,11 +16,9 @@
 
     p {
       @include pp-body-type;
-      padding: 3.2rem 0;
-
-      @media #{$mobile} {
-        padding: 1.2rem 0 1.8rem;
-      }
+      @include breakpoint-value(--padding-top, 3.2rem, 2.2rem, 1.2rem);
+      @include breakpoint-value(--padding-bottom, 3.2rem, 2.5rem, 1.8rem);
+      padding: var(--padding-top) 0 var(--padding-bottom);
     }
 
     h2,
@@ -42,21 +37,15 @@
     }
 
     .pp-newsletter-form-email {
-      width: 375px;
-
-      @media #{$mobile} {
-        width: 220px;
-      }
+      @include breakpoint-value(--width, 375px, 300px, 220px);
+      width: var(--width);
 
       &,
       &:focus,
       &:focus-visible {
         @include pp-body-type;
-        height: 4rem;
-
-        @media #{$mobile} {
-          height: 2.5rem;
-        }
+        @include breakpoint-value(--height, 4rem, 3.2rem, 2.5rem);
+        height: var(--height);
 
         border: none;
         outline: none;
@@ -69,13 +58,10 @@
 
   .pp-newsletter-form-field-wrapper {
     @include flex;
+    @include breakpoint-value(--gap, 2.4rem, 2.1rem, 1.5rem);
+    @include breakpoint-value(--flex-direction, row, column, column);
     width: 100%;
-    gap: 2.4rem;
-
-    @media #{$mobile} {
-      flex-direction: column;
-      gap: 2.1rem;
-    }
-
+    gap: var(--gap);
+    flex-direction: var(--flex-direction);
   }
 }

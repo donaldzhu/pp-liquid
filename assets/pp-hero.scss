@@ -11,32 +11,20 @@ $emblem-height-to-width-ratio: math.div(535, 433);
 
   margin: 0 auto;
 
-  // TODO
-  @media #{$desktop} {
-    padding: 4rem 0 1rem;
+  @include breakpoint-value(--height, 433px, 292px, 149px);
+  @include breakpoint-value(--text-max-width, 114rem, 64rem, 56rem);
+  @include breakpoint-value(--padding-top, 4rem, 4rem, 5rem);
+  @include breakpoint-value(--padding-bottom, 1rem, 1rem, 0);
 
-    .pp-hero-inner {
-      max-width: 114rem;
-      min-height: 433px;
+  padding: var(--padding-top) 0 var(--padding-bottom);
 
-      svg {
-        max-width: 535px;
-        height: 433px;
-      }
-    }
-  }
+  .pp-hero-inner {
+    max-width: var(--text-max-width);
+    min-height: var(--height);
 
-  @media #{$mobile} {
-    padding: 5rem 0;
-
-    .pp-hero-inner {
-      max-width: 36rem;
-      min-height: 149px;
-
-      svg {
-        max-width: 184px;
-        height: 149px;
-      }
+    svg {
+      max-width: calc(var(--height) * $emblem-height-to-width-ratio);
+      height: var(--height);
     }
   }
 

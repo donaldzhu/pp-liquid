@@ -4,19 +4,15 @@
 .pp-subpage-img-container {
   display: flex;
   flex-direction: column;
-
-  @media #{$mobile} {
-    margin-bottom: $y-mobile-padding;
-  }
+  @include breakpoint-value(--margin-bottom, 0, $y-tablet-padding, $y-mobile-padding);
+  margin-bottom: var(--margin-bottom);
 }
 
 p.pp-subpage-img-caption {
   @include pp-caption-type;
-  margin: 2rem 0;
-
-  @media #{$mobile} {
-    margin: 1.5rem 0 3rem;
-  }
+  @include breakpoint-value(--margin-top, 2rem, 2rem, 1.5rem);
+  @include breakpoint-value(--margin-bottom, 2rem, 4rem, 3rem);
+  margin: var(--margin-top) 0 var(--margin-bottom);
 }
 
 h2.pp-subpage-section-title {

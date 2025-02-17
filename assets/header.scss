@@ -5,30 +5,25 @@ header {
     margin: 0;
   }
 
-  @include flex(space-between);
-  @include main-container(3.6rem, 1.8rem);
+  @include breakpoint-value(--padding-top, 3.6rem, 3rem, 2rem);
+  @include breakpoint-value(--padding-bottom, 1.8rem, 2rem, 2rem);
+  @include main-container(var(--padding-top), var(--padding-bottom));
 
   svg {
-    width: 106px;
+    @include breakpoint-value(--svg-width, 106px, 80px, 65px);
+    width: var(--svg-width);
   }
 
-  @media #{$mobile} {
-    @include main-container(2rem, 2rem);
+  @include flex(space-between);
 
-    svg {
-      width: 70px;
-    }
-  }
 }
 
 .header-menu {
   ul {
+    @include breakpoint-value(--gap, 1.2rem, 0.8rem, 0.5rem);
+    padding-inline-start: 0;
     display: flex;
-    gap: 1.2rem;
-
-    @media #{$mobile} {
-      gap: 0.5rem;
-    }
+    gap: var(--gap);
   }
 
   li button {

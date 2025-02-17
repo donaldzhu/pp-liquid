@@ -14,11 +14,8 @@
 }
 
 @mixin pp-caption-type {
-  font-size: 1.6rem;
-
-  @media #{$mobile} {
-    font-size: 0.8rem;
-  }
+  @include breakpoint-value(--font-size, 1.6rem, 1.2rem, 0.8rem);
+  font-size: var(--font-size);
 
   line-height: 1.2;
   font-family: var(--pp-font-heading-family);

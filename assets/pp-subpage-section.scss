@@ -10,21 +10,15 @@ section:not(:first-child) h1 {
 .pp-subpage-section {
   &:first-of-type {
     .pp-subpage-section-dot {
-      margin-top: 20rem;
-
-      @media #{$mobile} {
-        margin-top: 10rem;
-      }
+      @include breakpoint-value(--margin-top, 20rem, 15rem, 10rem);
+      margin-top: var(--margin-top);
     }
   }
 
   &:not(:first-of-type) {
     .pp-subpage-section-dot {
-      margin-top: 40rem;
-
-      @media #{$mobile} {
-        margin-top: 10rem;
-      }
+      @include breakpoint-value(--margin-top, 40rem, 25rem, 10rem);
+      margin-top: var(--margin-top);
     }
   }
 
@@ -35,15 +29,13 @@ section:not(:first-child) h1 {
 
     .pp-subpage-section-dot {
       display: block;
-      width: 4.3rem;
       aspect-ratio: 1;
       background-color: rgb(var(--pp-dot-color));
       border-radius: 100%;
       margin-bottom: 1.5rem;
 
-      @media #{$mobile} {
-        width: 1.5rem;
-      }
+      @include breakpoint-value(--width, 4.3rem, 3rem, 1.5rem);
+      width: var(--width);
     }
 
 
@@ -57,17 +49,20 @@ section:not(:first-child) h1 {
 
     h2 {
       font-family: var(--pp-font-heading-family);
-      font-size: 17.5rem;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       line-height: 0.87;
-      margin: 7rem 0 4rem;
       text-transform: lowercase;
 
-      @media #{$mobile} {
-        font-size: 4.8rem;
-        margin: 4rem 0 1.5rem;
+      @include breakpoint-value(--font-size, 17.5rem, 7.5rem, 4.8rem);
+      @include breakpoint-value(--margin-top, 7rem, 5.5rem, 4rem);
+      @include breakpoint-value(--margin-bottom, 4rem, 2.25rem, 1.5rem);
+      font-size: var(--font-size);
+      margin: var(--margin-top) 0 var(--margin-bottom);
+
+      @media screen and (min-width: #{$screen-tablet + 1px}) and (max-width: #{$screen-desktop-small}) {
+        font-size: 10rem;
       }
     }
   }
@@ -79,10 +74,9 @@ section:not(:first-child) h1 {
       width: 100%;
       display: flex;
 
-      @media #{$mobile} {
-        height: 550px;
-        object-fit: cover;
-      }
+      @include breakpoint-value(--height, '', 850px, 550px);
+      height: var(--height);
+      object-fit: cover;
     }
   }
 
@@ -116,24 +110,19 @@ section:not(:first-child) h1 {
   .pp-subpage-section-date {
     @include main-container;
     @include flex(space-between);
-    margin-top: 3.75rem;
-    margin-bottom: 5.25rem;
-    line-height: 1.2;
 
-    @media #{$mobile} {
-      margin-top: 1.4rem;
-      margin-bottom: 3rem;
-    }
+    @include breakpoint-value(--margin-top, 3.75rem, 2.2rem, 1.4rem);
+    @include breakpoint-value(--margin-bottom, 5.25rem, 4rem, 3rem);
+    margin-top: var(--margin-top);
+    margin-bottom: var(--margin-bottom);
+    line-height: 1.2;
   }
 
   .pp-subpage-section-caption {
     @include pp-body-type;
-    padding-bottom: 6rem;
+    @include breakpoint-value(--padding-bottom, 6rem, 5rem, 4rem);
+    padding-bottom: var(--padding-bottom);
     position: relative;
-
-    @media #{$mobile} {
-      padding-bottom: 4rem; // TODO
-    }
 
     .pp-subpage-section-caption-temp {
       padding-left: var(--pp-x-padding);
@@ -152,7 +141,6 @@ section:not(:first-child) h1 {
 
     .pp-subpage-section-caption-equal-columns {
       @include main-container;
-      column-count: 2;
       column-gap: $gap;
 
       @media (min-width: 1440px) {
@@ -166,11 +154,12 @@ section:not(:first-child) h1 {
       display: block;
       opacity: 0;
 
-      @media #{$mobile} {
-        visibility: visible;
-        opacity: 1;
-        column-count: 1;
-      }
+      @include breakpoint-value(--visibility, hidden, visible, visible);
+      @include breakpoint-value(--opacity, 0, 1, 1);
+      @include breakpoint-value(--column-count, 2, 1, 1);
+      visibility: var(--visibility);
+      opacity: var(--opacity);
+      column-count: var(--column-count);
     }
 
     $left: calc(50vw - var(--pp-x-padding));
@@ -215,12 +204,15 @@ section:not(:first-child) h1 {
     }
 
     .pp-subpage-section-product-details {
-      margin-top: 10rem;
+      @include breakpoint-value(--margin-top, 10rem, 0, 0);
+      margin-top: var(--margin-top);
+
+      @media #{$tablet} {
+        @include flex(space-between);
+      }
 
       @media #{$mobile} {
-        @include main-container;
         @include flex(space-between);
-        margin-top: 0;
       }
 
       p {

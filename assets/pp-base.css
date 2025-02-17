@@ -1,18 +1,66 @@
 :root {
   --pp-font-heading-family: "AzeretMono";
   --pp-font-body-family: "XanhMono";
-  --pp-font-heading-size: 4rem;
-  --pp-font-body-size: 2.4rem;
-  --pp-x-padding: 3.2rem;
-  --pp-y-padding: 4.5rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-@media screen and (max-width: 420px) {
+@media screen and (min-width: 769px) {
+  :root {
+    --pp-font-heading-size: 4rem;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  :root {
+    --pp-font-heading-size: 2.4rem;
+  }
+}
+@media screen and (max-width: 480px) {
   :root {
     --pp-font-heading-size: 1.4rem;
+  }
+}
+@media screen and (min-width: 769px) {
+  :root {
+    --pp-font-body-size: 2.4rem;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  :root {
+    --pp-font-body-size: 1.65rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  :root {
     --pp-font-body-size: 1.2rem;
+  }
+}
+@media screen and (min-width: 769px) {
+  :root {
+    --pp-x-padding: 3.2rem;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  :root {
+    --pp-x-padding: 2.4rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  :root {
     --pp-x-padding: 1.8rem;
+  }
+}
+@media screen and (min-width: 769px) {
+  :root {
+    --pp-y-padding: 4.5rem;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  :root {
+    --pp-y-padding: 3rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  :root {
     --pp-y-padding: 1.5rem;
   }
 }
@@ -42,6 +90,9 @@ button.pp-button, button.pp-button-active {
   align-items: center;
   border: 1px solid rgb(var(--color-foreground));
   cursor: pointer;
+  border-radius: calc(var(--button-height) / 2);
+  height: var(--button-height);
+  border-width: var(--border-width);
 }
 button.pp-button span,
 button.pp-button a, button.pp-button-active span,
@@ -79,34 +130,76 @@ button.pp-button-active a {
   font-size: var(--pp-font-body-size);
   line-height: 1.12;
 }
-@media screen and (max-width: 420px) {
+@media screen and (min-width: 769px) {
   button.pp-button, button.pp-button-active {
-    border-radius: 1.25rem;
-    height: 2.5rem;
-    border-width: 0.5px;
-  }
-  button.pp-button span,
-button.pp-button a, button.pp-button-active span,
-button.pp-button-active a {
-    padding: calc((2.5rem - var(--pp-font-body-size) * 1.12) / 2) 1.5rem;
-    font-size: 1.2rem;
+    --button-height: 4.2rem;
   }
 }
-@media screen and (min-width: 421px) {
+@media screen and (min-width: 481px) and (max-width: 768px) {
   button.pp-button, button.pp-button-active {
-    border-radius: 2.1rem;
-    height: 4.2rem;
+    --button-height: 3.2rem;
   }
-  button.pp-button span,
+}
+@media screen and (max-width: 480px) {
+  button.pp-button, button.pp-button-active {
+    --button-height: 2.5rem;
+  }
+}
+@media screen and (min-width: 769px) {
+  button.pp-button, button.pp-button-active {
+    --border-width: 1px;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  button.pp-button, button.pp-button-active {
+    --border-width: 1px;
+  }
+}
+@media screen and (max-width: 480px) {
+  button.pp-button, button.pp-button-active {
+    --border-width: 0.5px;
+  }
+}
+@media screen and (min-width: 769px) {
+  button.pp-button, button.pp-button-active {
+    --x-padding: 3rem;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  button.pp-button, button.pp-button-active {
+    --x-padding: 2.25rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  button.pp-button, button.pp-button-active {
+    --x-padding: 1.5rem;
+  }
+}
+@media screen and (min-width: 769px) {
+  button.pp-button, button.pp-button-active {
+    --font-size: var(--pp-font-body-size);
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  button.pp-button, button.pp-button-active {
+    --font-size: var(--pp-font-body-size);
+  }
+}
+@media screen and (max-width: 480px) {
+  button.pp-button, button.pp-button-active {
+    --font-size: 1.2rem;
+  }
+}
+button.pp-button span,
 button.pp-button a, button.pp-button-active span,
 button.pp-button-active a {
-    padding: calc((4.2rem - var(--pp-font-body-size) * 1.12) / 2) 3rem;
-  }
+  padding: calc((var(--button-height) - var(--pp-font-body-size) * 1.12) / 2) var(--x-padding);
+  font-size: var(--font-size);
 }
 button.pp-button-active, button.pp-button:hover {
   background-color: rgb(var(--color-foreground));
   color: rgb(var(--color-background));
-  transition: all 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
 }
 button.pp-button[disabled] {
   opacity: 0.5;
@@ -121,18 +214,50 @@ p {
 }
 
 img.drop-shadow {
-  filter: drop-shadow(1px 1px 15px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(var(--offset) var(--offset) var(--blur) rgba(0, 0, 0, 0.25));
 }
-@media screen and (max-width: 420px) {
+@media screen and (min-width: 769px) {
   img.drop-shadow {
-    filter: drop-shadow(0.4px 0.4px 4px rgba(0, 0, 0, 0.25));
+    --offset: 1px;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  img.drop-shadow {
+    --offset: 0.6;
+  }
+}
+@media screen and (max-width: 480px) {
+  img.drop-shadow {
+    --offset: 0.4px;
+  }
+}
+@media screen and (min-width: 769px) {
+  img.drop-shadow {
+    --blur: 15px;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  img.drop-shadow {
+    --blur: 10px;
+  }
+}
+@media screen and (max-width: 480px) {
+  img.drop-shadow {
+    --blur: 4px;
   }
 }
 
-:root {
-  --pp-rounded-corners: 20px;
+@media screen and (min-width: 769px) {
+  :root {
+    --pp-rounded-corners: 20px;
+  }
 }
-@media screen and (max-width: 420px) {
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  :root {
+    --pp-rounded-corners: 15px;
+  }
+}
+@media screen and (max-width: 480px) {
   :root {
     --pp-rounded-corners: 10px;
   }

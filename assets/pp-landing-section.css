@@ -10,20 +10,25 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: var(--padding-top) var(--pp-x-padding) var(--pp-y-padding);
+  width: 100%;
+  text-transform: uppercase;
   letter-spacing: 0.01em;
   margin: 0;
-  text-transform: uppercase;
 }
-@media screen and (min-width: 421px) {
+@media screen and (min-width: 769px) {
   .pp-landing-section h2 {
-    padding: 14rem var(--pp-x-padding) var(--pp-y-padding);
-    width: 100%;
+    --padding-top: 14rem;
   }
 }
-@media screen and (max-width: 420px) {
+@media screen and (min-width: 481px) and (max-width: 768px) {
   .pp-landing-section h2 {
-    padding: 3rem var(--pp-x-padding) var(--pp-y-padding);
-    width: 100%;
+    --padding-top: 8rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .pp-landing-section h2 {
+    --padding-top: 3rem;
   }
 }
 .pp-landing-section .pp-landing-section-text-container p,
@@ -35,19 +40,54 @@
   width: calc(50vw + var(--pp-x-padding));
   margin: 0;
   padding: var(--pp-y-padding) var(--pp-x-padding) 0;
-  text-indent: calc(-1 * (50vw - var(--pp-x-padding)));
+  text-indent: var(--text-indent);
 }
-@media screen and (max-width: 420px) {
+@media screen and (min-width: 769px) {
   .pp-landing-section .pp-landing-section-text-container p {
-    text-indent: 0;
+    --text-indent: calc(-1 * (50vw - var(--pp-x-padding)));
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .pp-landing-section .pp-landing-section-text-container p {
+    --text-indent: 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  .pp-landing-section .pp-landing-section-text-container p {
+    --text-indent: 0;
   }
 }
 .pp-landing-section .pp-landing-section-text-container > div {
-  padding: 3.2rem var(--pp-x-padding) 5.6rem;
+  padding: var(--padding-top) var(--pp-x-padding) var(--padding-bottom);
 }
-@media screen and (max-width: 420px) {
+@media screen and (min-width: 769px) {
   .pp-landing-section .pp-landing-section-text-container > div {
-    padding: 1.5rem var(--pp-x-padding) 2.5rem;
+    --padding-top: 3.2rem;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .pp-landing-section .pp-landing-section-text-container > div {
+    --padding-top: 2.5rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .pp-landing-section .pp-landing-section-text-container > div {
+    --padding-top: 1.5rem;
+  }
+}
+@media screen and (min-width: 769px) {
+  .pp-landing-section .pp-landing-section-text-container > div {
+    --padding-bottom: 5.6rem;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .pp-landing-section .pp-landing-section-text-container > div {
+    --padding-bottom: 3.5rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .pp-landing-section .pp-landing-section-text-container > div {
+    --padding-bottom: 2.5rem;
   }
 }
 .pp-landing-section .pp-landing-section-button-container {

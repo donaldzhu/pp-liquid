@@ -7,7 +7,6 @@
 <script>
   (() => {
     const flowCaption = () => {
-      if (isMobile()) return
       const captionElement = document.getElementById('{{ id }}')
       const tempColumn = captionElement.querySelector('.pp-subpage-section-caption-temp')
       const leftColumn = captionElement.querySelector('.pp-subpage-section-caption-left-column')
@@ -44,14 +43,14 @@
         leftColumnElements.push(tempContainers[i].cloneNode(true))
       }
 
-      if (distributeEqually || isMobile()) {
+      if (distributeEqually || isMobile() || isTablet()) {
         equalColumns.style.display = 'block'
         equalColumns.style.opacity = 1
       } else {
         leftColumn.style.display = 'block'
         rightColumn.style.display = 'block'
         leftColumn.replaceChildren(...leftColumnElements)
-        rightColumn.replaceChildren(...[rightColumnElements, productDetails].filter(e => e).flat())
+        rightColumn.replaceChildren(...rightColumnElements)
       }
 
       tempColumn.style.visibility = 'hidden'
@@ -71,29 +70,30 @@
           <p>{{ line }}</p>
         {% endif %}
       {% endfor %}
+      {% if includeProduct %}
+        <div class="pp-subpage-section-product-details" >
+        {% for product in collections.all.products %}
+          {% assign productId = product.id | prepend: 'shopifyProduct-' %}
+          {% if productId == productReference %}
+            <div>
+              <p>
+              {{ product.metafields.custom.dimension }}, {{ product.metafields.custom.page_count }} pgs
+            </p>
+            <p>
+              {{ product.metafields.custom.binding_and_finish }}
+            </p>
+            <p>
+              printed by {{ product.metafields.custom.printer }}
+            </p>
+            </div>
+            {% render 'pp-buy-button', product: product, buttonText: 'ADD TO CART' %}
+          {% endif %}
+        {% endfor %}
+        </div>
+      {% endif %}
     </div>
   {% endfor %}
-  {% if includeProduct %}
-    <div class="pp-subpage-section-product-details" >
-    {% for product in collections.all.products %}
-      {% assign productId = product.id | prepend: 'shopifyProduct-' %}
-      {% if productId == productReference %}
-        <div>
-          <p>
-          {{ product.metafields.custom.dimension }}, {{ product.metafields.custom.page_count }} pgs
-        </p>
-        <p>
-          {{ product.metafields.custom.binding_and_finish }}
-        </p>
-        <p>
-          printed by {{ product.metafields.custom.printer }}
-        </p>
-        </div>
-        {% render 'pp-buy-button', product: product, buttonText: 'ADD TO CART' %}
-      {% endif %}
-    {% endfor %}
-    </div>
-  {% endif %}
+
   <div class="pp-subpage-section-caption-left-column" ></div>
   <div class="pp-subpage-section-caption-right-column" ></div>
 

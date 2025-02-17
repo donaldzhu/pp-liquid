@@ -48,17 +48,18 @@ footer {
 
   margin: 0;
   width: 100%;
-  gap: 4.5rem;
-  padding: 8.5rem 0 4.5rem;
 
+  @include breakpoint-value(--flex-direction, row, column, column);
+  @include breakpoint-value(--text-decoration, underline, none, none);
+  @include breakpoint-value(--gap, 4.5rem, 3.25rem, 2rem);
+  @include breakpoint-value(--padding-top, 8.5rem, 6.75rem, 5rem);
+  @include breakpoint-value(--padding-bottom, 4.5rem, 4.25rem, 4rem);
 
-  @media #{$mobile} {
-    flex-direction: column;
-    gap: 2rem;
-    padding: 5rem 0 4rem;
+  flex-direction: var(--flex-direction);
+  gap: var(--gap);
+  padding: var(--padding-top) 0 var(--padding-bottom);
 
-    a {
-      text-decoration: none;
-    }
+  a {
+    text-decoration: none;
   }
 }

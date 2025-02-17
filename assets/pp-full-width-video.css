@@ -2,12 +2,37 @@
   position: relative;
   display: flex;
   cursor: pointer;
-  padding: 3rem 0;
+  padding-top: var(--padding-top);
+  padding-bottom: var(--padding-bottom);
 }
-@media screen and (max-width: 420px) {
+@media screen and (min-width: 769px) {
   .pp-full-width-video {
-    padding-top: 0;
-    padding-bottom: 2rem;
+    --padding-top: 3rem;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .pp-full-width-video {
+    --padding-top: 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  .pp-full-width-video {
+    --padding-top: 0;
+  }
+}
+@media screen and (min-width: 769px) {
+  .pp-full-width-video {
+    --padding-bottom: 3rem;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .pp-full-width-video {
+    --padding-bottom: 3rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .pp-full-width-video {
+    --padding-bottom: 2rem;
   }
 }
 .pp-full-width-video img,
@@ -24,15 +49,24 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 125px;
   aspect-ratio: 1;
   border-radius: 100%;
   z-index: 9;
   transition: opacity 0.1s ease-in-out;
 }
-@media screen and (max-width: 420px) {
+@media screen and (min-width: 769px) {
   .pp-full-width-video svg {
-    width: 40px;
+    --width: 125px;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .pp-full-width-video svg {
+    --width: 85px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .pp-full-width-video svg {
+    --width: 40px;
   }
 }
 .pp-full-width-video svg circle {

@@ -1,27 +1,23 @@
 @use './scss/layout' as *;
 @use './scss/typography' as *;
 
+$tablet-padding: 10rem;
+$mobile-padding: 6rem;
+
 .pp-pull-quote {
   @mixin size-to-emblem {
     height: $emblem-height;
     max-height: $emblem-max-height;
   }
 
-  padding: 14rem 0;
-
-  @media #{$mobile} {
-    padding: 6rem 0;
-  }
+  @include breakpoint-value(--padding, 14rem, $tablet-padding, $mobile-padding);
+  padding: var(--padding) 0;
 
   .pp-pull-quote-inner {
     @include flex;
+    @include breakpoint-value(--max-width, 885px, 625px, 360px);
     flex-direction: column;
-
-    max-width: 885px;
-
-    @media #{$mobile} {
-      max-width: 36rem;
-    }
+    max-width: var(--max-width);
 
     width: $main-container-width;
     margin: 0 auto;
@@ -29,13 +25,10 @@
 
     h4 {
       @include pp-heading-type;
+      @include breakpoint-value(--margin, 3rem, 2.4rem, 1.6rem);
       letter-spacing: 0.01em;
       text-align: center;
-      margin: 3rem 0;
-
-      @media #{$mobile} {
-        margin: 1.6rem 0;
-      }
+      margin: var(--margin) 0;
     }
 
     p {
@@ -44,11 +37,15 @@
     }
 
     svg {
-      width: 70px;
-
-      @media #{$mobile} {
-        width: 42px;
-      }
+      @include breakpoint-value(--width, 70px, 56px, 42px);
+      width: var(--width);
     }
+  }
+}
+
+.pp-subpage-section {
+  .pp-pull-quote {
+    @include breakpoint-value(--padding, 14rem, $tablet-padding - $y-tablet-padding, $mobile-padding - $y-mobile-padding);
+    padding-top: var(--padding);
   }
 }

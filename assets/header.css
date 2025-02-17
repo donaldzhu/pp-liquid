@@ -1,33 +1,80 @@
 header {
+  padding: var(--padding-top) var(--pp-x-padding) var(--padding-bottom);
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 3.6rem var(--pp-x-padding) 1.8rem;
-  width: 100%;
 }
 header h1 {
   margin: 0;
 }
-header svg {
-  width: 106px;
-}
-@media screen and (max-width: 420px) {
+@media screen and (min-width: 769px) {
   header {
-    padding: 2rem var(--pp-x-padding) 2rem;
-    width: 100%;
+    --padding-top: 3.6rem;
   }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  header {
+    --padding-top: 3rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  header {
+    --padding-top: 2rem;
+  }
+}
+@media screen and (min-width: 769px) {
+  header {
+    --padding-bottom: 1.8rem;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  header {
+    --padding-bottom: 2rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  header {
+    --padding-bottom: 2rem;
+  }
+}
+header svg {
+  width: var(--svg-width);
+}
+@media screen and (min-width: 769px) {
   header svg {
-    width: 70px;
+    --svg-width: 106px;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  header svg {
+    --svg-width: 80px;
+  }
+}
+@media screen and (max-width: 480px) {
+  header svg {
+    --svg-width: 65px;
   }
 }
 
 .header-menu ul {
+  padding-inline-start: 0;
   display: flex;
-  gap: 1.2rem;
+  gap: var(--gap);
 }
-@media screen and (max-width: 420px) {
+@media screen and (min-width: 769px) {
   .header-menu ul {
-    gap: 0.5rem;
+    --gap: 1.2rem;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .header-menu ul {
+    --gap: 0.8rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .header-menu ul {
+    --gap: 0.5rem;
   }
 }
 .header-menu li button {

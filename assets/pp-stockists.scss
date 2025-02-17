@@ -2,16 +2,13 @@
 
 .pp-stockists {
   display: flex;
-  @include main-container(var(--pp-y-padding), 13.5rem);
   position: relative;
   overflow: hidden;
-  margin-top: 14rem;
 
-  @media #{$mobile} {
-    margin-top: 0;
-    @include main-container(var(--pp-y-padding), 8rem);
-  }
-
+  @include breakpoint-value(--padding-bottom, 13.5rem, 10.5rem, 8rem);
+  @include breakpoint-value(--margin-top, 14rem, 8rem, 0);
+  @include main-container(var(--pp-y-padding), var(--padding-bottom));
+  margin-top: var(--margin-top);
 
   h2,
   p {

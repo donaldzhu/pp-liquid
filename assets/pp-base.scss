@@ -4,22 +4,13 @@
 :root {
   --pp-font-heading-family: 'AzeretMono';
   --pp-font-body-family: 'XanhMono';
-
-  --pp-font-heading-size: 4rem;
-  --pp-font-body-size: 2.4rem;
-
-  --pp-x-padding: #{$x-padding-desktop};
-  --pp-y-padding: 4.5rem;
-
-  @media #{$mobile} {
-    --pp-font-heading-size: 1.4rem;
-    --pp-font-body-size: 1.2rem;
-    --pp-x-padding: #{$x-padding-mobile};
-    --pp-y-padding: 1.5rem;
-  }
-
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  @include breakpoint-value(--pp-font-heading-size, 4rem, 2.4rem, 1.4rem);
+  @include breakpoint-value(--pp-font-body-size, 2.4rem, 1.65rem, 1.2rem);
+  @include breakpoint-value(--pp-x-padding, #{$x-padding-desktop}, #{$x-padding-tablet}, #{$x-padding-mobile});
+  @include breakpoint-value(--pp-y-padding, 4.5rem, 3rem, 1.5rem);
 
   ul li {
     &::marker {
@@ -82,28 +73,19 @@ button.pp-button {
       @include pp-body-type;
     }
 
-    @media #{$mobile} {
-      $button-height: 2.5rem;
-      border-radius: calc($button-height / 2);
-      height: $button-height;
-      border-width: 0.5px;
+    @include breakpoint-value(--button-height, 4.2rem, 3.2rem, 2.5rem);
+    @include breakpoint-value(--border-width, 1px, 1px, 0.5px);
+    @include breakpoint-value(--x-padding, 3rem, 2.25rem, 1.5rem);
+    @include breakpoint-value(--font-size, var(--pp-font-body-size), var(--pp-font-body-size), 1.2rem);
 
-      span,
-      a {
-        padding: calc(($button-height - (var(--pp-font-body-size) * 1.12)) / 2) 1.5rem;
-        font-size: 1.2rem;
-      }
-    }
+    border-radius: calc(var(--button-height) / 2);
+    height: var(--button-height);
+    border-width: var(--border-width);
 
-    @media #{$desktop} {
-      $button-height: 4.2rem;
-      border-radius: calc($button-height / 2);
-      height: $button-height;
-
-      span,
-      a {
-        padding: calc(($button-height - (var(--pp-font-body-size) * 1.12)) / 2) 3rem;
-      }
+    span,
+    a {
+      padding: calc((var(--button-height) - (var(--pp-font-body-size) * 1.12)) / 2) var(--x-padding);
+      font-size: var(--font-size);
     }
   }
 
@@ -111,7 +93,7 @@ button.pp-button {
   &:hover {
     background-color: rgb(var(--color-foreground));
     color: rgb(var(--color-background));
-    transition: all $button-transition;
+    transition: background-color $button-transition, color $button-transition;
   }
 
   &[disabled] {
@@ -126,19 +108,13 @@ p {
 }
 
 img.drop-shadow {
-  filter: drop-shadow(1px 1px 15px rgba(0, 0, 0, 0.25));
-
-  @media #{$mobile} {
-    filter: drop-shadow(0.4px 0.4px 4px rgba(0, 0, 0, 0.25));
-  }
+  @include breakpoint-value(--offset, 1px, 0.6, 0.4px);
+  @include breakpoint-value(--blur, 15px, 10px, 4px);
+  filter: drop-shadow(var(--offset) var(--offset) var(--blur) rgba(0, 0, 0, 0.25));
 }
 
 :root {
-  --pp-rounded-corners: 20px;
-
-  @media #{$mobile} {
-    --pp-rounded-corners: 10px;
-  }
+  @include breakpoint-value(--pp-rounded-corners, 20px, 15px, 10px);
 }
 
 img.rounded {

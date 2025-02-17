@@ -21,9 +21,10 @@
 .pp-split-layout {
   @include main-container;
   @include flex(space-between);
+  @include breakpoint-value(--padding, 3rem, 0, 0);
   align-items: stretch;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: var(--padding);
+  padding-bottom: var(--padding);
 
   @include split-layout-plane($gap);
 
@@ -33,11 +34,6 @@
 
   @media (max-width: 1024px) {
     @include split-layout-plane($gap-min);
-  }
-
-  @media #{$mobile} {
-    padding-top: 0;
-    padding-bottom: 0;
   }
 
   .pp-split-layout-plane.pp-desktop {
@@ -84,6 +80,10 @@
       width: var(--insetSize);
     }
 
+    @media #{$tablet} {
+      display: none;
+    }
+
     @media #{$mobile} {
       display: none;
     }
@@ -96,7 +96,6 @@
   .pp-split-layout-plane.pp-mobile {
     width: 100%;
     flex-direction: column;
-    /*     margin-bottom: $y-mobile-padding; */
 
     @media #{$desktop} {
       display: none;
@@ -115,22 +114,21 @@
     }
   }
 
-  $y-padding: 5rem;
 
-  .pp-split-layout-plane:not(:first-child) {
-    .pp-split-layout-plane-excerpt-container {
-      margin-top: $y-padding - $y-mobile-padding;
-    }
-  }
 
   .pp-split-layout-plane-excerpt-container {
+    @media #{$tablet} {
+      width: 60%;
+      $y-padding: 6rem;
+      margin-top: $y-padding - $y-tablet-padding;
+      margin-bottom: $y-padding;
+    }
+
     @media #{$mobile} {
       width: 60%;
-      max-width: 300rem;
-
-      margin-top: $y-padding;
+      $y-padding: 5rem;
+      margin-top: $y-padding - $y-mobile-padding;
       margin-bottom: $y-padding;
-
     }
   }
 

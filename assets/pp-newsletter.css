@@ -4,13 +4,37 @@
   align-items: center;
 }
 .pp-newsletter .pp-newsletter-inner {
-  max-width: 88.5rem;
-  padding: 23.5rem 0;
+  max-width: var(--max-width);
+  padding: var(--padding-top) 0;
 }
-@media screen and (max-width: 420px) {
+@media screen and (min-width: 769px) {
   .pp-newsletter .pp-newsletter-inner {
-    max-width: 27.5rem;
-    padding: 12.5rem 0;
+    --max-width: 88.5rem;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .pp-newsletter .pp-newsletter-inner {
+    --max-width: 40rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .pp-newsletter .pp-newsletter-inner {
+    --max-width: 27.5rem;
+  }
+}
+@media screen and (min-width: 769px) {
+  .pp-newsletter .pp-newsletter-inner {
+    --padding-top: 23.5rem;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .pp-newsletter .pp-newsletter-inner {
+    --padding-top: 18rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .pp-newsletter .pp-newsletter-inner {
+    --padding-top: 12.5rem;
   }
 }
 .pp-newsletter .pp-newsletter-inner h2 {
@@ -23,11 +47,36 @@
   font-family: var(--pp-font-body-family);
   font-size: var(--pp-font-body-size);
   line-height: 1.12;
-  padding: 3.2rem 0;
+  padding: var(--padding-top) 0 var(--padding-bottom);
 }
-@media screen and (max-width: 420px) {
+@media screen and (min-width: 769px) {
   .pp-newsletter .pp-newsletter-inner p {
-    padding: 1.2rem 0 1.8rem;
+    --padding-top: 3.2rem;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .pp-newsletter .pp-newsletter-inner p {
+    --padding-top: 2.2rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .pp-newsletter .pp-newsletter-inner p {
+    --padding-top: 1.2rem;
+  }
+}
+@media screen and (min-width: 769px) {
+  .pp-newsletter .pp-newsletter-inner p {
+    --padding-bottom: 3.2rem;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .pp-newsletter .pp-newsletter-inner p {
+    --padding-bottom: 2.5rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .pp-newsletter .pp-newsletter-inner p {
+    --padding-bottom: 1.8rem;
   }
 }
 .pp-newsletter .pp-newsletter-inner h2,
@@ -43,26 +92,46 @@
   max-width: initial;
 }
 .pp-newsletter .pp-newsletter-form-wrapper .pp-newsletter-form-email {
-  width: 375px;
+  width: var(--width);
 }
-@media screen and (max-width: 420px) {
+@media screen and (min-width: 769px) {
   .pp-newsletter .pp-newsletter-form-wrapper .pp-newsletter-form-email {
-    width: 220px;
+    --width: 375px;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .pp-newsletter .pp-newsletter-form-wrapper .pp-newsletter-form-email {
+    --width: 300px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .pp-newsletter .pp-newsletter-form-wrapper .pp-newsletter-form-email {
+    --width: 220px;
   }
 }
 .pp-newsletter .pp-newsletter-form-wrapper .pp-newsletter-form-email, .pp-newsletter .pp-newsletter-form-wrapper .pp-newsletter-form-email:focus, .pp-newsletter .pp-newsletter-form-wrapper .pp-newsletter-form-email:focus-visible {
   font-family: var(--pp-font-body-family);
   font-size: var(--pp-font-body-size);
   line-height: 1.12;
-  height: 4rem;
+  height: var(--height);
   border: none;
   outline: none;
   box-shadow: none;
   padding: 0 1rem;
 }
-@media screen and (max-width: 420px) {
+@media screen and (min-width: 769px) {
   .pp-newsletter .pp-newsletter-form-wrapper .pp-newsletter-form-email, .pp-newsletter .pp-newsletter-form-wrapper .pp-newsletter-form-email:focus, .pp-newsletter .pp-newsletter-form-wrapper .pp-newsletter-form-email:focus-visible {
-    height: 2.5rem;
+    --height: 4rem;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .pp-newsletter .pp-newsletter-form-wrapper .pp-newsletter-form-email, .pp-newsletter .pp-newsletter-form-wrapper .pp-newsletter-form-email:focus, .pp-newsletter .pp-newsletter-form-wrapper .pp-newsletter-form-email:focus-visible {
+    --height: 3.2rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .pp-newsletter .pp-newsletter-form-wrapper .pp-newsletter-form-email, .pp-newsletter .pp-newsletter-form-wrapper .pp-newsletter-form-email:focus, .pp-newsletter .pp-newsletter-form-wrapper .pp-newsletter-form-email:focus-visible {
+    --height: 2.5rem;
   }
 }
 .pp-newsletter .pp-newsletter-form-field-wrapper {
@@ -70,11 +139,36 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  gap: 2.4rem;
+  gap: var(--gap);
+  flex-direction: var(--flex-direction);
 }
-@media screen and (max-width: 420px) {
+@media screen and (min-width: 769px) {
   .pp-newsletter .pp-newsletter-form-field-wrapper {
-    flex-direction: column;
-    gap: 2.1rem;
+    --gap: 2.4rem;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .pp-newsletter .pp-newsletter-form-field-wrapper {
+    --gap: 2.1rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .pp-newsletter .pp-newsletter-form-field-wrapper {
+    --gap: 1.5rem;
+  }
+}
+@media screen and (min-width: 769px) {
+  .pp-newsletter .pp-newsletter-form-field-wrapper {
+    --flex-direction: row;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .pp-newsletter .pp-newsletter-form-field-wrapper {
+    --flex-direction: column;
+  }
+}
+@media screen and (max-width: 480px) {
+  .pp-newsletter .pp-newsletter-form-field-wrapper {
+    --flex-direction: column;
   }
 }

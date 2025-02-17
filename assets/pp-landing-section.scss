@@ -14,18 +14,11 @@
 
   h2 {
     @include flex(space-between, center);
-
+    @include breakpoint-value(--padding-top, 14rem, 8rem, 3rem);
+    @include main-container(var(--padding-top), var(--pp-y-padding));
+    text-transform: uppercase;
     letter-spacing: 0.01em;
     margin: 0;
-    text-transform: uppercase;
-
-    @media #{$desktop} {
-      @include main-container(14rem, var(--pp-y-padding));
-    }
-
-    @media #{$mobile} {
-      @include main-container(3rem, var(--pp-y-padding));
-    }
   }
 
   $left: calc(50vw - var(--pp-x-padding));
@@ -39,22 +32,17 @@
     }
 
     p {
+      @include breakpoint-value(--text-indent, calc(-1 * $left), 0, 0);
       width: calc(50vw + var(--pp-x-padding));
       margin: 0;
       padding: var(--pp-y-padding) var(--pp-x-padding) 0;
-      text-indent: calc(-1 * $left);
-
-      @media #{$mobile} {
-        text-indent: 0;
-      }
+      text-indent: var(--text-indent);
     }
 
     >div {
-      padding: 3.2rem var(--pp-x-padding) 5.6rem;
-
-      @media #{$mobile} {
-        padding: 1.5rem var(--pp-x-padding) 2.5rem;
-      }
+      @include breakpoint-value(--padding-top, 3.2rem, 2.5rem, 1.5rem);
+      @include breakpoint-value(--padding-bottom, 5.6rem, 3.5rem, 2.5rem);
+      padding: var(--padding-top) var(--pp-x-padding) var(--padding-bottom);
     }
   }
 

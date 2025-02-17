@@ -5,12 +5,11 @@
   position: relative;
   display: flex;
   cursor: pointer;
-  padding: 3rem 0;
 
-  @media #{$mobile} {
-    padding-top: 0;
-    padding-bottom: $y-mobile-padding;
-  }
+  @include breakpoint-value(--padding-top, 3rem, 0, 0);
+  @include breakpoint-value(--padding-bottom, 3rem, $y-tablet-padding, $y-mobile-padding);
+  padding-top: var(--padding-top);
+  padding-bottom: var(--padding-bottom);
 
   img,
   video {
@@ -26,14 +25,11 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 125px;
     aspect-ratio: 1;
     border-radius: 100%;
     z-index: 9;
 
-    @media #{$mobile} {
-      width: 40px;
-    }
+    @include breakpoint-value(--width, 125px, 85px, 40px);
 
     circle {
       fill: rgba(var(--color-background));
