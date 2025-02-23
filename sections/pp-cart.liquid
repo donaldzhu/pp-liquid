@@ -1,0 +1,22 @@
+{% style %}
+
+{% endstyle %}
+
+{% assign metaobj = shop.metaobjects['app--6007307--sanity-documents-home'].values %}
+
+<div class="pp-cart">
+  {% render 'pp-cart-items', sectionData: section %}
+</div>
+
+{% schema %}
+  {
+    "name": "Cart",
+    "tag": "section",
+    "disabled_on": {
+      "groups": ["header", "footer"]
+    },
+    "settings": [
+
+    ]
+  }
+{% endschema %}

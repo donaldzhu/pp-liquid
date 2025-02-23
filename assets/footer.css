@@ -9,30 +9,7 @@ footer a {
   font-size: var(--pp-font-body-size);
   line-height: 1.12;
   text-transform: uppercase;
-  text-decoration-thickness: 5%;
   text-underline-offset: 12.5%;
-}
-footer .logo-container, footer .logo-container-colored {
-  max-width: 1600px;
-}
-footer .logo-container img, footer .logo-container-colored img {
-  width: 100%;
-}
-footer .logo-container-colored {
-  position: relative;
-  mix-blend-mode: multiply;
-  display: flex;
-}
-footer .logo-container-colored:before {
-  content: "";
-  display: block;
-  width: 99%;
-  height: 99%;
-  position: absolute;
-  top: 0.5%;
-  left: 0.5%;
-  background-color: rgb(var(--color-foreground));
-  mix-blend-mode: screen;
 }
 
 .footer-menu ul {
@@ -43,7 +20,7 @@ footer .logo-container-colored:before {
   width: 100%;
   flex-direction: var(--flex-direction);
   gap: var(--gap);
-  padding: var(--padding-top) 0 var(--padding-bottom);
+  padding: var(--padding) 0 var(--padding);
 }
 @media screen and (min-width: 769px) {
   .footer-menu ul {
@@ -92,34 +69,20 @@ footer .logo-container-colored:before {
 }
 @media screen and (min-width: 769px) {
   .footer-menu ul {
-    --padding-top: 8.5rem;
+    --padding: 8.5rem;
   }
 }
 @media screen and (min-width: 481px) and (max-width: 768px) {
   .footer-menu ul {
-    --padding-top: 6.75rem;
+    --padding: 6.75rem;
   }
 }
 @media screen and (max-width: 480px) {
   .footer-menu ul {
-    --padding-top: 5rem;
-  }
-}
-@media screen and (min-width: 769px) {
-  .footer-menu ul {
-    --padding-bottom: 4.5rem;
-  }
-}
-@media screen and (min-width: 481px) and (max-width: 768px) {
-  .footer-menu ul {
-    --padding-bottom: 4.25rem;
-  }
-}
-@media screen and (max-width: 480px) {
-  .footer-menu ul {
-    --padding-bottom: 4rem;
+    --padding: 5rem;
   }
 }
 .footer-menu ul a {
   text-decoration: var(--text-decoration);
+  text-decoration-thickness: 3%;
 }

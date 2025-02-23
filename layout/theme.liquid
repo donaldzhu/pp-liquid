@@ -105,8 +105,10 @@
       {% for scheme in settings.color_schemes -%}
         {% assign scheme_classes = scheme_classes | append: ', .color-' | append: scheme.id %}
         {% assign subpath = request.path | remove_first: '/pages/' %}
-        {% if request.path == '/' and scheme.id == 'landing' %}
-          :root,
+        {% if scheme.id == 'landing' %}
+          {% if request.path == '/' or request.path == '/cart' %}
+            :root,
+          {% endif %}
         {%- endif -%}
         .color-{{ scheme.id }} {
           --color-background: {{ scheme.settings.background.red }},

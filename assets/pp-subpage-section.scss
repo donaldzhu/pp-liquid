@@ -205,7 +205,10 @@ section:not(:first-child) h1 {
 
     .pp-subpage-section-product-details {
       @include breakpoint-value(--margin-top, 10rem, 0, 0);
-      margin-top: var(--margin-top);
+
+      &:not(:first-child) {
+        margin-top: var(--margin-top);
+      }
 
       @media #{$tablet} {
         @include flex(space-between);

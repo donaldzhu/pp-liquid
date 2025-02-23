@@ -17,13 +17,6 @@
         <li><a href="mailto:{{ o.footer.value.email }}">Email</a></li>
       {% endfor %}
     </ul>
-    <div class="logo-container{% if request.path != '/' %}-colored{% endif %}">
-      {% if request.path == '/' %}
-        <img src="{{ 'pp-footer.png' | asset_url }}">
-      {% else %}
-        <img src="{{ 'pp-footer-bw.png' | asset_url }}">
-      {% endif %}
-    </div>
   </div>
 </footer>
 

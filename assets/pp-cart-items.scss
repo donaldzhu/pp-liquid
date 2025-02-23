@@ -1,0 +1,80 @@
+@use './scss/typography' as *;
+@use './scss/layout' as *;
+
+.pp-cart {
+  .pp-cart-items-title {
+    @include breakpoint-value(--padding-top, 14rem, 8rem, 3rem);
+    @include main-container(var(--pp-y-padding), var(--pp-x-padding));
+
+    h1 {
+      @include pp-body-type;
+      @include flex(space-between);
+    }
+  }
+
+  table.pp-cart-items-table {
+
+    & tbody,
+    & tr,
+    & td {
+      border: none;
+      box-shadow: none;
+
+
+      a {
+        text-decoration: none;
+
+        &,
+        & div,
+        & h4 {
+          @include pp-body-type;
+        }
+      }
+    }
+
+    tr {
+      @include flex(flex-start, flex-start);
+      align-items: stretch;
+      gap: 3.5rem;
+      width: 100vw;
+    }
+
+    td {
+      @include flex(center, flex-end);
+      flex-direction: row;
+
+      h4,
+      p {
+        margin: 0;
+      }
+    }
+  }
+
+  td.pp-cart-item-image {
+    $width: 330px;
+    width: $width;
+
+    a {
+      display: flex;
+      width: fit-content;
+      height: fit-content;
+    }
+
+    img {
+      width: $width;
+      max-width: none;
+    }
+  }
+
+  td.pp-cart-item-details {
+    margin-right: auto;
+
+    p {
+      margin-top: 0.25rem;
+    }
+  }
+
+  td.pp-cart-item-price {
+    margin-right: var(--pp-x-padding);
+  }
+}
