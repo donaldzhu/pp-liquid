@@ -1,0 +1,33 @@
+.pp-cart-footer {
+  padding: 18rem 0 24rem;
+}
+.pp-cart-footer .cart__footer {
+  padding: 0 var(--pp-x-padding) 0;
+  width: 100%;
+}
+.pp-cart-footer .cart__footer .totals h2,
+.pp-cart-footer .cart__footer .totals p {
+  font-family: var(--pp-font-body-family);
+  font-size: var(--pp-font-body-size);
+  line-height: 1.12;
+}
+.pp-cart-footer .cart__footer .totals h2 {
+  width: 30rem;
+}
+.pp-cart-footer .cart__footer .totals p {
+  text-align: right;
+  width: 5vw;
+}
+.pp-cart-footer .cart__footer > * {
+  width: initial;
+}
+.pp-cart-footer .cart__ctas {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-top: 6rem;
+}
+.pp-cart-footer .cart__ctas button {
+  width: fit-content;
+  padding: calc((var(--button-height) - var(--pp-font-body-size) * 1.12) / 2) var(--x-padding);
+}

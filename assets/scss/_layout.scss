@@ -55,3 +55,7 @@ $button-transition: 0.15s ease-in-out;
     #{$variable-name}: $mobile-value;
   }
 }
+
+@mixin button-padding {
+  padding: calc((var(--button-height) - (var(--pp-font-body-size) * 1.12)) / 2) var(--x-padding);
+}

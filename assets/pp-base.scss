@@ -84,7 +84,7 @@ button.pp-button {
 
     span,
     a {
-      padding: calc((var(--button-height) - (var(--pp-font-body-size) * 1.12)) / 2) var(--x-padding);
+      @include button-padding;
       font-size: var(--font-size);
     }
   }

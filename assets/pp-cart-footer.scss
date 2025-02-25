@@ -1,0 +1,42 @@
+@use './scss/typography' as *;
+@use './scss/layout' as *;
+
+.pp-cart-footer {
+  padding: 18rem 0 24rem;
+
+  .cart__footer {
+    @include main-container;
+
+    .totals {
+
+      h2,
+      p {
+        @include pp-body-type;
+      }
+
+      h2 {
+        width: 30rem;
+      }
+
+      p {
+        text-align: right;
+        width: 5vw;
+      }
+    }
+
+    >* {
+      width: initial;
+    }
+  }
+
+  .cart__ctas {
+    @include flex(flex-end, flex-end);
+    padding-top: 6rem;
+
+    button {
+      width: fit-content;
+      @include button-padding;
+    }
+  }
+
+}
