@@ -1,5 +1,5 @@
-@use './scss/layout' as *;
-@use './scss/typography' as *;
+@use "./scss/layout" as *;
+@use "./scss/typography" as *;
 
 .pp-landing-section {
   .pp-landing-section-image-container {
@@ -14,7 +14,7 @@
 
   h2 {
     @include flex(space-between, center);
-    @include breakpoint-value(--padding-top, 14rem, 8rem, 3rem);
+    @include breakpoint-value(--padding-top, 14rem, 8rem, 7rem);
     @include main-container(var(--padding-top), var(--pp-y-padding));
     text-transform: uppercase;
     letter-spacing: 0.01em;
@@ -24,9 +24,8 @@
   $left: calc(50vw - var(--pp-x-padding));
 
   .pp-landing-section-text-container {
-
     p,
-    >div {
+    > div {
       position: relative;
       left: $left;
     }
@@ -39,7 +38,7 @@
       text-indent: var(--text-indent);
     }
 
-    >div {
+    > div {
       @include breakpoint-value(--padding-top, 3.2rem, 2.5rem, 1.5rem);
       @include breakpoint-value(--padding-bottom, 5.6rem, 3.5rem, 2.5rem);
       padding: var(--padding-top) var(--pp-x-padding) var(--padding-bottom);

@@ -12,119 +12,127 @@
 <cart-items class="pp-cart-items {% if cart == empty %} is-empty{% endif %}">
   <div>
     <div class="pp-cart-items-title">
-      <h1><span>Shopping</span> <span>Cart</span></h1>
+      <h1>
+        <span>Shopping</span><span>Cart</span>
+      </h1>
     </div>
+    <div class="cart__warnings">
+      <h1 class="cart__empty-text">Your cart is empty!</h1>
+      <button class="pp-button"><a href="/pages/issues">Continue shopping</a></button>
+    </div>
+
     <form action="{{ routes.cart_url }}" class="cart__contents critical-hidden" method="post" id="cart">
       <div class="cart__items" id="main-cart-items" data-id="{{ section.id }}">
-        <div class="js-contents">
-          {%- if cart != empty -%}
-            <table class="cart-items pp-cart-items-table">
-              <tbody>
-                {%- for item in cart.items -%}
-                  {% assign image_width = 330 %}
-                  <tr
-                    class="cart-item"
-                    id="CartItem-{{ item.index | plus: 1 }}"
-                    style="height: {{ image_width | divided_by: item.image.aspect_ratio | ceil }}px">
-                    <td
-                      class="pp-cart-item-image cart-item__media"
-                      style="width: {{ image_width }}px; height: {{ image_width | divided_by: item.image.aspect_ratio | ceil }}px">
-                      {% if item.image %}
-                        <a
-                          class="cart-item__link"
-                          href="/pages/issues"
-                          aria-hidden="true"
-                          tabindex="-1">
-                          <div class="cart-item__image-container">
-                            <img
-                              class="cart-item__image"
-                              src="{{ item.image | image_url }}"
-                              alt="{{ item.image.alt | escape }}"
-                              loading="lazy">
-                          </div>
+        {%- if cart != empty -%}
+          <div class="js-contents">
+            {%- if cart != empty -%}
+              <table class="cart-items pp-cart-items-table">
+                <tbody>
+                  {%- for item in cart.items -%}
+                    <tr
+                      class="cart-item"
+                      id="CartItem-{{ item.index | plus: 1 }}"
+                      style="--aspect-ratio: {{ item.image.aspect_ratio }}">
+                      <td class="pp-cart-item-image cart-item__media">
+                        {% if item.image %}
+                          <a
+                            class="cart-item__link"
+                            href="/pages/issues"
+                            aria-hidden="true"
+                            tabindex="-1">
+                            <div class="cart-item__image-container">
+                              <img
+                                class="cart-item__image"
+                                src="{{ item.image | image_url }}"
+                                alt="{{ item.image.alt | escape }}"
+                                loading="lazy">
+                            </div>
+                          </a>
+                        {% endif %}
+                      </td>
+
+                      <td class="pp-cart-item-details cart-item__details">
+                        <a href="/pages/issues">
+                        {% if item.product.metafields.custom.volume_number %}
+                          {% assign volumeNumber = item.product.metafields.custom.volume_number %}
+                          {% if volumeNumber < 10 %}
+                            {% assign volumeNumber = '0' | append: volumeNumber %}
+                          {% endif %}
+                          <h4 class="cart-item__name">
+                            PATINAPATINA<span class="desktop-only"> MAGAZINE</span>
+                          </h4>
+                          <p>
+                            ISSUE {{ volumeNumber }}
+                          </p>
+                          {% else %}
+                            <h4 class="cart-item__name">{{ item.product.title | escape }}</h4>
+                          {% endif %}
                         </a>
-                      {% endif %}
-                    </td>
+                      </td>
 
-                    <td class="pp-cart-item-details cart-item__details">
-                      <a href="/pages/issues">
-                      {% if item.product.metafields.custom.volume_number %}
-                        {% assign volumeNumber = item.product.metafields.custom.volume_number %}
-                        {% if volumeNumber < 10 %}
-                          {% assign volumeNumber = '0' | append: volumeNumber %}
-                        {% endif %}
-                        <h4 class="cart-item__name">
-                          PATINAPATINA MAGAZINE
-                        </h4>
-                        <p>
-                          ISSUE {{ volumeNumber }}
-                        </p>
-                        {% else %}
-                          <h4 class="cart-item__name">{{ item.product.title | escape }}</h4>
-                        {% endif %}
-                      </a>
-                    </td>
+                      <td class="pp-cart-item-quantity cart-item__quantity">
+                        <quantity-popover>
+                          <div class="cart-item__quantity-wrapper quantity-popover-wrapper">
+                            <label class="visually-hidden" for="Quantity-{{ item.index | plus: 1 }}">
+                              {{ 'products.product.quantity.label' | t }}
+                            </label>
+                            <div class="quantity-popover-container">
+                              <quantity-input class="quantity cart-quantity">
+                                <button class="quantity__button" name="minus" type="button">
+                                  <span class="svg-wrapper">
+                                    -
+                                  </span>
+                                </button>
+                                <input
+                                  class="quantity__input"
+                                  data-quantity-variant-id="{{ item.variant.id }}"
+                                  type="number"
+                                  readonly
+                                  name="updates[]"
+                                  value="{{ item.quantity }}"
+                                  {% # theme-check-disable %}
+                                  data-cart-quantity="{{ cart | item_count_for_variant: item.variant.id }}"
+                                  step="1"
+                                  {% # theme-check-enable %}
+                                  id="Quantity-{{ item.index | plus: 1 }}"
+                                  data-index="{{ item.index | plus: 1 }}"
+                                >
+                                <button class="quantity__button" name="plus" type="button">
+                                  <span class="svg-wrapper">
+                                    +
+                                  </span>
+                                </button>
+                              </quantity-input>
+                            </div>
 
-                    <td class="pp-cart-item-quantity cart-item__quantity">
-                      <quantity-popover>
-                        <div class="cart-item__quantity-wrapper quantity-popover-wrapper">
-                          <label class="visually-hidden" for="Quantity-{{ item.index | plus: 1 }}">
-                            {{ 'products.product.quantity.label' | t }}
-                          </label>
-                          <div class="quantity-popover-container">
-                            <quantity-input class="quantity cart-quantity">
-                              <button class="quantity__button" name="minus" type="button">
-                                <span class="svg-wrapper">
-                                  -
-                                </span>
-                              </button>
-                              <input
-                                class="quantity__input"
-                                data-quantity-variant-id="{{ item.variant.id }}"
-                                type="number"
-                                readonly
-                                name="updates[]"
-                                value="{{ item.quantity }}"
-                                {% # theme-check-disable %}
-                                data-cart-quantity="{{ cart | item_count_for_variant: item.variant.id }}"
-                                step="1"
-                                {% # theme-check-enable %}
-                                id="Quantity-{{ item.index | plus: 1 }}"
-                                data-index="{{ item.index | plus: 1 }}"
-                              >
-                              <button class="quantity__button" name="plus" type="button">
-                                <span class="svg-wrapper">
-                                  +
-                                </span>
-                              </button>
-                            </quantity-input>
                           </div>
 
-                        </div>
+                          <div class="cart-item__error" id="Line-item-error-{{ item.index | plus: 1 }}" role="alert">
+                            <small class="cart-item__error-text"></small>
+                            <span class="svg-wrapper">
+                              {{- 'icon-error.svg' | inline_asset_content -}}
+                            </span>
+                          </div>
+                        </quantity-popover>
+                      </td>
 
-                        <div class="cart-item__error" id="Line-item-error-{{ item.index | plus: 1 }}" role="alert">
-                          <small class="cart-item__error-text"></small>
-                          <span class="svg-wrapper">
-                            {{- 'icon-error.svg' | inline_asset_content -}}
+                      <td class="pp-cart-item-price cart-item__totals">
+                        {%- render 'loading-spinner' -%}
+                        <div class="cart-item__price-wrapper">
+                          <span class="price price--end">
+                            {{ item.original_line_price | money }}
                           </span>
                         </div>
-                      </quantity-popover>
-                    </td>
+                      </td>
+                    </tr>
+                  {%- endfor -%}
 
-                    <td class="pp-cart-item-price cart-item__totals">
-                      {%- render 'loading-spinner' -%}
-                      <div class="cart-item__price-wrapper">
-                        <span class="price price--end">
-                          {{ item.original_line_price | money }}
-                        </span>
-                      </div>
-                    </td>
-                  </tr>
-                {%- endfor -%}
-              </tbody>
-            </table>
-          {%- endif -%}
-        </div>
+
+                </tbody>
+              </table>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
       </div>
 
       <p class="visually-hidden" id="cart-live-region-text" aria-live="polite" role="status"></p>

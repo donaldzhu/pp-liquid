@@ -1,3 +1,7 @@
+.shopify-section.shopify-section-group-header-group.section-header {
+  z-index: 999;
+}
+
 header {
   padding: var(--padding-top) var(--pp-x-padding) var(--padding-bottom);
   width: 100%;
@@ -7,6 +11,9 @@ header {
 }
 header h1 {
   margin: 0;
+}
+header a {
+  display: flex;
 }
 @media screen and (min-width: 769px) {
   header {
@@ -56,6 +63,9 @@ header svg {
     --svg-width: 65px;
   }
 }
+header ul.mobile-menu-list {
+  display: none;
+}
 
 .header-menu ul {
   padding-inline-start: 0;
@@ -79,4 +89,62 @@ header svg {
 }
 .header-menu li button {
   margin: 0;
+}
+
+header.expanded {
+  position: fixed;
+  z-index: 999;
+}
+
+menu.mobile-menu {
+  position: fixed;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: 99;
+  margin: 0;
+  padding-left: var(--pp-x-padding);
+  padding-top: var(--padding-top);
+  background-color: rgb(var(--color-background));
+}
+@media screen and (min-width: 769px) {
+  menu.mobile-menu {
+    --padding-top: 0;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  menu.mobile-menu {
+    --padding-top: 18rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  menu.mobile-menu {
+    --padding-top: 12rem;
+  }
+}
+menu.mobile-menu ul {
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+@media screen and (min-width: 769px) {
+  menu.mobile-menu ul {
+    --gap: 0;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  menu.mobile-menu ul {
+    --gap: 1.75rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  menu.mobile-menu ul {
+    --gap: 1.5rem;
+  }
+}
+menu.mobile-menu.expanded {
+  display: block;
 }

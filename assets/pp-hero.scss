@@ -1,6 +1,6 @@
-@use './scss/layout' as *;
-@use './scss/typography' as *;
-@use 'sass:math';
+@use "./scss/layout" as *;
+@use "./scss/typography" as *;
+@use "sass:math";
 
 $emblem-height-to-width-ratio: math.div(535, 433);
 
@@ -13,8 +13,8 @@ $emblem-height-to-width-ratio: math.div(535, 433);
 
   @include breakpoint-value(--height, 433px, 292px, 149px);
   @include breakpoint-value(--text-max-width, 114rem, 64rem, 56rem);
-  @include breakpoint-value(--padding-top, 4rem, 4rem, 5rem);
-  @include breakpoint-value(--padding-bottom, 1rem, 1rem, 0);
+  @include breakpoint-value(--padding-top, 4rem, 5rem, 5rem);
+  @include breakpoint-value(--padding-bottom, 1rem, 0, 0);
 
   padding: var(--padding-top) 0 var(--padding-bottom);
 

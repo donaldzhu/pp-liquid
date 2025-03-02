@@ -1,15 +1,18 @@
-@use './scss/typography' as *;
-@use './scss/layout' as *;
+@use "./scss/typography" as *;
+@use "./scss/layout" as *;
 
 :root {
-  --pp-font-heading-family: 'AzeretMono';
-  --pp-font-body-family: 'XanhMono';
+  --pp-font-heading-family: "AzeretMono";
+  --pp-font-body-family: "XanhMono";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
   @include breakpoint-value(--pp-font-heading-size, 4rem, 2.4rem, 1.4rem);
   @include breakpoint-value(--pp-font-body-size, 2.4rem, 1.65rem, 1.2rem);
-  @include breakpoint-value(--pp-x-padding, #{$x-padding-desktop}, #{$x-padding-tablet}, #{$x-padding-mobile});
+  @include breakpoint-value(--pp-x-padding,
+    #{$x-padding-desktop},
+    #{$x-padding-tablet},
+    #{$x-padding-mobile});
   @include breakpoint-value(--pp-y-padding, 4.5rem, 3rem, 1.5rem);
 
   ul li {
@@ -76,7 +79,10 @@ button.pp-button {
     @include breakpoint-value(--button-height, 4.2rem, 3.2rem, 2.5rem);
     @include breakpoint-value(--border-width, 1px, 1px, 0.5px);
     @include breakpoint-value(--x-padding, 3rem, 2.25rem, 1.5rem);
-    @include breakpoint-value(--font-size, var(--pp-font-body-size), var(--pp-font-body-size), 1.2rem);
+    @include breakpoint-value(--font-size,
+      var(--pp-font-body-size),
+      var(--pp-font-body-size),
+      1.2rem);
 
     border-radius: calc(var(--button-height) / 2);
     height: var(--button-height);
@@ -119,4 +125,30 @@ img.drop-shadow {
 
 img.rounded {
   border-radius: var(--pp-rounded-corners);
+}
+
+.desktop-only {
+  @media #{$tablet} {
+    display: none;
+  }
+
+  @media #{$mobile} {
+    display: none;
+  }
+}
+
+.mobile-only {
+  @media #{$desktop} {
+    display: none;
+  }
+
+  @media #{$tablet} {
+    display: none;
+  }
+}
+
+.non-desktop-only {
+  @media #{$desktop} {
+    display: none;
+  }
 }

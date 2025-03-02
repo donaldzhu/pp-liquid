@@ -1,0 +1,17 @@
+{{ 'pp-404.css' | asset_url | stylesheet_tag }}
+
+<div class="pp-404">
+  <p>
+    OOPS!
+  </p>
+  <h1>
+    Page not found :(
+  </h1>
+  <button class="pp-button"><a href="/">Go Back Home</a></button>
+</div>
+
+{% schema %}
+  {
+    "name": "pp-404"
+  }
+{% endschema %}

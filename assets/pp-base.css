@@ -46,7 +46,7 @@
 }
 @media screen and (max-width: 480px) {
   :root {
-    --pp-x-padding: 1.8rem;
+    --pp-x-padding: 1.6rem;
   }
 }
 @media screen and (min-width: 769px) {
@@ -82,7 +82,7 @@ button.pp-button {
   letter-spacing: 0.01em;
 }
 button.pp-button, button.pp-button-active {
-  border-radius: 2.1rem;
+  border-radius: calc($button-height / 2);
   height: 4.2rem;
   padding: 0;
   display: flex;
@@ -193,7 +193,7 @@ button.pp-button-active a {
 button.pp-button span,
 button.pp-button a, button.pp-button-active span,
 button.pp-button-active a {
-  padding: calc((var(--button-height) - var(--pp-font-body-size) * 1.12) / 2) var(--x-padding);
+  padding: calc((var(--button-height) - (var(--pp-font-body-size) * 1.12)) / 2) var(--x-padding);
   font-size: var(--font-size);
 }
 button.pp-button-active, button.pp-button:hover {
@@ -265,4 +265,32 @@ img.drop-shadow {
 
 img.rounded {
   border-radius: var(--pp-rounded-corners);
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .desktop-only {
+    display: none;
+  }
+}
+@media screen and (max-width: 480px) {
+  .desktop-only {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .mobile-only {
+    display: none;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .mobile-only {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .non-desktop-only {
+    display: none;
+  }
 }

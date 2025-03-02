@@ -25,26 +25,26 @@
   }
 }
 .pp-split-layout .pp-split-layout-plane {
-  width: calc(50vw - (6.7307692308vw + -3.6923076923rem) / 2 - var(--pp-x-padding));
+  width: calc(50vw - $gap / 2 - var(--pp-x-padding));
 }
 .pp-split-layout .pp-split-layout-plane.pp-split-layout-plane-full-size {
-  width: calc((50vw - (6.7307692308vw + -3.6923076923rem) / 2 - var(--pp-x-padding)) * 1.2);
+  width: calc($width * 1.2);
 }
 .pp-split-layout .pp-split-layout-plane.pp-split-layout-plane-inset {
-  width: calc((50vw - (6.7307692308vw + -3.6923076923rem) / 2 - var(--pp-x-padding)) * 0.8);
+  width: calc($width * 0.8);
 }
 @media (min-width: 1440px) {
   .pp-split-layout {
     gap: 6rem;
   }
   .pp-split-layout .pp-split-layout-plane {
-    width: calc(50vw - 3rem - var(--pp-x-padding));
+    width: calc(50vw - $gap / 2 - var(--pp-x-padding));
   }
   .pp-split-layout .pp-split-layout-plane.pp-split-layout-plane-full-size {
-    width: calc((50vw - 3rem - var(--pp-x-padding)) * 1.2);
+    width: calc($width * 1.2);
   }
   .pp-split-layout .pp-split-layout-plane.pp-split-layout-plane-inset {
-    width: calc((50vw - 3rem - var(--pp-x-padding)) * 0.8);
+    width: calc($width * 0.8);
   }
 }
 @media (max-width: 1024px) {
@@ -52,13 +52,13 @@
     gap: 3.2rem;
   }
   .pp-split-layout .pp-split-layout-plane {
-    width: calc(50vw - 1.6rem - var(--pp-x-padding));
+    width: calc(50vw - $gap / 2 - var(--pp-x-padding));
   }
   .pp-split-layout .pp-split-layout-plane.pp-split-layout-plane-full-size {
-    width: calc((50vw - 1.6rem - var(--pp-x-padding)) * 1.2);
+    width: calc($width * 1.2);
   }
   .pp-split-layout .pp-split-layout-plane.pp-split-layout-plane-inset {
-    width: calc((50vw - 1.6rem - var(--pp-x-padding)) * 0.8);
+    width: calc($width * 0.8);
   }
 }
 .pp-split-layout .pp-split-layout-plane.pp-desktop {

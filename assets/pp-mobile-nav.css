@@ -1,0 +1,23 @@
+.pp-mobile-nav ul {
+  padding-inline-start: 0;
+  display: flex;
+  gap: var(--gap);
+}
+@media screen and (min-width: 769px) {
+  .pp-mobile-nav ul {
+    --gap: 1.2rem;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .pp-mobile-nav ul {
+    --gap: 0.8rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .pp-mobile-nav ul {
+    --gap: 0.5rem;
+  }
+}
+.pp-mobile-nav li button {
+  margin: 0;
+}

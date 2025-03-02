@@ -2,12 +2,20 @@
 @use './scss/layout' as *;
 
 .pp-cart-footer {
-  padding: 18rem 0 24rem;
+  @include breakpoint-value(--padding-top, 18rem, 6rem, 4rem);
+  @include breakpoint-value(--padding-bottom, 24rem, 18rem, 14rem);
+  padding: var(--padding-top) 0 var(--padding-bottom);
+
+  &.is-empty {
+    padding: 0;
+  }
 
   .cart__footer {
     @include main-container;
+    justify-content: flex-end;
 
     .totals {
+      justify-content: flex-end;
 
       h2,
       p {
@@ -15,12 +23,17 @@
       }
 
       h2 {
-        width: 30rem;
+        @include breakpoint-value(--quantity-width, $cart-quantity-desktop-width, $cart-quantity-tablet-width, $cart-quantity-mobile-width);
+        width: var(--quantity-width);
       }
 
       p {
+        @include breakpoint-value(--margin-left, 2rem, 0, 0);
+        @include breakpoint-value(--min-width, $cart-price-desktop-width, $cart-price-non-desktop-width, $cart-price-non-desktop-width);
         text-align: right;
-        width: 5vw;
+        flex: none;
+        min-width: var(--min-width);
+        margin-left: var(--margin-left);
       }
     }
 
@@ -31,7 +44,8 @@
 
   .cart__ctas {
     @include flex(flex-end, flex-end);
-    padding-top: 6rem;
+    @include breakpoint-value(--padding-top, 6rem, 4rem, 2rem);
+    padding-top: var(--padding-top);
 
     button {
       width: fit-content;

@@ -1,0 +1,14 @@
+@use "./scss/layout" as *;
+
+.pp-mobile-nav {
+  ul {
+    @include breakpoint-value(--gap, 1.2rem, 0.8rem, 0.5rem);
+    padding-inline-start: 0;
+    display: flex;
+    gap: var(--gap);
+  }
+
+  li button {
+    margin: 0;
+  }
+}

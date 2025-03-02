@@ -1,0 +1,20 @@
+{{ 'pp-mobile-nav.css' | asset_url | stylesheet_tag }}
+<nav class="pp-mobile-nav">
+    <ul role="list">
+      {% for link in linklists.main-menu.links %}
+        <li>
+          <button class="pp-button{%- if link.current -%}-active{%- elsif request.path == '/cart' and link.title == 'Cart' -%}-active{%- endif -%}">
+            <a
+              href="{% if link.title == 'Cart' %}/cart{% else %}{{ link.url }}{% endif %}"
+              class="button"
+              {% if link.current %}
+              aria-current="page"
+              {% endif %}>
+              {{ link.title | escape }}
+            </a>
+          </button>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+

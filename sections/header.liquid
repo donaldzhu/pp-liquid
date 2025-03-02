@@ -1,12 +1,30 @@
 {{ 'header.css' | asset_url | stylesheet_tag }}
 
-{%- liquid
-  for block in section.blocks
-    if block.type == '@app'
-      assign has_app_block = true
-    endif
-  endfor
--%}
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuButton = document.querySelector('.mobile-menu-button')
+    mobileMenuButton.addEventListener('click', () => {
+      const header = document.querySelector('header')
+
+      const menu = document.querySelector('.mobile-menu')
+      const menuButton = document.querySelector('.mobile-menu-button')
+      const menuButtonSpan = menuButton.querySelector('span')
+      menu.classList.toggle('expanded')
+      header.classList.toggle('expanded')
+      menuButton.classList.toggle('pp-button-active')
+      menuButton.classList.toggle('pp-button')
+
+      const isExpanded = header.classList.contains('expanded')
+      menuButtonSpan.textContent = isExpanded ? 'Close' : 'Menu'
+      if (isExpanded) {
+        document.body.style.overflow = 'hidden'
+      } else {
+        document.body.style.overflow = 'auto'
+      }
+    })
+  })
+
+</script>
 
 <header>
   {%- if request.page_type == 'index' -%}
@@ -19,7 +37,8 @@
   {%- if request.page_type == 'index' -%}
     </h1>
   {%- endif -%}
-  <nav class="header-menu">
+
+  <nav class="header-menu desktop-only">
     <ul role="list">
       {% for link in linklists.main-menu.links %}
         <li>
@@ -37,7 +56,33 @@
       {% endfor %}
     </ul>
   </nav>
+
+  <nav class="header-menu non-desktop-only">
+    <ul role="list">
+      <li>
+        <button class="pp-button mobile-menu-button"><span>Menu</span></button>
+      </li>
+    </ul>
+  </nav>
 </header>
+<menu class="mobile-menu">
+  <ul role="list" class="mobile-menu-list">
+      {% for link in linklists.main-menu.links %}
+        <li>
+          <button class="pp-button{%- if link.current -%}-active{%- elsif request.path == '/cart' and link.title == 'Cart' -%}-active{%- endif -%}">
+            <a
+              href="{% if link.title == 'Cart' %}/cart{% else %}{{ link.url }}{% endif %}"
+              class="button"
+              {% if link.current %}
+              aria-current="page"
+              {% endif %}>
+              {{ link.title | escape }}
+            </a>
+          </button>
+        </li>
+      {% endfor %}
+    </ul>
+</menu>
 
 <script type="application/ld+json">
   {

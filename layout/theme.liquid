@@ -11,7 +11,7 @@
     {% assign path = request.path | remove: '/' %}
     {%- if redirect_paths contains path -%}
       <script>
-        window.location.href = '/';
+        window.location.href = '/404';
       </script>
     {%- endif -%}
 
@@ -105,10 +105,8 @@
       {% for scheme in settings.color_schemes -%}
         {% assign scheme_classes = scheme_classes | append: ', .color-' | append: scheme.id %}
         {% assign subpath = request.path | remove_first: '/pages/' %}
-        {% if scheme.id == 'landing' %}
-          {% if request.path == '/' or request.path == '/cart' %}
-            :root,
-          {% endif %}
+        {% if scheme.id == 'main' %}
+          :root,
         {%- endif -%}
         .color-{{ scheme.id }} {
           --color-background: {{ scheme.settings.background.red }},

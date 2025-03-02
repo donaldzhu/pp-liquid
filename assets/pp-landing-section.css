@@ -28,7 +28,7 @@
 }
 @media screen and (max-width: 480px) {
   .pp-landing-section h2 {
-    --padding-top: 3rem;
+    --padding-top: 7rem;
   }
 }
 .pp-landing-section .pp-landing-section-text-container p,
@@ -44,7 +44,7 @@
 }
 @media screen and (min-width: 769px) {
   .pp-landing-section .pp-landing-section-text-container p {
-    --text-indent: calc(-1 * (50vw - var(--pp-x-padding)));
+    --text-indent: calc(-1 * $left);
   }
 }
 @media screen and (min-width: 481px) and (max-width: 768px) {

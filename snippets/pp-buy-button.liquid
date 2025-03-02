@@ -12,10 +12,27 @@
     {% if product.selected_or_first_available_variant.available == false%}disabled{% endif %}
     class="product-variant-id">
   <div>
+    {% assign cartItems = cart.items %}
+    {% for item in cartItems %}
+      {% if item.product.id == product.id %}
+        {% assign quantityInCart = item.quantity %}
+        {% assign inventoryQuantity = product.selected_or_first_available_variant.inventory_quantity %}
+        {% if quantityInCart >= inventoryQuantity %}
+          {% assign hasMoreThanInventory = true %}
+        {% else %}
+          {% assign hasMoreThanInventory = false %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
     <button
-      type="submit"
+      type="button"
       name="add"
       class="pp-button"
+      {% if hasMoreThanInventory %}
+        onclick="window.location.href = '/cart'"
+      {% else %}
+        onclick="this.form.submit()"
+      {% endif %}
       {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}>
         <span>{%- if product.selected_or_first_available_variant.available -%}{{ buttonText | default: 'BUY NOW' }}{%- else -%}SOLD OUT{%- endif -%}</span>
     </button>

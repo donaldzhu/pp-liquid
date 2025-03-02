@@ -1,8 +1,16 @@
-@use './scss/layout' as *;
+@use "./scss/layout" as *;
+
+.shopify-section.shopify-section-group-header-group.section-header {
+  z-index: 999;
+}
 
 header {
   h1 {
     margin: 0;
+  }
+
+  a {
+    display: flex;
   }
 
   @include breakpoint-value(--padding-top, 3.6rem, 3rem, 2rem);
@@ -16,6 +24,9 @@ header {
 
   @include flex(space-between);
 
+  ul.mobile-menu-list {
+    display: none;
+  }
 }
 
 .header-menu {
@@ -28,5 +39,40 @@ header {
 
   li button {
     margin: 0;
+  }
+}
+
+header.expanded {
+  position: fixed;
+  z-index: 999;
+}
+
+menu.mobile-menu {
+  position: fixed;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: 99;
+
+  @include breakpoint-value(--padding-top, 0, 18rem, 12rem);
+  margin: 0;
+  padding-left: var(--pp-x-padding);
+  padding-top: var(--padding-top);
+
+  background-color: rgb(var(--color-background));
+
+  ul {
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint-value(--gap, 0, 1.75rem, 1.5rem);
+    gap: var(--gap);
+  }
+
+  &.expanded {
+    display: block;
   }
 }

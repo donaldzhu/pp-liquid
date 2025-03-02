@@ -1,0 +1,27 @@
+@use './scss/typography' as *;
+@use './scss/layout' as *;
+
+
+.pp-404 {
+  padding: 25rem 0; // TODO
+  @include flex;
+  flex-direction: column;
+
+  p {
+    @include pp-heading-type;
+    margin: 0;
+    padding-top: 7rem;
+  }
+
+  h1 {
+    @include pp-body-type;
+    text-transform: uppercase;
+    margin: 1.2rem 0 0;
+  }
+
+  button {
+    @include breakpoint-value(--margin-top, 10rem, 4rem, 2rem);
+    width: fit-content;
+    margin-top: var(--margin-top);
+  }
+}

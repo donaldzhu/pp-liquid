@@ -10,7 +10,7 @@ $tablet: 'screen and (min-width: #{$screen-mobile + 1px}) and (max-width: #{$scr
 $mobile: 'screen and (max-width: #{$screen-mobile})';
 $x-padding-desktop: 3.2rem;
 $x-padding-tablet: 2.4rem;
-$x-padding-mobile: 1.8rem;
+$x-padding-mobile: 1.6rem;
 $y-tablet-padding: 3rem;
 $y-mobile-padding: 2rem;
 
@@ -30,6 +30,15 @@ $gap-max: 6rem;
 $gap: desktop-dynamic-size($gap-min, $gap-max);
 $half-container-width: calc(50vw - $gap / 2 - var(--pp-x-padding));
 $button-transition: 0.15s ease-in-out;
+
+$cart-quantity-desktop-width: calc(9vw + 12rem);
+$cart-quantity-tablet-width: calc(9vw + 12rem);
+$cart-quantity-mobile-width: calc(15vw + 5rem);
+
+$cart-price-desktop-width: 5vw;
+
+$cart-price-non-desktop-width: 6rem;
+
 
 @mixin flex ($justify: center, $align: center) {
   display: flex;
