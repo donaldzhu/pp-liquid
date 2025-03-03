@@ -71,7 +71,7 @@
       @include flex(flex-start, flex-end);
       @include breakpoint-value(--tr-gap, 3.5rem, 0, 0);
       @include breakpoint-value(--tr-flex-wrap, nowrap, wrap, wrap);
-      $image-height: calc($image-width / var(--aspect-ratio));
+      $image-height: calc(#{$image-width} / var(--aspect-ratio));
       @include breakpoint-value(--tr-height, $image-height, auto, auto);
 
       width: 100vw;
