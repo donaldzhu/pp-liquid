@@ -40,7 +40,7 @@
   <div class="pp-landing-section-image-container">
       {% for s in sectionData.sectionMedia -%}
         {% if s.mediaType == 'image' %}
-          {% render 'pp-focal-image', imageData: s.image %}
+          {% render 'pp-focal-image', imageData: s.image, rounded: false, dropShadow: false %}
         {% endif %}
       {% endfor %}
   </div>
