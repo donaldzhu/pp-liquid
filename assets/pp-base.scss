@@ -16,9 +16,7 @@
   @include breakpoint-value(--pp-y-padding, 4.5rem, 3rem, 1.5rem);
 
   ul li {
-    &::marker {
-      content: none;
-    }
+    list-style-type: none;
   }
 
   a,

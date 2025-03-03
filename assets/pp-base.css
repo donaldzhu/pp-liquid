@@ -64,8 +64,8 @@
     --pp-y-padding: 1.5rem;
   }
 }
-:root ul li::marker {
-  content: none;
+:root ul li {
+  list-style-type: none;
 }
 :root a,
 :root a:active,
