@@ -16,12 +16,8 @@
 %}
 
 
-<div class="pp-subpage-img-container">
-  <img
-    style="--insetSize: {{ insetSize }};"
-    class="pp-subpage-img{% if roundedCorners != false %} rounded{% endif %}{% if dropShadow != false %} drop-shadow{% endif %}"
-    src="{{ imageData.filename | file_url }}"
-    alt="{{ imageData.alt }}">
+<div class="pp-subpage-img-container" style="--insetSize: {{ insetSize }};">
+  {% render 'pp-focal-image', imageData: imageData, class: 'pp-subpage-img', rounded: roundedCorners, dropShadow: dropShadow %}
   {% if caption != blank %}
     <p class="pp-subpage-img-caption">{{ caption }}</p>
   {% endif %}

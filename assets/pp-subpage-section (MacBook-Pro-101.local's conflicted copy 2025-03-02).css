@@ -248,16 +248,16 @@ section:not(:first-child) h1 {
   padding-left: var(--pp-x-padding);
   opacity: 0;
   position: fixed;
-  width: calc(50vw - (6.7307692308vw + -3.6923076923rem) / 2 - var(--pp-x-padding));
+  width: calc(50vw - $gap / 2 - var(--pp-x-padding));
 }
 @media (min-width: 1440px) {
   .pp-subpage-section .pp-subpage-section-caption .pp-subpage-section-caption-temp {
-    width: calc(50vw - 3rem - var(--pp-x-padding));
+    width: calc(50vw - $gap-max / 2 - var(--pp-x-padding));
   }
 }
 @media (max-width: 1024px) {
   .pp-subpage-section .pp-subpage-section-caption .pp-subpage-section-caption-temp {
-    width: calc(50vw - 1.6rem - var(--pp-x-padding));
+    width: calc(50vw - $gap-min / 2 - var(--pp-x-padding));
   }
 }
 .pp-subpage-section .pp-subpage-section-caption .pp-subpage-section-caption-equal-columns {
@@ -331,32 +331,32 @@ section:not(:first-child) h1 {
   padding: 0 var(--pp-x-padding) 0;
 }
 .pp-subpage-section .pp-subpage-section-caption .pp-subpage-section-caption-left-column {
-  padding-right: calc((6.7307692308vw + -3.6923076923rem) / 2);
+  padding-right: calc($gap / 2);
 }
 @media (min-width: 1440px) {
   .pp-subpage-section .pp-subpage-section-caption .pp-subpage-section-caption-left-column {
-    padding-right: 3rem;
+    padding-right: calc($gap-max / 2);
   }
 }
 @media (max-width: 1024px) {
   .pp-subpage-section .pp-subpage-section-caption .pp-subpage-section-caption-left-column {
-    padding-right: 1.6rem;
+    padding-right: calc($gap-min / 2);
   }
 }
 .pp-subpage-section .pp-subpage-section-caption .pp-subpage-section-caption-right-column {
   position: absolute;
   top: 0;
   left: 50vw;
-  padding-left: calc((6.7307692308vw + -3.6923076923rem) / 2);
+  padding-left: calc($gap / 2);
 }
 @media (min-width: 1440px) {
   .pp-subpage-section .pp-subpage-section-caption .pp-subpage-section-caption-right-column {
-    padding-left: 3rem;
+    padding-left: calc($gap-max / 2);
   }
 }
 @media (max-width: 1024px) {
   .pp-subpage-section .pp-subpage-section-caption .pp-subpage-section-caption-right-column {
-    padding-left: 1.6rem;
+    padding-left: calc($gap-min / 2);
   }
 }
 .pp-subpage-section .pp-subpage-section-caption p {

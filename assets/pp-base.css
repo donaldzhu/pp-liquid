@@ -82,7 +82,7 @@ button.pp-button {
   letter-spacing: 0.01em;
 }
 button.pp-button, button.pp-button-active {
-  border-radius: calc($button-height / 2);
+  border-radius: 2.1rem;
   height: 4.2rem;
   padding: 0;
   display: flex;
@@ -193,7 +193,7 @@ button.pp-button-active a {
 button.pp-button span,
 button.pp-button a, button.pp-button-active span,
 button.pp-button-active a {
-  padding: calc((var(--button-height) - (var(--pp-font-body-size) * 1.12)) / 2) var(--x-padding);
+  padding: calc((var(--button-height) - var(--pp-font-body-size) * 1.12) / 2) var(--x-padding);
   font-size: var(--font-size);
 }
 button.pp-button-active, button.pp-button:hover {

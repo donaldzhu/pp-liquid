@@ -149,7 +149,7 @@
 }
 @media screen and (min-width: 769px) {
   .pp-cart-items table.pp-cart-items-table tr {
-    --tr-height: calc((var(--image-width-vw) + var(--image-width-px)) / var(--aspect-ratio));
+    --tr-height: calc($image-width / var(--aspect-ratio));
   }
 }
 @media screen and (min-width: 481px) and (max-width: 768px) {
@@ -163,7 +163,7 @@
   }
 }
 .pp-cart-items table.pp-cart-items-table tr td.pp-cart-item-image {
-  height: calc((var(--image-width-vw) + var(--image-width-px)) / var(--aspect-ratio));
+  height: calc($image-width / var(--aspect-ratio));
 }
 .pp-cart-items table.pp-cart-items-table tr:not(:first-child) {
   margin-top: var(--margin-top);
@@ -323,7 +323,7 @@
 }
 @media screen and (min-width: 769px) {
   .pp-cart-items td.pp-cart-item-quantity .quantity-popover-container quantity-input.quantity {
-    --quantity-input-width: calc(14rem / var(--font-body-scale) + var(--inputs-border-width) * 2);
+    --quantity-input-width: calc(14rem / var(--font-body-scale) + var(--inputs-border-width)* 2);
   }
 }
 @media screen and (min-width: 481px) and (max-width: 768px) {

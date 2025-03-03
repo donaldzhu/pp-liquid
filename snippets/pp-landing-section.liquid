@@ -40,7 +40,7 @@
   <div class="pp-landing-section-image-container">
       {% for s in sectionData.sectionMedia -%}
         {% if s.mediaType == 'image' %}
-          <img src="{{ s.image.filename | file_url  }}">
+          {% render 'pp-focal-image', imageData: s.image %}
         {% endif %}
       {% endfor %}
   </div>

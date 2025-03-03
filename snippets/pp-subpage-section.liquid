@@ -5,6 +5,7 @@
   assign sectionHeader = sectionData.sectionHeader.value
 %}
 
+
 <div class="pp-subpage-section">
   <div class="pp-subpage-section-header-container">
     <div class="pp-subpage-section-dot"></div>
@@ -16,7 +17,7 @@
       <div></div>
       <div></div>
     {% endif %}
-    <img src="{{ sectionHeader.image.filename | file_url }}">
+    {% render 'pp-focal-image', imageData: sectionHeader.image, class: 'pp-subpage-section-image' %}
   </div>
   <p class="pp-subpage-section-date">
     {% render 'pp-date', date: sectionHeader.date %}

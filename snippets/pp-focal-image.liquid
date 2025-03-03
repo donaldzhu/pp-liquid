@@ -1,0 +1,22 @@
+{% liquid
+  assign image = images[imageData.filename]
+  assign focalPointX = image.presentation.focal_point.x
+  assign focalPointY = image.presentation.focal_point.y
+  if focalPointX == blank
+    assign focalPointX = 0
+  endif
+  if focalPointY == blank
+    assign focalPointY = 0
+  endif
+  if rounded != false
+    assign class = class | append: ' rounded'
+  endif
+  if dropShadow != false
+    assign class = class | append: ' drop-shadow'
+  endif
+%}
+
+<img
+style="object-position: {{ focalPointX }}% {{ focalPointY }}%"
+class="{{ class }}"
+src="{{ imageData.filename | file_url }}">

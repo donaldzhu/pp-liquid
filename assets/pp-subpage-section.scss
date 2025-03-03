@@ -154,7 +154,7 @@ section:not(:first-child) h1 {
       display: block;
       opacity: 0;
 
-      @include breakpoint-value(--visibility, hidden, visible, visible);
+      @include breakpoint-value(--visibility, auto, visible, visible);
       @include breakpoint-value(--opacity, 0, 1, 1);
       @include breakpoint-value(--column-count, 2, 1, 1);
       visibility: var(--visibility);

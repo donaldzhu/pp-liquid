@@ -128,5 +128,5 @@
 }
 .pp-cart-footer .cart__ctas button {
   width: fit-content;
-  padding: calc((var(--button-height) - var(--pp-font-body-size) * 1.12) / 2) var(--x-padding);
+  padding: calc((var(--button-height) - (var(--pp-font-body-size) * 1.12)) / 2) var(--x-padding);
 }

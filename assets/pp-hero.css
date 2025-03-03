@@ -72,7 +72,7 @@
   min-height: var(--height);
 }
 .pp-hero .pp-hero-inner svg {
-  max-width: calc(var(--height) * $emblem-height-to-width-ratio);
+  max-width: calc(var(--height) * 1.2355658199);
   height: var(--height);
 }
 .pp-hero .pp-hero-inner {
