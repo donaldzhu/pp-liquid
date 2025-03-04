@@ -50,6 +50,11 @@
     button {
       width: fit-content;
       @include button-padding;
+
+      &,
+      & a {
+        font-weight: normal;
+      }
     }
   }
 
