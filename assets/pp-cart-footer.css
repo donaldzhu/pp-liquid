@@ -46,7 +46,7 @@
 .pp-cart-footer .cart__footer .totals p {
   font-family: var(--pp-font-body-family);
   font-size: var(--pp-font-body-size);
-  line-height: 1.12;
+  line-height: var(--main-line-height);
 }
 .pp-cart-footer .cart__footer .totals h2 {
   width: var(--quantity-width);
@@ -128,5 +128,5 @@
 }
 .pp-cart-footer .cart__ctas button {
   width: fit-content;
-  padding: calc((var(--button-height) - (var(--pp-font-body-size) * 1.12)) / 2) var(--x-padding);
+  padding: calc((var(--button-height) - var(--pp-font-body-size) * var(--main-line-height)) / 2) var(--x-padding);
 }

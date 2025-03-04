@@ -14,7 +14,9 @@
   }
 
   &.is-empty {
-    padding: 25rem 0;
+    @include flex;
+    @include full-page-height;
+
 
     .pp-cart-items-title {
       display: none;
@@ -189,7 +191,7 @@
           button,
           input,
           span {
-            height: calc(var(--pp-font-body-size) * 1.12);
+            height: calc(var(--pp-font-body-size) * var(--main-line-height));
           }
 
           button.quantity__button {

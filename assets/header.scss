@@ -13,12 +13,9 @@ header {
     display: flex;
   }
 
-  @include breakpoint-value(--padding-top, 3.6rem, 3rem, 2rem);
-  @include breakpoint-value(--padding-bottom, 1.8rem, 2rem, 2rem);
-  @include main-container(var(--padding-top), var(--padding-bottom));
+  @include main-container(var(--header-padding-top), var(--header-padding-bottom));
 
   svg {
-    @include breakpoint-value(--svg-width, 106px, 80px, 65px);
     width: var(--svg-width);
   }
 
@@ -35,6 +32,7 @@ header {
     padding-inline-start: 0;
     display: flex;
     gap: var(--gap);
+    margin: 0;
   }
 
   li button {

@@ -20,14 +20,32 @@
 .pp-cart-items .pp-cart-items-title h1 {
   font-family: var(--pp-font-body-family);
   font-size: var(--pp-font-body-size);
-  line-height: 1.12;
+  line-height: var(--main-line-height);
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 0;
 }
 .pp-cart-items.is-empty {
-  padding: 25rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--height);
+}
+@media screen and (min-width: 769px) {
+  .pp-cart-items.is-empty {
+    --height: calc(100vh - calc(var(--footer-padding) * 2 + var(--pp-font-body-size) * var(--main-line-height)) - calc(var(--header-padding-top) + var(--header-padding-bottom) + var(--svg-width) / var(--logo-ratio)));
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .pp-cart-items.is-empty {
+    --height: calc(100dvh - calc(var(--footer-padding) * 2 + var(--pp-font-body-size) * var(--main-line-height) * 5 + var(--footer-gap) * 4) - calc(var(--header-padding-top) + var(--header-padding-bottom) + var(--svg-width) / var(--logo-ratio)));
+  }
+}
+@media screen and (max-width: 480px) {
+  .pp-cart-items.is-empty {
+    --height: calc(100dvh - calc(var(--footer-padding) * 2 + var(--pp-font-body-size) * var(--main-line-height) * 5 + var(--footer-gap) * 4) - calc(var(--header-padding-top) + var(--header-padding-bottom) + var(--svg-width) / var(--logo-ratio)));
+  }
 }
 .pp-cart-items.is-empty .pp-cart-items-title {
   display: none;
@@ -42,7 +60,7 @@
   font-family: var(--pp-font-heading-family);
   font-weight: normal;
   font-size: var(--pp-font-heading-size);
-  line-height: 1.12;
+  line-height: var(--main-line-height);
 }
 .pp-cart-items.is-empty .cart__warnings button {
   width: fit-content;
@@ -106,7 +124,7 @@
 .pp-cart-items table.pp-cart-items-table tbody a, .pp-cart-items table.pp-cart-items-table tbody a div, .pp-cart-items table.pp-cart-items-table tbody a h4, .pp-cart-items table.pp-cart-items-table tr a, .pp-cart-items table.pp-cart-items-table tr a div, .pp-cart-items table.pp-cart-items-table tr a h4, .pp-cart-items table.pp-cart-items-table td a, .pp-cart-items table.pp-cart-items-table td a div, .pp-cart-items table.pp-cart-items-table td a h4 {
   font-family: var(--pp-font-body-family);
   font-size: var(--pp-font-body-size);
-  line-height: 1.12;
+  line-height: var(--main-line-height);
 }
 .pp-cart-items table.pp-cart-items-table tr {
   display: flex;
@@ -291,7 +309,7 @@
   .pp-cart-items td.pp-cart-item-quantity .quantity-popover-container quantity-input button,
 .pp-cart-items td.pp-cart-item-quantity .quantity-popover-container quantity-input input,
 .pp-cart-items td.pp-cart-item-quantity .quantity-popover-container quantity-input span {
-    height: calc(var(--pp-font-body-size) * 1.12);
+    height: calc(var(--pp-font-body-size) * var(--main-line-height));
   }
   .pp-cart-items td.pp-cart-item-quantity .quantity-popover-container quantity-input button.quantity__button {
     position: relative;
@@ -306,7 +324,7 @@
   .pp-cart-items td.pp-cart-item-quantity .quantity-popover-container quantity-input button,
 .pp-cart-items td.pp-cart-item-quantity .quantity-popover-container quantity-input input,
 .pp-cart-items td.pp-cart-item-quantity .quantity-popover-container quantity-input span {
-    height: calc(var(--pp-font-body-size) * 1.12);
+    height: calc(var(--pp-font-body-size) * var(--main-line-height));
   }
   .pp-cart-items td.pp-cart-item-quantity .quantity-popover-container quantity-input button.quantity__button {
     position: relative;
@@ -344,7 +362,7 @@
 .pp-cart-items td.pp-cart-item-quantity .quantity-popover-container quantity-input input {
   font-family: var(--pp-font-body-family);
   font-size: var(--pp-font-body-size);
-  line-height: 1.12;
+  line-height: var(--main-line-height);
 }
 .pp-cart-items td.pp-cart-item-quantity .quantity-popover-container quantity-input input.quantity__input:focus-visible {
   outline: none;
@@ -373,7 +391,7 @@
   margin: 0;
   font-family: var(--pp-font-body-family);
   font-size: var(--pp-font-body-size);
-  line-height: 1.12;
+  line-height: var(--main-line-height);
   position: absolute;
   padding-top: 1.25rem;
 }
@@ -436,7 +454,7 @@
 .pp-cart-items td.pp-cart-item-price span {
   font-family: var(--pp-font-body-family);
   font-size: var(--pp-font-body-size);
-  line-height: 1.12;
+  line-height: var(--main-line-height);
 }
 .pp-cart-items td.pp-cart-item-price .loading__spinner {
   padding-top: 0;

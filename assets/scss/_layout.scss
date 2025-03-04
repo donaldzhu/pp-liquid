@@ -66,5 +66,15 @@ $cart-price-non-desktop-width: 6rem;
 }
 
 @mixin button-padding {
-  padding: calc((var(--button-height) - (var(--pp-font-body-size) * 1.12)) / 2) var(--x-padding);
+  padding: calc((var(--button-height) - (var(--pp-font-body-size) * var(--main-line-height))) / 2) var(--x-padding);
+}
+
+@mixin full-page-height {
+  $header-height: calc(var(--header-padding-top) + var(--header-padding-bottom) + var(--svg-width) / var(--logo-ratio));
+  $desktop-footer-height: calc(var(--footer-padding) * 2 + var(--pp-font-body-size) * var(--main-line-height));
+  $mobile-footer-height: calc(var(--footer-padding) * 2 + var(--pp-font-body-size) * var(--main-line-height) * 5 + var(--footer-gap) * 4);
+  $desktop-height: calc(100vh - #{$desktop-footer-height} - #{$header-height});
+  $mobile-height: calc(100dvh - #{$mobile-footer-height} - #{$header-height});
+  @include breakpoint-value(--height, $desktop-height, $mobile-height, $mobile-height);
+  height: var(--height);
 }

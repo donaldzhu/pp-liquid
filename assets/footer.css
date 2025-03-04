@@ -4,10 +4,13 @@ footer {
   justify-content: center;
   align-items: center;
 }
+footer li,
 footer a {
   font-family: var(--pp-font-body-family);
   font-size: var(--pp-font-body-size);
-  line-height: 1.12;
+  line-height: var(--main-line-height);
+}
+footer a {
   text-transform: uppercase;
   text-underline-offset: 12.5%;
 }
@@ -19,8 +22,8 @@ footer a {
   margin: 0;
   width: 100%;
   flex-direction: var(--flex-direction);
-  gap: var(--gap);
-  padding: var(--padding) 0 var(--padding);
+  gap: var(--footer-gap);
+  padding: var(--footer-padding) 0 var(--footer-padding);
 }
 @media screen and (min-width: 769px) {
   .footer-menu ul {
@@ -50,36 +53,6 @@ footer a {
 @media screen and (max-width: 480px) {
   .footer-menu ul {
     --text-decoration: none;
-  }
-}
-@media screen and (min-width: 769px) {
-  .footer-menu ul {
-    --gap: 4.5rem;
-  }
-}
-@media screen and (min-width: 481px) and (max-width: 768px) {
-  .footer-menu ul {
-    --gap: 3.25rem;
-  }
-}
-@media screen and (max-width: 480px) {
-  .footer-menu ul {
-    --gap: 2rem;
-  }
-}
-@media screen and (min-width: 769px) {
-  .footer-menu ul {
-    --padding: 8.5rem;
-  }
-}
-@media screen and (min-width: 481px) and (max-width: 768px) {
-  .footer-menu ul {
-    --padding: 6.75rem;
-  }
-}
-@media screen and (max-width: 480px) {
-  .footer-menu ul {
-    --padding: 5rem;
   }
 }
 .footer-menu ul a {

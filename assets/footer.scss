@@ -5,8 +5,12 @@ footer {
   margin: 0;
   @include flex;
 
+  li,
   a {
     @include pp-body-type;
+  }
+
+  a {
     text-transform: uppercase;
     text-underline-offset: 12.5%;
   }
@@ -21,12 +25,10 @@ footer {
 
   @include breakpoint-value(--flex-direction, row, column, column);
   @include breakpoint-value(--text-decoration, underline, none, none);
-  @include breakpoint-value(--gap, 4.5rem, 3.25rem, 2rem);
-  @include breakpoint-value(--padding, 8.5rem, 6.75rem, 5rem);
 
   flex-direction: var(--flex-direction);
-  gap: var(--gap);
-  padding: var(--padding) 0 var(--padding);
+  gap: var(--footer-gap);
+  padding: var(--footer-padding) 0 var(--footer-padding);
 
   a {
     text-decoration: var(--text-decoration);

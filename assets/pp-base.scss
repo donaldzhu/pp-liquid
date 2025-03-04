@@ -100,6 +100,19 @@ button.pp-button {
     transition: background-color $button-transition, color $button-transition;
   }
 
+  &:hover {
+    @media #{$tablet} {
+      background-color: rgb(var(--color-background));
+      color: rgb(var(--color-foreground));
+    }
+
+    @media #{$mobile} {
+      background-color: rgb(var(--color-background));
+      color: rgb(var(--color-foreground));
+    }
+  }
+
+
   &[disabled] {
     opacity: 0.5;
     pointer-events: none;
@@ -119,6 +132,13 @@ img.drop-shadow {
 
 :root {
   @include breakpoint-value(--pp-rounded-corners, 20px, 15px, 10px);
+  @include breakpoint-value(--header-padding-top, 3.6rem, 3rem, 2rem);
+  @include breakpoint-value(--header-padding-bottom, 1.8rem, 2rem, 2rem);
+  @include breakpoint-value(--svg-width, 106px, 80px, 65px);
+  @include breakpoint-value(--footer-padding, 8.5rem, 6.75rem, 5rem);
+  @include breakpoint-value(--footer-gap, 4.5rem, 3.25rem, 2rem);
+  --logo-ratio: 1.3589;
+  --main-line-height: 1.12;
 }
 
 img.rounded {

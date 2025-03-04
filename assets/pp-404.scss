@@ -3,7 +3,7 @@
 
 
 .pp-404 {
-  padding: 25rem 0; // TODO
+  @include full-page-height;
   @include flex;
   flex-direction: column;
 

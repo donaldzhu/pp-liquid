@@ -72,7 +72,7 @@ section:not(:first-child) h1 {
 .pp-subpage-section .pp-subpage-section-header-container h1 {
   font-family: var(--pp-font-body-family);
   font-size: var(--pp-font-body-size);
-  line-height: 1.12;
+  line-height: var(--main-line-height);
   line-height: 0.87;
   width: 100%;
   text-align: center;
@@ -225,7 +225,7 @@ section:not(:first-child) h1 {
 .pp-subpage-section .pp-subpage-section-caption {
   font-family: var(--pp-font-body-family);
   font-size: var(--pp-font-body-size);
-  line-height: 1.12;
+  line-height: var(--main-line-height);
   padding-bottom: var(--padding-bottom);
   position: relative;
 }
@@ -399,5 +399,5 @@ section:not(:first-child) h1 {
   margin: 0;
 }
 .pp-subpage-section .pp-subpage-section-caption .pp-subpage-section-product-details p:last-of-type {
-  margin-bottom: calc(var(--pp-font-body-size) * 1.12);
+  margin-bottom: calc(var(--pp-font-body-size) * var(--main-line-height));
 }

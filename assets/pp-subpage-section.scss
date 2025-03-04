@@ -223,7 +223,7 @@ section:not(:first-child) h1 {
       }
 
       p:last-of-type {
-        margin-bottom: calc(var(--pp-font-body-size) * 1.12);
+        margin-bottom: calc(var(--pp-font-body-size) * var(--main-line-height));
       }
     }
   }

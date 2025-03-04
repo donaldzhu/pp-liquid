@@ -16,11 +16,7 @@
 
       const isExpanded = header.classList.contains('expanded')
       menuButtonSpan.textContent = isExpanded ? 'Close' : 'Menu'
-      if (isExpanded) {
-        document.body.style.overflow = 'hidden'
-      } else {
-        document.body.style.overflow = 'auto'
-      }
+      document.body.style.overflow = isExpanded ? 'hidden' : 'auto'
     })
   })
 

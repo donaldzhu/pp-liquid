@@ -128,7 +128,7 @@ button.pp-button-active a {
   background: none;
   font-family: var(--pp-font-body-family);
   font-size: var(--pp-font-body-size);
-  line-height: 1.12;
+  line-height: var(--main-line-height);
 }
 @media screen and (min-width: 769px) {
   button.pp-button, button.pp-button-active {
@@ -193,13 +193,25 @@ button.pp-button-active a {
 button.pp-button span,
 button.pp-button a, button.pp-button-active span,
 button.pp-button-active a {
-  padding: calc((var(--button-height) - var(--pp-font-body-size) * 1.12) / 2) var(--x-padding);
+  padding: calc((var(--button-height) - var(--pp-font-body-size) * var(--main-line-height)) / 2) var(--x-padding);
   font-size: var(--font-size);
 }
 button.pp-button-active, button.pp-button:hover {
   background-color: rgb(var(--color-foreground));
   color: rgb(var(--color-background));
   transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  button.pp-button:hover {
+    background-color: rgb(var(--color-background));
+    color: rgb(var(--color-foreground));
+  }
+}
+@media screen and (max-width: 480px) {
+  button.pp-button:hover {
+    background-color: rgb(var(--color-background));
+    color: rgb(var(--color-foreground));
+  }
 }
 button.pp-button[disabled] {
   opacity: 0.5;
@@ -210,7 +222,7 @@ h2,
 p {
   font-family: var(--pp-font-body-family);
   font-size: var(--pp-font-body-size);
-  line-height: 1.12;
+  line-height: var(--main-line-height);
 }
 
 img.drop-shadow {
@@ -247,6 +259,10 @@ img.drop-shadow {
   }
 }
 
+:root {
+  --logo-ratio: 1.3589;
+  --main-line-height: 1.12;
+}
 @media screen and (min-width: 769px) {
   :root {
     --pp-rounded-corners: 20px;
@@ -260,6 +276,81 @@ img.drop-shadow {
 @media screen and (max-width: 480px) {
   :root {
     --pp-rounded-corners: 10px;
+  }
+}
+@media screen and (min-width: 769px) {
+  :root {
+    --header-padding-top: 3.6rem;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  :root {
+    --header-padding-top: 3rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  :root {
+    --header-padding-top: 2rem;
+  }
+}
+@media screen and (min-width: 769px) {
+  :root {
+    --header-padding-bottom: 1.8rem;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  :root {
+    --header-padding-bottom: 2rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  :root {
+    --header-padding-bottom: 2rem;
+  }
+}
+@media screen and (min-width: 769px) {
+  :root {
+    --svg-width: 106px;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  :root {
+    --svg-width: 80px;
+  }
+}
+@media screen and (max-width: 480px) {
+  :root {
+    --svg-width: 65px;
+  }
+}
+@media screen and (min-width: 769px) {
+  :root {
+    --footer-padding: 8.5rem;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  :root {
+    --footer-padding: 6.75rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  :root {
+    --footer-padding: 5rem;
+  }
+}
+@media screen and (min-width: 769px) {
+  :root {
+    --footer-gap: 4.5rem;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  :root {
+    --footer-gap: 3.25rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  :root {
+    --footer-gap: 2rem;
   }
 }
 

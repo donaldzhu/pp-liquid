@@ -3,7 +3,7 @@
 }
 
 header {
-  padding: var(--padding-top) var(--pp-x-padding) var(--padding-bottom);
+  padding: var(--header-padding-top) var(--pp-x-padding) var(--header-padding-bottom);
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -15,53 +15,8 @@ header h1 {
 header a {
   display: flex;
 }
-@media screen and (min-width: 769px) {
-  header {
-    --padding-top: 3.6rem;
-  }
-}
-@media screen and (min-width: 481px) and (max-width: 768px) {
-  header {
-    --padding-top: 3rem;
-  }
-}
-@media screen and (max-width: 480px) {
-  header {
-    --padding-top: 2rem;
-  }
-}
-@media screen and (min-width: 769px) {
-  header {
-    --padding-bottom: 1.8rem;
-  }
-}
-@media screen and (min-width: 481px) and (max-width: 768px) {
-  header {
-    --padding-bottom: 2rem;
-  }
-}
-@media screen and (max-width: 480px) {
-  header {
-    --padding-bottom: 2rem;
-  }
-}
 header svg {
   width: var(--svg-width);
-}
-@media screen and (min-width: 769px) {
-  header svg {
-    --svg-width: 106px;
-  }
-}
-@media screen and (min-width: 481px) and (max-width: 768px) {
-  header svg {
-    --svg-width: 80px;
-  }
-}
-@media screen and (max-width: 480px) {
-  header svg {
-    --svg-width: 65px;
-  }
 }
 header ul.mobile-menu-list {
   display: none;
@@ -71,6 +26,7 @@ header ul.mobile-menu-list {
   padding-inline-start: 0;
   display: flex;
   gap: var(--gap);
+  margin: 0;
 }
 @media screen and (min-width: 769px) {
   .header-menu ul {

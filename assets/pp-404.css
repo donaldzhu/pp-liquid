@@ -1,22 +1,37 @@
 .pp-404 {
-  padding: 25rem 0;
+  height: var(--height);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
+@media screen and (min-width: 769px) {
+  .pp-404 {
+    --height: calc(100vh - calc(var(--footer-padding) * 2 + var(--pp-font-body-size) * var(--main-line-height)) - calc(var(--header-padding-top) + var(--header-padding-bottom) + var(--svg-width) / var(--logo-ratio)));
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .pp-404 {
+    --height: calc(100dvh - calc(var(--footer-padding) * 2 + var(--pp-font-body-size) * var(--main-line-height) * 5 + var(--footer-gap) * 4) - calc(var(--header-padding-top) + var(--header-padding-bottom) + var(--svg-width) / var(--logo-ratio)));
+  }
+}
+@media screen and (max-width: 480px) {
+  .pp-404 {
+    --height: calc(100dvh - calc(var(--footer-padding) * 2 + var(--pp-font-body-size) * var(--main-line-height) * 5 + var(--footer-gap) * 4) - calc(var(--header-padding-top) + var(--header-padding-bottom) + var(--svg-width) / var(--logo-ratio)));
+  }
+}
 .pp-404 p {
   font-family: var(--pp-font-heading-family);
   font-weight: normal;
   font-size: var(--pp-font-heading-size);
-  line-height: 1.12;
+  line-height: var(--main-line-height);
   margin: 0;
   padding-top: 7rem;
 }
 .pp-404 h1 {
   font-family: var(--pp-font-body-family);
   font-size: var(--pp-font-body-size);
-  line-height: 1.12;
+  line-height: var(--main-line-height);
   text-transform: uppercase;
   margin: 1.2rem 0 0;
 }
