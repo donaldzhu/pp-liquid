@@ -24,6 +24,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  text-transform: uppercase;
   margin: 0;
 }
 .pp-cart-items.is-empty {

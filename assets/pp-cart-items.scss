@@ -9,6 +9,7 @@
     h1 {
       @include pp-body-type;
       @include flex(space-between);
+      text-transform: uppercase;
       margin: 0;
     }
   }

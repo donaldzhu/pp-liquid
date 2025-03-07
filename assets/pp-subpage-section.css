@@ -51,8 +51,23 @@ section:not(:first-child) h1 {
   aspect-ratio: 1;
   background-color: rgb(var(--pp-dot-color));
   border-radius: 100%;
-  margin-bottom: 1.5rem;
   width: var(--width);
+  margin-bottom: var(--margin-bottom);
+}
+@media screen and (min-width: 769px) {
+  .pp-subpage-section .pp-subpage-section-header-container .pp-subpage-section-dot {
+    --margin-bottom: 1.5rem;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .pp-subpage-section .pp-subpage-section-header-container .pp-subpage-section-dot {
+    --margin-bottom: 0.5rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .pp-subpage-section .pp-subpage-section-header-container .pp-subpage-section-dot {
+    --margin-bottom: 0.25rem;
+  }
 }
 @media screen and (min-width: 769px) {
   .pp-subpage-section .pp-subpage-section-header-container .pp-subpage-section-dot {

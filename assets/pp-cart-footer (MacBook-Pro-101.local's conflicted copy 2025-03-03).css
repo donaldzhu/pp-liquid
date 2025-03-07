@@ -1,0 +1,135 @@
+.pp-cart-footer {
+  padding: var(--padding-top) 0 var(--padding-bottom);
+}
+@media screen and (min-width: 769px) {
+  .pp-cart-footer {
+    --padding-top: 18rem;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .pp-cart-footer {
+    --padding-top: 6rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .pp-cart-footer {
+    --padding-top: 4rem;
+  }
+}
+@media screen and (min-width: 769px) {
+  .pp-cart-footer {
+    --padding-bottom: 24rem;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .pp-cart-footer {
+    --padding-bottom: 18rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .pp-cart-footer {
+    --padding-bottom: 14rem;
+  }
+}
+.pp-cart-footer.is-empty {
+  padding: 0;
+}
+.pp-cart-footer .cart__footer {
+  padding: 0 var(--pp-x-padding) 0;
+  width: 100%;
+  justify-content: flex-end;
+}
+.pp-cart-footer .cart__footer .totals {
+  justify-content: flex-end;
+}
+.pp-cart-footer .cart__footer .totals h2,
+.pp-cart-footer .cart__footer .totals p {
+  font-family: var(--pp-font-body-family);
+  font-size: var(--pp-font-body-size);
+  line-height: var(--main-line-height);
+}
+.pp-cart-footer .cart__footer .totals h2 {
+  width: var(--quantity-width);
+}
+@media screen and (min-width: 769px) {
+  .pp-cart-footer .cart__footer .totals h2 {
+    --quantity-width: calc(9vw + 12rem);
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .pp-cart-footer .cart__footer .totals h2 {
+    --quantity-width: calc(9vw + 12rem);
+  }
+}
+@media screen and (max-width: 480px) {
+  .pp-cart-footer .cart__footer .totals h2 {
+    --quantity-width: calc(15vw + 5rem);
+  }
+}
+.pp-cart-footer .cart__footer .totals p {
+  text-align: right;
+  flex: none;
+  min-width: var(--min-width);
+  margin-left: var(--margin-left);
+}
+@media screen and (min-width: 769px) {
+  .pp-cart-footer .cart__footer .totals p {
+    --margin-left: 2rem;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .pp-cart-footer .cart__footer .totals p {
+    --margin-left: 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  .pp-cart-footer .cart__footer .totals p {
+    --margin-left: 0;
+  }
+}
+@media screen and (min-width: 769px) {
+  .pp-cart-footer .cart__footer .totals p {
+    --min-width: 5vw;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .pp-cart-footer .cart__footer .totals p {
+    --min-width: 6rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .pp-cart-footer .cart__footer .totals p {
+    --min-width: 6rem;
+  }
+}
+.pp-cart-footer .cart__footer > * {
+  width: initial;
+}
+.pp-cart-footer .cart__ctas {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-top: var(--padding-top);
+}
+@media screen and (min-width: 769px) {
+  .pp-cart-footer .cart__ctas {
+    --padding-top: 6rem;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .pp-cart-footer .cart__ctas {
+    --padding-top: 4rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .pp-cart-footer .cart__ctas {
+    --padding-top: 2rem;
+  }
+}
+.pp-cart-footer .cart__ctas button {
+  width: fit-content;
+  padding: calc((var(--button-height) - (var(--pp-font-body-size) * var(--main-line-height))) / 2) var(--x-padding);
+}
+.pp-cart-footer .cart__ctas button, .pp-cart-footer .cart__ctas button a {
+  font-weight: normal;
+}

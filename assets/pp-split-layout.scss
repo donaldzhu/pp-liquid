@@ -9,11 +9,11 @@
     width: $width;
 
     &.pp-split-layout-plane-full-size {
-      width: calc($width * 1.2);
+      width: calc(#{$width} * 1.2);
     }
 
     &.pp-split-layout-plane-inset {
-      width: calc($width * 0.8);
+      width: calc(#{$width} * 0.8);
     }
   }
 }

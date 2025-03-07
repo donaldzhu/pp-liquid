@@ -32,10 +32,11 @@ section:not(:first-child) h1 {
       aspect-ratio: 1;
       background-color: rgb(var(--pp-dot-color));
       border-radius: 100%;
-      margin-bottom: 1.5rem;
 
+      @include breakpoint-value(--margin-bottom, 1.5rem, 0.5rem, 0.25rem);
       @include breakpoint-value(--width, 4.3rem, 3rem, 1.5rem);
       width: var(--width);
+      margin-bottom: var(--margin-bottom);
     }
 
 

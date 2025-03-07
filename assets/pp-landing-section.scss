@@ -24,8 +24,9 @@
   $left: calc(50vw - var(--pp-x-padding));
 
   .pp-landing-section-text-container {
+
     p,
-    > div {
+    >div {
       position: relative;
       left: $left;
     }
@@ -38,7 +39,7 @@
       text-indent: var(--text-indent);
     }
 
-    > div {
+    >div {
       @include breakpoint-value(--padding-top, 3.2rem, 2.5rem, 1.5rem);
       @include breakpoint-value(--padding-bottom, 5.6rem, 3.5rem, 2.5rem);
       padding: var(--padding-top) var(--pp-x-padding) var(--padding-bottom);

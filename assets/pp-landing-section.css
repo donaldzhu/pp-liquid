@@ -44,7 +44,7 @@
 }
 @media screen and (min-width: 769px) {
   .pp-landing-section .pp-landing-section-text-container p {
-    --text-indent: calc(-1 * $left);
+    --text-indent: calc(-1 * (50vw - var(--pp-x-padding)));
   }
 }
 @media screen and (min-width: 481px) and (max-width: 768px) {
