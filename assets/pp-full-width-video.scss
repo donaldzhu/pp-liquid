@@ -11,6 +11,11 @@
   padding-top: var(--padding-top);
   padding-bottom: var(--padding-bottom);
 
+  &.vimeo {
+    padding-top: calc(var(--padding-top) * .25);
+    padding-bottom: calc(var(--padding-bottom) * .25);
+  }
+
   img,
   video {
     width: $main-container-width;
@@ -40,5 +45,10 @@
     }
 
     transition: opacity 0.1s ease-in-out;
+  }
+
+  div {
+    width: $main-container-width;
+    margin-left: var(--pp-x-padding);
   }
 }

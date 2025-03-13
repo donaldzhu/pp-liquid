@@ -1,15 +1,43 @@
 {{ 'pp-full-width-video.css' | asset_url | stylesheet_tag }}
 
+{% liquid
+  assign videoType = sectionData.videoType
+  assign idSuffix = "now" | date: "%N"
+  assign id = "pp-full-width-video-" | append: idSuffix
+%}
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    if ('{{ videoType }}' === 'vimeoVideo') {
+      const iframe = document.querySelector('#{{ id }} iframe');
+      const src = '{{ sectionData.vimeoUrl }}'
+        .replace('vimeo.com/', 'player.vimeo.com/video/')
+        .replaceAll(/\?.*$/gi,'')
+      iframe.src = src
+    }
+})
+</script>
+
 {% assign video = sectionData.video %}
-<div class="pp-full-width-video">
+<div class="pp-full-width-video {% if videoType == 'vimeoVideo' %}vimeo{% endif %}" id="{{ id }}">
+  {% if videoType == 'vimeoVideo' %}
+    <div style="padding:75% 0 0 0;position:relative;">
+        <iframe
+          frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+          style="position:absolute;top:0;left:0;width:100%;height:100%;" >
+        </iframe>
+    </div>
+  {% else %}
   {% render 'play-button' %}
-  <video
-    playsinline="playsinline"
-    preload="metadata"
-    poster="{{ video.preview.url }}"
-    loop>
-    <source src="{{ video.url }}" type="video/mp4"><img src="{{ video.preview.url | file_img_url }}" loading="lazy">
-  </video>
+    <video
+      playsinline="playsinline"
+      preload="metadata"
+      poster="{{ video.preview.url }}"
+      loop>
+      <source src="{{ video.url }}" type="video/mp4"><img src="{{ video.preview.url | file_img_url }}" loading="lazy">
+    </video>
+  {% endif %}
 </div>
 
 
