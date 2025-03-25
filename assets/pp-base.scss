@@ -125,9 +125,9 @@ p {
 }
 
 img.drop-shadow {
-  @include breakpoint-value(--offset, 1px, 0.6, 0.4px);
+  /*   @include breakpoint-value(--offset, 1px, 0.6, 0.4px);
   @include breakpoint-value(--blur, 15px, 10px, 4px);
-  filter: drop-shadow(var(--offset) var(--offset) var(--blur) rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(var(--offset) var(--offset) var(--blur) rgba(0, 0, 0, 0.25)); */
 }
 
 :root {
